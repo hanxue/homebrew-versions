@@ -11,5 +11,11 @@ class Squid2 < Formula
                           "--disable-dependency-tracking",
                           "--prefix=#{prefix}"
     system "make install"
+    
+    # Create default Squid cache and log dirs
+    mkdir_p "#{prefix}/var/cache"
+    mkdir_p "#{prefix}/var/logs"
+    # Create swap directories otherwise squid will complain
+    system "#{prefix}/sbin/squid", "-z"
   end
 end
