@@ -1,7 +1,7 @@
 class Kibana41 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://github.com/elastic/kibana.git", :tag => "v4.1.5", :revision => "04efeb4ca2305809137225ae6aa22e13de899d51"
+  url "https://github.com/elastic/kibana.git", :tag => "v4.1.6", :revision => "1c3d5ac4bf98ec207b550a6d769b849116c00d7e"
   head "https://github.com/elastic/kibana.git"
 
   bottle do
@@ -13,8 +13,8 @@ class Kibana41 < Formula
   conflicts_with "kibana", :because => "Different versions of same formula"
 
   resource "node" do
-    url "https://nodejs.org/dist/v0.10.42/node-v0.10.42.tar.gz"
-    sha256 "ebc1d53698f80c5a7b0b948e1108d7858f93d2d9ebf4541c12688d85704de105"
+    url "https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz"
+    sha256 "1f92f6d31f7292ce56db57d6703efccf3e6c945948f5901610cefa69e78d3498"
   end
 
   def install
