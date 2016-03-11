@@ -2,8 +2,8 @@ class Kibana43 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
   url "https://github.com/elastic/kibana.git",
-      :tag => "v4.3.2",
-      :revision => "85c0f729b12f6a6efe2003cbcc28aa1c271f9595"
+      :tag => "v4.3.3",
+      :revision => "b8833210a21ca747879f7d93ad34afd3250f954f"
   head "https://github.com/elastic/kibana.git"
 
   bottle do
@@ -15,8 +15,8 @@ class Kibana43 < Formula
   conflicts_with "kibana", :because => "Different versions of same formula"
 
   resource "node" do
-    url "https://nodejs.org/dist/v0.12.10/node-v0.12.10.tar.gz"
-    sha256 "edbd3710512ec7518a3de4cabf9bfee6d12f278eef2e4b53422c7b063f6b976d"
+    url "https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz"
+    sha256 "1f92f6d31f7292ce56db57d6703efccf3e6c945948f5901610cefa69e78d3498"
   end
 
   def install
