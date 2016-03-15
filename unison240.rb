@@ -11,7 +11,7 @@ class Unison240 < Formula
     sha256 "062468878d77d8e2101d4a95775725a10d61265d34100153011c739164b6ce6f" => :mountain_lion
   end
 
-  depends_on "objective-caml" => :build
+  depends_on "ocaml" => :build
 
   def install
     ENV.j1
