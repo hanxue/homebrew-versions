@@ -5,10 +5,11 @@ class Unison240 < Formula
   sha256 "5a1ea828786b9602f2a42c2167c9e7643aba2c1e20066be7ce46de4779a5ca54"
 
   bottle do
-    cellar :any
-    sha256 "f7934fb365bb6d8267b9f10d7f42846dff6614fe517cc52d6c8eac85dc5f8e82" => :yosemite
-    sha256 "68eb2b262e62fb0127c17285d98c180a644754a9ca14a60166ee15477d43c4de" => :mavericks
-    sha256 "062468878d77d8e2101d4a95775725a10d61265d34100153011c739164b6ce6f" => :mountain_lion
+    cellar :any_skip_relocation
+    revision 1
+    sha256 "dfe253294f54d90a2fb3e5f8b2316b11726ad76cc9c7e8965dfcaee551814f00" => :el_capitan
+    sha256 "6519f3a415677e6daf0072253f150693463312d6b7d68801c294aa68d9c09672" => :yosemite
+    sha256 "6ff17e0dbdde5bf54fa66296224c842783e88d0ce08fa0226d23b76431f25740" => :mavericks
   end
 
   depends_on "ocaml" => :build
