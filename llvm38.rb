@@ -67,6 +67,12 @@ class Llvm38 < Formula
       end
     end
   end
+  bottle do
+    sha256 "d11c8af13e3560b99da7444ea4b98766aca1c2cde2c4d7d9d70450769f80106d" => :el_capitan
+    sha256 "992e53288649668ce8125a0fda5b4e96c0e33871b377087c582f55a055f8bc1c" => :yosemite
+    sha256 "aaca71557a11144d9fb8276f791282c910f7172dbbe7a6f63a146d718d058b16" => :mavericks
+  end
+
 
   head do
     url "http://llvm.org/git/llvm.git", :branch => "release_38"
