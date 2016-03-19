@@ -1,8 +1,8 @@
 class Mariadb100 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mariadb-10.0/mariadb-10.0_10.0.22.orig.tar.gz"
-  sha256 "9e17f4aaccb7069a874555cca254974d0f0103f0ad5e2434acab6aa353dafc7b"
+  url "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mariadb-10.0/mariadb-10.0_10.0.24.orig.tar.gz"
+  sha256 "65de16f5f9b1696e2a537bc7a99d122bc38fa77941ba2e65d8cdf363c8449094"
 
   bottle do
     sha256 "9c7708fa9341ea3706d6347db70defeed2de0089ec374f35a9ac9e166388478c" => :el_capitan
@@ -43,6 +43,10 @@ class Mariadb100 < Formula
       s.change_make_var! "basedir", "\"#{prefix}\""
       s.change_make_var! "ldata", "\"#{var}/mysql\""
     end
+
+    # Patch Clang failure for 10.0.24. See:
+    # https://jira.mariadb.org/browse/MDEV-9603
+    inreplace "storage/connect/tabmysql.cpp", 'Schema ? Schema : "*");', 'Schema ? Schema : (char*)"*");'
 
     # Build without compiler or CPU specific optimization flags to facilitate
     # compilation of gems and other software that queries `mysql-config`.
