@@ -4,6 +4,8 @@ class JenkinsLts < Formula
   url "http://mirrors.jenkins-ci.org/war-stable/1.642.3/jenkins.war"
   sha256 "942478fbf16dfe8b338fd2402ed406a6d74f9154f749c424f3d2d1d389594d72"
 
+  bottle :unneeded
+
   depends_on :java => "1.7+"
 
   conflicts_with "jenkins",
