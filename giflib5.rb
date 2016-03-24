@@ -1,8 +1,8 @@
 class Giflib5 < Formula
   desc "Library and utilities for processing GIFs"
   homepage "http://giflib.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/giflib/giflib-5.1.1.tar.bz2"
-  sha256 "391014aceb21c8b489dc7b0d0b6a917c4e32cc014ce2426d47ca376d02fe2ffc"
+  url "https://downloads.sourceforge.net/project/giflib/giflib-5.1.3.tar.bz2"
+  sha256 "5096d27805283599b01074d487ad3f8e02bd26b84d759b9017be876ca3d5b81d"
 
   bottle do
     cellar :any
