@@ -6,9 +6,9 @@ class Giflib5 < Formula
 
   bottle do
     cellar :any
-    sha256 "d5539114f8aea22d0e0559e7feb47faca1423622fd9c9fc79938e55c76865811" => :el_capitan
-    sha256 "9a346ec04be4662c1662c3b96e919d8387aec55cf7da58bf64671bcb14438fb4" => :yosemite
-    sha256 "86a048dbaf112e748fe8b8c72a00fe456b5f1f8fe2dc2fc5a932e8d5ad67d6d8" => :mavericks
+    sha256 "2cd4acd853d02b17d3a2b6aeacd6cfb86d1c7169d9bcecdad8c1bb1b45478f75" => :el_capitan
+    sha256 "ad28823dd73acd53bbcb1cf65937914fd7bd7ebf06404de04865b4d48f0484cc" => :yosemite
+    sha256 "c5209430a970ba85bdccb634b2b144d71a33078a4396623567b45606b57569db" => :mavericks
   end
 
   keg_only "Conflicts with giflib in main repository."
