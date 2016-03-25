@@ -1,23 +1,27 @@
-class AndroidNdkR9d < Formula
+class AndroidNdkR10e < Formula
   desc "Android native-code language toolset"
   homepage "https://developer.android.com/sdk/ndk/index.html"
-  version "r9d"
-
-  if MacOS.prefer_64_bit?
-    url "https://dl.google.com/android/ndk/android-ndk-r9d-darwin-x86_64.tar.bz2"
-    sha256 "4dc03dbd30dd98fee3664ebc48546b0ec40f9c2e184e4d9e97ce119e1b51b8a5"
-  else
-    url "https://dl.google.com/android/ndk/android-ndk-r9d-darwin-x86.tar.bz2"
-    sha256 "82ee78e79fb049f099dcee6680e229339f4c5507308d67c9e145e0964d0b40af"
-  end
+  url "https://dl.google.com/android/ndk/android-ndk-r10e-darwin-x86_64.bin"
+  version "r10e"
+  sha256 "728c309e606f63101f1258c9d3d579b80ac74fe74c511ebb71f460ce5c5d084e"
 
   bottle :unneeded
 
-  depends_on "android-sdk"
+  # As of r10e, only a 64-bit version is provided
+  depends_on :arch => :x86_64
+  depends_on "android-sdk" => :recommended
+
+  conflicts_with "crystax-ndk",
+    :because => "both install `ndk-build`, `ndk-gdb` and `ndk-stack` binaries"
 
   def install
     bin.mkpath
-    prefix.install Dir["*"]
+
+    chmod 0755, "./android-ndk-#{version}-darwin-x86_64.bin"
+    system "./android-ndk-#{version}-darwin-x86_64.bin"
+
+    # Now we can install both 64-bit and 32-bit targeting toolchains
+    prefix.install Dir["android-ndk-#{version}/*"]
 
     # Create a dummy script to launch the ndk apps
     ndk_exec = prefix+"ndk-exec.sh"
@@ -44,5 +48,9 @@ class AndroidNdkR9d < Formula
     For more documentation on Android NDK, please check:
       #{prefix}/docs
     EOS
+  end
+
+  test do
+    assert_match /Usage/, shell_output("#{bin}/ndk-build --help")
   end
 end
