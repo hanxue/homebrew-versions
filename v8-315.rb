@@ -1,4 +1,5 @@
 class V8315 < Formula
+  desc "Google's open source JavaScript engine"
   homepage "https://code.google.com/p/v8/"
   url "https://github.com/v8/v8-git-mirror/archive/3.15.11.18.tar.gz"
   sha256 "93a4945a550e5718d474113d9769a3c010ba21e3764df8f22932903cd106314d"
