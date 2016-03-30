@@ -7,9 +7,9 @@ class Kibana44 < Formula
   conflicts_with "kibana", :because => "Different versions of same formula"
 
   bottle do
-    sha256 "80be04374451a808d022ed2b0397c3550aff6ed593501e8d138191a7e4158847" => :el_capitan
-    sha256 "34408a301a9c4d2070fe0f0d706b87c76ab39750abb70db905a138e76f1af24d" => :yosemite
-    sha256 "44a8825d08999c4ef1a767bfa8b2c8bcf3c4477b76999c9ec41443589c81abcc" => :mavericks
+    sha256 "f0e5591eb069135d45391f1a923cb60aa70c07dc51a1f6fb71e3a0f0f09d7268" => :el_capitan
+    sha256 "ec055fba53a6c7eee74592705b7790866cd6367ed3177d3019d937d471e5e0d3" => :yosemite
+    sha256 "035f5609881e8851a6f5537b38386df488971df3297eda8b9fc7e929aa0fd545" => :mavericks
   end
 
   resource "node" do
