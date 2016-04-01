@@ -2,8 +2,8 @@
 class Node010 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v0.10.43/node-v0.10.43.tar.xz"
-  sha256 "6c5185cbfad3538484c9d97eec0110b5cd5826126f15b776015dfee1f51cd32a"
+  url "https://nodejs.org/dist/v0.10.44/node-v0.10.44.tar.xz"
+  sha256 "25b2cd910822723e972a3990d5687b7ff48581ad2f77aa1942d99a1b024f434a"
   head "https://github.com/nodejs/node.git", :branch => "v0.10-staging"
 
   bottle do
@@ -26,8 +26,8 @@ class Node010 < Formula
   end
 
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-2.14.4.tgz"
-    sha256 "c8b602de5d51f956aa8f9c34d89be38b2df3b7c25ff6588030eb8224b070db27"
+    url "https://registry.npmjs.org/npm/-/npm-2.15.1.tgz"
+    sha256 "e3435100b37379354b899a31d073ef81b8aa7365c52eb138847ecfbf9f01ea93"
   end
 
   conflicts_with "node",
