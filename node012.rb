@@ -1,8 +1,8 @@
 class Node012 < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/download/release/v0.12.12/node-v0.12.12.tar.xz"
-  sha256 "5977adab4fec36abcc18053b1b8c1deac4c94016d7b19942a986291d58685db6"
+  url "https://nodejs.org/download/release/v0.12.13/node-v0.12.13.tar.xz"
+  sha256 "d0a4ebff052016c81184b6b880009f299263fc1a2f2bca35483b67bb886c6556"
   head "https://github.com/nodejs/node.git", :branch => "v0.12-staging"
 
   bottle do
@@ -30,8 +30,8 @@ class Node012 < Formula
   end
 
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-2.14.9.tgz"
-    sha256 "ca3aa0f94931ec2259fd6d498140540767ebbed68c05be431030a2f3601c8107"
+    url "https://registry.npmjs.org/npm/-/npm-2.15.1.tgz"
+    sha256 "e3435100b37379354b899a31d073ef81b8aa7365c52eb138847ecfbf9f01ea93"
   end
 
   def install
