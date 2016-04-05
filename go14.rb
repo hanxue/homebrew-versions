@@ -34,6 +34,8 @@ class Go14 < Formula
   end
 
   def install
+    ENV.refurbish_args
+
     # host platform (darwin) must come last in the targets list
     if build.with? "cc-all"
       targets = [
