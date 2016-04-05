@@ -27,6 +27,8 @@ class Go12 < Formula
   end
 
   def install
+    ENV.refurbish_args
+
     # install the completion scripts
     bash_completion.install "misc/bash/go" => "go-completion.bash"
     zsh_completion.install "misc/zsh/go" => "go"
