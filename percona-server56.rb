@@ -5,6 +5,12 @@ class PerconaServer56 < Formula
   version "5.6.28-76.1"
   sha256 "ab8ab794a58a82132645ae84b74de91c7f9a5bcf81f2162628ce8976a00a4fd4"
 
+  bottle do
+    sha256 "29cf79333367a520b823559f1a8695721b28ec50ab0ac593a284fdffe5bfe954" => :el_capitan
+    sha256 "19f9a1e7c0f15fcaacf93e3a91cd6d6366305302cb5339088ad90203f6609b24" => :yosemite
+    sha256 "9c6d91dbd3169d00feeff08a31625e240a36bcfdd07a68155dd4e74a0e2cb2f2" => :mavericks
+  end
+
   option :universal
   option "with-test", "Build with unit tests"
   option "with-embedded", "Build the embedded server"
