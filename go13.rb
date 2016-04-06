@@ -6,10 +6,10 @@ class Go13 < Formula
   sha256 "1bb6fde89cfe8b9756a875af55d994cce0994861227b5dc0f268c143d91cd5ff"
 
   bottle do
-    revision 1
-    sha256 "d2c3c0b965390c3bc4f692d95310248e6b60bce2aa0837c0132edd54aa6de891" => :yosemite
-    sha256 "dd5fda632d78f6aa217278b8969a82159b87bffb457f0db501dff99e4200b115" => :mavericks
-    sha256 "6035b4eb2c551dc45c45af84e2b94723b69802eba0859ffda778ab17fae75f8c" => :mountain_lion
+    revision 2
+    sha256 "5a8b572c601cf916c7d610c57f2ba428747446a40fa5ccd55124b83c926ef73a" => :el_capitan
+    sha256 "aa45dfc5da2f0f2339976fa522e1662adfb7ade889d3d8e769a030d841e5d0a1" => :yosemite
+    sha256 "3d431f2216a974ec69dd872fb2d03f9b1dc5a6d3a62a8dc0a3683c967d1d84d5" => :mavericks
   end
 
   option "with-cc-all", "Build with cross-compilers and runtime support for all supported platforms"
