@@ -7,9 +7,9 @@ class Go15 < Formula
   sha256 "002acabce7ddc140d0d55891f9d4fcfbdd806b9332fb8b110c91bc91afb0bc93"
 
   bottle do
-    sha256 "f74acec49688ac0c3e85d2c1d7ee3291fa990d301e50c1b50d9085e5e0999703" => :el_capitan
-    sha256 "72bd62661dfe8326302909333f97590d987fdeced1df5d6bedd74ccf826172d5" => :yosemite
-    sha256 "de92c756c4ca4c396606a82486294ec72bf0b6bf4e5cbf60b98ae479f156c4d2" => :mavericks
+    sha256 "0d0d96d66bbf85396ea445c357a31a5e3bff80197c34527a788454e6b59067db" => :el_capitan
+    sha256 "57d3da12e509369ca49fa3fe1dd945b9ca6b5deff328832a867d1e665c4ed7c6" => :yosemite
+    sha256 "de116cc18565a6b564f7b9546717b0314126ed5fc2fd93bad5d1cbc0e6c39c2a" => :mavericks
   end
 
   option "without-cgo", "Build without cgo"
