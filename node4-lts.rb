@@ -1,8 +1,8 @@
 class Node4Lts < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v4.4.2/node-v4.4.2.tar.xz"
-  sha256 "49051fd930e36181509dc8fcf584fc01971083b6bf9e14f2bbec49cc9c4224e9"
+  url "https://nodejs.org/dist/v4.4.3/node-v4.4.3.tar.xz"
+  sha256 "57499bb0b1b86080459d4066e3c138579a278b2d0b1f5b2f19e66c69b4e8433c"
   head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
@@ -47,6 +47,7 @@ class Node4Lts < Formula
     else
       args << "--with-intl=small-icu"
     end
+    args << "--tag=head" if build.head?
 
     resource("icu4c").stage buildpath/"deps/icu"
 
@@ -136,6 +137,7 @@ class Node4Lts < Formula
     if build.with? "npm"
       # make sure npm can find node
       ENV.prepend_path "PATH", opt_bin
+      ENV.delete "NVM_NODEJS_ORG_MIRROR"
       assert_equal which("node"), opt_bin/"node"
       assert (HOMEBREW_PREFIX/"bin/npm").exist?, "npm must exist"
       assert (HOMEBREW_PREFIX/"bin/npm").executable?, "npm must be executable"
