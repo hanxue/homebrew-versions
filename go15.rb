@@ -1,10 +1,10 @@
 class Go15 < Formula
   desc "Go programming environment"
   homepage "https://golang.org"
-  url "https://storage.googleapis.com/golang/go1.5.3.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.5.3.src.tar.gz"
-  version "1.5.3"
-  sha256 "754e06dab1c31ab168fc9db9e32596734015ea9e24bc44cae7f237f417ce4efe"
+  url "https://storage.googleapis.com/golang/go1.5.4.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.5.4.src.tar.gz"
+  version "1.5.4"
+  sha256 "002acabce7ddc140d0d55891f9d4fcfbdd806b9332fb8b110c91bc91afb0bc93"
 
   bottle do
     sha256 "f74acec49688ac0c3e85d2c1d7ee3291fa990d301e50c1b50d9085e5e0999703" => :el_capitan
