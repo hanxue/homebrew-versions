@@ -3,7 +3,7 @@ class Mapnik2 < Formula
   homepage "http://www.mapnik.org/"
   url "https://s3.amazonaws.com/mapnik/dist/v2.2.0/mapnik-v2.2.0.tar.bz2"
   sha256 "9b30de4e58adc6d5aa8478779d0a47fdabe6bf8b166b67a383b35f5aa5d6c1b0"
-  revision 1
+  revision 2
 
   bottle do
     sha256 "d493b3dba9a41b2df14d3a5c527ceff127b0817bdac6df66ffd30addd5585f94" => :el_capitan
@@ -29,8 +29,8 @@ class Mapnik2 < Formula
   depends_on "proj"
   depends_on "icu4c"
   depends_on "jpeg"
-  depends_on "boost"
-  depends_on "boost-python"
+  depends_on "boost159"
+  depends_on "boost-python159"
   depends_on "gdal" => :optional
   depends_on "postgresql" => :optional
   depends_on "cairo" => :optional
@@ -40,7 +40,7 @@ class Mapnik2 < Formula
 
   def install
     icu = Formula["icu4c"].opt_prefix
-    boost = Formula["boost"].opt_prefix
+    boost = Formula["boost159"].opt_prefix
     proj = Formula["proj"].opt_prefix
     jpeg = Formula["jpeg"].opt_prefix
     libpng = Formula["libpng"].opt_prefix
