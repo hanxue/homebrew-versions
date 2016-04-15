@@ -4,6 +4,13 @@ class Boost159 < Formula
   url "https://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2"
   sha256 "727a932322d94287b62abb1bd2d41723eec4356a7728909e38adb65ca25241ca"
 
+  bottle do
+    cellar :any
+    sha256 "0eed018a20e25f55ff029376a899f3b73817d9a49fafae0c9488689d27cd3643" => :el_capitan
+    sha256 "7d90dac3983b8ae5e844396d0baf43e365b79b4040829fdbaa925c5916649654" => :yosemite
+    sha256 "a7f928a08e8add78570ab19ab54d78211c754ed0947ee5aa9d6896b10cdccb04" => :mavericks
+  end
+
   keg_only "Conflicts with boost in main repository."
 
   option :universal
