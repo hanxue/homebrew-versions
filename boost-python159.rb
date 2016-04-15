@@ -4,6 +4,13 @@ class BoostPython159 < Formula
   url "https://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.tar.bz2"
   sha256 "727a932322d94287b62abb1bd2d41723eec4356a7728909e38adb65ca25241ca"
 
+  bottle do
+    cellar :any
+    sha256 "455c3e4253bc5e7dce422e217aaff2a4361a15e8789daa49901105aa111b52b5" => :el_capitan
+    sha256 "a4d5a6a41654e43e025e38eb6a87db901fea072dec6c9c8e1900cbd1973f5481" => :yosemite
+    sha256 "c6e99c0f1ca29a1ba90777cb84cd23cb3532060101c386bcfc8bc40b4fd6ca61" => :mavericks
+  end
+
   keg_only "Conflicts with boost-python in main repository."
 
   option :universal
