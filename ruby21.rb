@@ -1,8 +1,8 @@
 class Ruby21 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.8.tar.bz2"
-  sha256 "250d0b589cba97caddc86a28849365ad0d475539448cf76bbae93190985b3387"
+  url "https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.9.tar.bz2"
+  sha256 "4f21376aa11e09b499c3254bbd839e68e053c0d18e28d61c428a32347269036e"
 
   bottle do
     sha256 "809ab6041eb2fcf47c5a7545fe8540137fa1c491994f12a023faedadbd971e24" => :el_capitan
@@ -97,7 +97,7 @@ class Ruby21 < Formula
     end
 
     # Create the version-specific bindir used by rubygems
-    mkdir_p "#{rubygems_bindir}"
+    rubygems_bindir.mkpath
   end
 
   def abi_version
