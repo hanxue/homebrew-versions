@@ -49,7 +49,7 @@ class Gcc49 < Formula
     end
   end
 
-  option "with-fortran", "Build the gfortran compiler"
+  option "without-fortran", "Build without the gfortran compiler"
   option "with-java", "Build the gcj compiler"
   option "with-all-languages", "Enable all compilers and languages, except Ada"
   option "with-nls", "Build with native language support (localization)"
@@ -57,7 +57,6 @@ class Gcc49 < Formula
   # enabling multilib on a host that can't run 64-bit results in build failures
   option "without-multilib", "Build without multilib support" if MacOS.prefer_64_bit?
 
-  deprecated_option "enable-fortran" => "with-fortran"
   deprecated_option "enable-java" => "with-java"
   deprecated_option "enable-all-languages" => "with-all-languages"
   deprecated_option "enable-nls" => "with-nls"
