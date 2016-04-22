@@ -6,9 +6,9 @@ class LibmongoclientLegacy < Formula
   head "https://github.com/mongodb/mongo-cxx-driver.git", :branch => "legacy"
 
   bottle do
-    sha256 "06d60976d8cafd154480cfaea8a63e932c547a52a9aedbe45b487d57e05c48fa" => :el_capitan
-    sha256 "1327fc998a24c34a1d567fbaeedfbc21013efd0d94b2a29dbee40273cd59a2d7" => :yosemite
-    sha256 "92efe198af4fb9807029697a6070fd795a29fb55473dd2bad66901c23fc9ddc2" => :mavericks
+    sha256 "11a511e574f2de1be11345e850f8a48d34a3fa7af1e49413219b050eb9cfb033" => :el_capitan
+    sha256 "874d3c287a5b399a156fd6d1e3b133a5f82231562714a44ad706c2ea1511026f" => :yosemite
+    sha256 "984a9b24c5f6e6b8e8a7b83fca80f128e5168705b9064081e39a7bf5f8b9fa0c" => :mavericks
   end
 
   conflicts_with "libmongoclient", :because => "libmongoclient contains 26compat branch"
