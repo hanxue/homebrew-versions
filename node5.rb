@@ -3,6 +3,12 @@ class Node5 < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v5.11.0/node-v5.11.0.tar.xz"
   sha256 "083766aff72fc5c78f6999dd0d00bc0340a052ab270fd60d6928b719ca2b3fd1"
+  bottle do
+    sha256 "591be9bf371ffefac664146b84e3517c189a7db7eae0dfd6cd45d5126c915cc1" => :el_capitan
+    sha256 "9678fb9530633e9f3bf76daba68919a820b9baa663d3e11f715d898a444d4db8" => :yosemite
+    sha256 "ca964f5738c01a64165bf059da4488524ff0ccc6d9ea59ef87c6b730d9603933" => :mavericks
+  end
+
   # uncomment once a v5.x staging branch is cut
   # head "https://github.com/nodejs/node.git", :branch => "v5.x-staging"
 
