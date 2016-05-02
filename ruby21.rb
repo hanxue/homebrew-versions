@@ -5,9 +5,9 @@ class Ruby21 < Formula
   sha256 "4f21376aa11e09b499c3254bbd839e68e053c0d18e28d61c428a32347269036e"
 
   bottle do
-    sha256 "809ab6041eb2fcf47c5a7545fe8540137fa1c491994f12a023faedadbd971e24" => :el_capitan
-    sha256 "f6facdecb1e6918a1714d9cbb660221c64109aa2702708c68dbe73aa6edb1ce7" => :yosemite
-    sha256 "07ca6d0e10bcb9c0e3bc52ad79c178e806f57c67c758f5dafeb364e85d1a1918" => :mavericks
+    sha256 "4ecbacee3a08c5d0ee2d0746094253361c5c2c4d6bcb7d9cc5fbab6ad577579b" => :el_capitan
+    sha256 "b61a28c3738a76ede44d5b03dc5a66f798cd8c4b21a1f71111aab26986e2ed9f" => :yosemite
+    sha256 "7728af9cf4bd799bf4aacc3602603c7646d78f43df1dea9650b4ee11f88f426a" => :mavericks
   end
 
   keg_only :provided_by_osx
