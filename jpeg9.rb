@@ -7,9 +7,9 @@ class Jpeg9 < Formula
 
   bottle do
     cellar :any
-    sha256 "9061df1faf981bb9e064d58a6a72b0339cf00b0824da8f09b911026a3740fef0" => :yosemite
-    sha256 "969b3b006f8eddbd66c4d293d4732783510ed04346151497d204c1da3ad46c04" => :mavericks
-    sha256 "be2a94a1715e16a4097ac00c7d9b5f3d4ebc64e96027bc4a40b321bb5da27eea" => :mountain_lion
+    sha256 "b9125a19cf663a93035bb506c518076515397d6a7ba9b748283bdc9cf141d371" => :el_capitan
+    sha256 "3aebd7cf46e589ffe9510d770e1c76fb67e2faa1866b00f221aacb0d15e7f5b8" => :yosemite
+    sha256 "da27dd200099902e1077cb9997f72882226be2681744dfe3cdfc098e196a1e84" => :mavericks
   end
 
   keg_only "Conflicts with jpeg in main repository."
