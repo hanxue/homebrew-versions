@@ -12,6 +12,8 @@ class Jpeg9 < Formula
     sha256 "be2a94a1715e16a4097ac00c7d9b5f3d4ebc64e96027bc4a40b321bb5da27eea" => :mountain_lion
   end
 
+  keg_only "Conflicts with jpeg in main repository."
+
   option :universal
 
   def install
