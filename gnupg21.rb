@@ -5,6 +5,12 @@ class Gnupg21 < Formula
   mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.12.tar.bz2"
   sha256 "ac34929d2400a58a349963865442ee6cdd75e500a8d5df083d29835e88bfc506"
 
+  bottle do
+    sha256 "c74376ad8252d404d004c1f2b8e0c23f1fefa07463f072bcdf6a94929e8d333c" => :el_capitan
+    sha256 "c41a42e8fa8003bc9d6c7e635a072e2610c2db78d9268e49083ec752c297fb0a" => :yosemite
+    sha256 "7674d7ace819ec510336803095e7690b6c3c221832ae58d9c2820d3723bcea7c" => :mavericks
+  end
+
   head do
     url "git://git.gnupg.org/gnupg.git"
 
