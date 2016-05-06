@@ -24,7 +24,7 @@ You may wish to consider hosting your own [tap](https://github.com/Homebrew/brew
 
 You can read Homebrew’s Acceptable Formulae document [here](https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Acceptable-Formulae.md). There are some differences between `homebrew/core` (which these guidelines cover) and here:
 
-* Versions formulae *must* not exceed +/-2 versions from the current stable release.
+* Versions formulae *must* not exceed +/-2 major/minor (not patch) versions from the current stable release.
 * Versions formulae *usually* do not have head or devel sections.
 * Versions formulae *can* depend on other versions formulae.
 * If copied from `homebrew/core` prior formulae please remove any deprecated options and fix any issues raised by `brew audit --strict`.
