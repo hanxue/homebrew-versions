@@ -1,8 +1,8 @@
 class Node4Lts < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v4.4.3/node-v4.4.3.tar.xz"
-  sha256 "57499bb0b1b86080459d4066e3c138579a278b2d0b1f5b2f19e66c69b4e8433c"
+  url "https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.xz"
+  sha256 "2c9cedc401145a6648877ebd3fa9090c874dfced8bf7a6e7d9d8e9c21827b114"
   head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
@@ -142,7 +142,7 @@ class Node4Lts < Formula
       assert (HOMEBREW_PREFIX/"bin/npm").exist?, "npm must exist"
       assert (HOMEBREW_PREFIX/"bin/npm").executable?, "npm must be executable"
       system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "npm@latest"
-      system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "bignum"
+      system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "bignum" unless head?
     end
   end
 end
