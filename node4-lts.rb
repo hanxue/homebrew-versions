@@ -6,9 +6,9 @@ class Node4Lts < Formula
   head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
-    sha256 "23558abedfa8e16708e263aa642d5ff04b065b139958b12460ee996e3f9a97c2" => :el_capitan
-    sha256 "31b3221016c84edc852f94aec94664fddf288e9a622f6a9bc2147aaf8b0360b7" => :yosemite
-    sha256 "aa356a1b6a6dd1504d08c640db4e9847914905a15408f4fc67857eb2b3880a10" => :mavericks
+    sha256 "14de79b13033182101775ec933c8c01264a175f1751ddf781d1be1968cd0fc47" => :el_capitan
+    sha256 "42323413c9805e4c13c3216d79667dc1df6ae519d6a4079bbf115655666c5d35" => :yosemite
+    sha256 "30fce1adb4a9a5875a0e5b7c63ced9c8f8298a29e30ce5082e96c1a0a9ca910c" => :mavericks
   end
 
   option "with-debug", "Build with debugger hooks"
