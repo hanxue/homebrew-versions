@@ -1,16 +1,14 @@
 class Node5 < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v5.11.0/node-v5.11.0.tar.xz"
-  sha256 "083766aff72fc5c78f6999dd0d00bc0340a052ab270fd60d6928b719ca2b3fd1"
+  url "https://nodejs.org/dist/v5.11.1/node-v5.11.1.tar.xz"
+  sha256 "f11bc3727e7ea74cffa940be258beaf1f81bee90537d13caa9e748ae6105661f"
+
   bottle do
     sha256 "591be9bf371ffefac664146b84e3517c189a7db7eae0dfd6cd45d5126c915cc1" => :el_capitan
     sha256 "9678fb9530633e9f3bf76daba68919a820b9baa663d3e11f715d898a444d4db8" => :yosemite
     sha256 "ca964f5738c01a64165bf059da4488524ff0ccc6d9ea59ef87c6b730d9603933" => :mavericks
   end
-
-  # uncomment once a v5.x staging branch is cut
-  # head "https://github.com/nodejs/node.git", :branch => "v5.x-staging"
 
   option "with-debug", "Build with debugger hooks"
   option "without-npm", "npm will not be installed"
@@ -163,7 +161,7 @@ class Node5 < Formula
       assert (HOMEBREW_PREFIX/"bin/npm").exist?, "npm must exist"
       assert (HOMEBREW_PREFIX/"bin/npm").executable?, "npm must be executable"
       system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "npm@latest"
-      system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "bignum" unless build.head?
+      system "#{HOMEBREW_PREFIX}/bin/npm", "--verbose", "install", "bignum" unless head?
     end
   end
 end
