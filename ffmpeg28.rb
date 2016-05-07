@@ -5,6 +5,12 @@ class Ffmpeg28 < Formula
   sha256 "40611e329bc354592c6f8f1deb033c31b91f80e91f5707ca4f9afceca78d8e62"
   head "https://github.com/FFmpeg/FFmpeg.git"
 
+  bottle do
+    sha256 "8234d9f4885fb0f13c08e6dd9bdbb29f801c1b9961894bf73e2f49b92f9f2abd" => :el_capitan
+    sha256 "d8b21613d6ddbf6e4cfe1a95648a26b7b78aec4bedbba35ad39e39fefb3054ed" => :yosemite
+    sha256 "bc7b183c0eedcb5a8ab35be3b25cf00af89c867085a5fc0855d7ec74ab7d1e79" => :mavericks
+  end
+
   conflicts_with "ffmpeg",
                  :because => "both install the same binaries"
 
