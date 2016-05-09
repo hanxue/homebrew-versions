@@ -1,9 +1,9 @@
 class Subversion18 < Formula
   desc "Version control system"
   homepage "https://subversion.apache.org/"
-  url "https://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.8.13.tar.bz2"
-  mirror "https://archive.apache.org/dist/subversion/subversion-1.8.13.tar.bz2"
-  sha256 "1099cc68840753b48aedb3a27ebd1e2afbcc84ddb871412e5d500e843d607579"
+  url "https://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.8.16.tar.bz2"
+  mirror "https://archive.apache.org/dist/subversion/subversion-1.8.16.tar.bz2"
+  sha256 "f18f6e8309270982135aae54d96958f9ca6b93f8a4e746dd634b1b5b84edb346"
 
   bottle do
     sha256 "f9a579aa4740ef94dda7c2365a9185cd6e1b56b1407790cdc37784910ef8a30b" => :el_capitan
@@ -27,12 +27,13 @@ class Subversion18 < Formula
   option "with-ruby", "Build Ruby bindings"
   option "with-gpg-agent", "Build with support for GPG Agent"
 
+  depends_on "pkg-config" => :build
+
   resource "serf" do
     url "https://serf.googlecode.com/svn/src_releases/serf-1.3.8.tar.bz2", :using => :curl
     sha256 "e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590"
   end
 
-  depends_on "pkg-config" => :build
   depends_on :apr => :build
 
   # Always build against Homebrew versions instead of system versions for consistency.
