@@ -21,8 +21,9 @@ class Gcc6 < Formula
 
   desc "The GNU Compiler Collection"
   homepage "https://gcc.gnu.org"
-  url "ftp://gcc.gnu.org/pub/gcc/snapshots/6-20160320/gcc-6-20160320.tar.bz2"
-  sha256 "f709da74947e0f33fad468224b2317338a60d3db3564d196d3e1d0a97aaf6708"
+  url "http://ftpmirror.gnu.org/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-6.1.0/gcc-6.1.0.tar.bz2"
+  sha256 "09c4c85cabebb971b1de732a0219609f93fc0af5f86f6e437fd8d7f832f1a351"
 
   bottle do
     sha256 "566785f034ee816afcf94dea5c6bc884afe15ad733c42e1e174ed33e7384d7f6" => :el_capitan
