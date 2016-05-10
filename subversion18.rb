@@ -6,9 +6,9 @@ class Subversion18 < Formula
   sha256 "f18f6e8309270982135aae54d96958f9ca6b93f8a4e746dd634b1b5b84edb346"
 
   bottle do
-    sha256 "f9a579aa4740ef94dda7c2365a9185cd6e1b56b1407790cdc37784910ef8a30b" => :el_capitan
-    sha256 "662ce135a546445baee8341e580f01547fd2243359c9566ed3af1af6aa881b95" => :yosemite
-    sha256 "da9215845e5f904a3656562ae4bc54c499d1c692453828f1a3c9eb3cdeda51cd" => :mavericks
+    sha256 "c8e084464d3a30b65381af6cb2b225dd5511cb0f074a67a2fe6c89d66a1fae30" => :el_capitan
+    sha256 "0d80b06e7c27264ff0c533ad93f9a4ff0c9702d50740c87862d1368fe2c70bc5" => :yosemite
+    sha256 "2514644016e8f2a8feb77fc31b3620af91c3310cf501b8e402e3b972eef98f42" => :mavericks
   end
 
   devel do
