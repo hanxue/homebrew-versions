@@ -23,6 +23,15 @@ class Openssl101 < Formula
 
   depends_on "makedepend" => :build
 
+  # OpenSSL let the certs used for testing in the 1.0.1 branch expire
+  # and consequently `make test` now dies a horrible death.
+  # I'm not even joking.
+  # https://mta.openssl.org/pipermail/openssl-dev/2016-May/006983.html
+  patch do
+    url "https://github.com/openssl/openssl/commit/24762dee178bace.diff"
+    sha256 "7cfdb6248054602688c26a8f448c4489881684fe44dfef6727fb5dc0845dfd8b"
+  end
+
   def arch_args
     {
       :x86_64 => %w[darwin64-x86_64-cc enable-ec_nistp_64_gcc_128],
