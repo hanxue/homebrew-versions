@@ -1,7 +1,7 @@
 class Kibana41 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://github.com/elastic/kibana.git", :tag => "v4.1.6", :revision => "1c3d5ac4bf98ec207b550a6d769b849116c00d7e"
+  url "https://github.com/elastic/kibana.git", :tag => "v4.1.7", :revision => "6b8db7dbb5a881e5d57c4fa3baa3fc7f62d4431e"
   head "https://github.com/elastic/kibana.git"
 
   bottle do
@@ -13,8 +13,8 @@ class Kibana41 < Formula
   conflicts_with "kibana", :because => "Different versions of same formula"
 
   resource "node" do
-    url "https://nodejs.org/dist/v4.3.2/node-v4.3.2.tar.gz"
-    sha256 "1f92f6d31f7292ce56db57d6703efccf3e6c945948f5901610cefa69e78d3498"
+    url "https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.gz"
+    sha256 "53c694c203ee18e7cd393612be08c61ed6ab8b2a165260984a99c014d1741414"
   end
 
   def install
@@ -70,13 +70,13 @@ class Kibana41 < Formula
     ln_s var/"kibana/plugins", prefix/"plugins"
   end
 
-  plist_options :manual => "kibana"
-
   def caveats; <<-EOS.undent
     Plugins: #{var}/kibana/plugins/
     Config: #{etc}/kibana/
     EOS
   end
+
+  plist_options :manual => "kibana"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
