@@ -5,9 +5,9 @@ class Kibana41 < Formula
   head "https://github.com/elastic/kibana.git"
 
   bottle do
-    sha256 "b13277298261f18e4099d0f268bccd2004eea7e69a3f74f65de2829c774bb4ab" => :el_capitan
-    sha256 "62eef39223ce1a25a7c362a4789291c7bba5f8e2cb7618776079150be12d3a80" => :yosemite
-    sha256 "2d5e36a64ca891ab8285f226fcb16c2bfc07eed9b21dbf3ca3614d7d457bcfbf" => :mavericks
+    sha256 "82badd074e2f54991425cefd3624975addb202c7168bf4318fbbfdb6b315ec5f" => :el_capitan
+    sha256 "c6011e8e29ef4a78075477da1820266315ea6c9127d6dc5cef853445bc0afbf8" => :yosemite
+    sha256 "a527fe7e31ecffe12c87223d937945e85129321d13d40bdf6fb866118101903e" => :mavericks
   end
 
   conflicts_with "kibana", :because => "Different versions of same formula"
