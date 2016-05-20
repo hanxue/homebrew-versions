@@ -11,12 +11,6 @@ class Subversion18 < Formula
     sha256 "2514644016e8f2a8feb77fc31b3620af91c3310cf501b8e402e3b972eef98f42" => :mavericks
   end
 
-  devel do
-    url "https://www.apache.org/dyn/closer.cgi?path=subversion/subversion-1.9.0-rc3.tar.bz2"
-    mirror "https://archive.apache.org/dist/subversion/subversion-1.9.0-rc3.tar.bz2"
-    sha256 "c49432a1a2e83fa3babd7a0602d207c8c11feb1d0660828609710f101737fa6d"
-  end
-
   deprecated_option "java" => "with-java"
   deprecated_option "perl" => "with-perl"
   deprecated_option "ruby" => "with-ruby"
@@ -30,7 +24,7 @@ class Subversion18 < Formula
   depends_on "pkg-config" => :build
 
   resource "serf" do
-    url "https://serf.googlecode.com/svn/src_releases/serf-1.3.8.tar.bz2", :using => :curl
+    url "https://archive.apache.org/dist/serf/serf-1.3.8.tar.bz2"
     sha256 "e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590"
   end
 
@@ -92,7 +86,7 @@ class Subversion18 < Formula
         args << "APU=#{Formula["apr-util"].opt_prefix}"
       end
 
-      scons *args
+      scons(*args)
       scons "install"
     end
 
