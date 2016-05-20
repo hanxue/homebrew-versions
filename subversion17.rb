@@ -24,7 +24,7 @@ class Subversion17 < Formula
   deprecated_option "unicode-path" => "with-unicode-path"
 
   resource "serf" do
-    url "https://serf.googlecode.com/files/serf-1.3.3.tar.bz2"
+    url "https://archive.apache.org/dist/serf/serf-1.3.3.tar.bz2"
     sha256 "02eae04176296347be3c32b0da8d8610064f4a9f40065fb1cefbe5b656f8ad2b"
   end
 
@@ -33,6 +33,8 @@ class Subversion17 < Formula
   depends_on :java
 
   # Requires system OpenSSL headers to build. >El Capitan no longer ship them.
+  # Note this means that this subversion is linked against an outdated OpenSSL
+  # and really should not be considered secure.
   depends_on MaximumMacOSRequirement => :yosemite
 
   # Always build against Homebrew versions instead of system versions for consistency.
@@ -121,7 +123,7 @@ class Subversion17 < Formula
         args << "APU=#{Formula["apr-util"].opt_prefix}"
       end
 
-      scons *args
+      scons(*args)
       scons "install"
     end
 
