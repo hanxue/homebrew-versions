@@ -27,6 +27,8 @@ class Subversion16 < Formula
   depends_on "pkg-config" => :build
 
   # Requires system OpenSSL headers to build. >El Capitan no longer ship them.
+  # Note this means that this subversion is linked against an outdated OpenSSL
+  # and really should not be considered secure.
   depends_on MaximumMacOSRequirement => :yosemite
 
   # On Snow Leopard, build a new neon. For Leopard, the deps below include this.
@@ -60,7 +62,8 @@ class Subversion16 < Formula
 
   # SERF=serf-0.7.0
   resource "serf" do
-    url "http://serf.googlecode.com/svn/trunk/", :tag => "0.7.0"
+    url "https://archive.apache.org/dist/serf/serf-0.7.0.tar.gz"
+    sha256 "6ef823635091716cd7dbbfa51b8217696f19148a55e08a870a3047f5ac6c8473"
   end
 
   # ZLIB=zlib-1.2.8
@@ -95,12 +98,12 @@ class Subversion16 < Formula
 
   def setup_leopard
     # Slot dependencies into place
-    (buildpath).install resource("apr")
-    (buildpath).install resource("apr-util")
-    (buildpath).install resource("serf")
-    (buildpath).install resource("zlib")
-    (buildpath).install resource("sqlite-amalgamation")
-    (buildpath).install resource("neon")
+    buildpath.install resource("apr")
+    buildpath.install resource("apr-util")
+    buildpath.install resource("serf")
+    buildpath.install resource("zlib")
+    buildpath.install resource("sqlite-amalgamation")
+    buildpath.install resource("neon")
   end
 
   def install
