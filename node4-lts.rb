@@ -1,8 +1,8 @@
 class Node4Lts < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.xz"
-  sha256 "2c9cedc401145a6648877ebd3fa9090c874dfced8bf7a6e7d9d8e9c21827b114"
+  url "https://nodejs.org/dist/v4.4.5/node-v4.4.5.tar.xz"
+  sha256 "eaec2cd3c26a1cc101b829d32fef392268285187d1d9eda3718db288e7be28c6"
   head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
@@ -26,9 +26,11 @@ class Node4Lts < Formula
     build 2326
   end
 
+  # Use npm 2.15.4 for now, because there are issues with the registry tarball
+  # of npm 2.15.5: https://github.com/Homebrew/homebrew-versions/pull/1269
   resource "npm" do
-    url "https://registry.npmjs.org/npm/-/npm-2.15.1.tgz"
-    sha256 "e3435100b37379354b899a31d073ef81b8aa7365c52eb138847ecfbf9f01ea93"
+    url "https://registry.npmjs.org/npm/-/npm-2.15.4.tgz"
+    sha256 "0bf2d52cf6544020b8e9f5f9671b7ea4ee9aca3af5e93b58befdd54fe402493c"
   end
 
   resource "icu4c" do
@@ -131,7 +133,7 @@ class Node4Lts < Formula
 
     output = shell_output("#{bin}/node #{path}").strip
     assert_equal "hello", output
-    output = shell_output("#{bin}/node -e 'console.log(new Intl.NumberFormat().format(1234.56))'").strip
+    output = shell_output("#{bin}/node -e 'console.log(new Intl.NumberFormat(\"en-EN\").format(1234.56))'").strip
     assert_equal "1,234.56", output
 
     if build.with? "npm"
