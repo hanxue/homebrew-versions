@@ -6,6 +6,13 @@ class Mongodb30 < Formula
   url "https://fastdl.mongodb.org/src/mongodb-src-r3.0.11.tar.gz"
   sha256 "8b25bae2636960650246ea60f270f276b2ff8fc80f1776be252eb6ab20d74d15"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "0c346ff07d20b9ea38e2c11be9f6de6db84c6cef6fc052019eb10a47fc6df21f" => :el_capitan
+    sha256 "8643a8d94b5334dca95cbbf3403155e07d7f1b22956994ae39fac1fa4eb5117f" => :yosemite
+    sha256 "62c9198ff6c02dbb823ab2c4566358d8c2869e6b77b08725b7c97798560a0ebe" => :mavericks
+  end
+
   option "with-boost", "Compile using installed boost, not the version shipped with mongodb"
 
   needs :cxx11
