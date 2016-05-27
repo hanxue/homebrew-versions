@@ -77,7 +77,7 @@ class Gcc47 < Formula
 
   # Fix 10.10 issues: https://gcc.gnu.org/viewcvs/gcc?view=revision&revision=215251
   patch :p0 do
-    url "https://raw.githubusercontent.com/Homebrew/patches/7293b7d3/gcc47/patch-10.10.diff"
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/7293b7d3/gcc47/patch-10.10.diff"
     sha256 "61e5d0f18db59220cbd99717e9b644c1d0f3502b09ada746b60850cacda07328"
   end
 

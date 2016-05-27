@@ -38,7 +38,7 @@ class Gcc48 < Formula
     # Fixes build on El Capitan
     # https://trac.macports.org/ticket/48471
     patch :p0 do
-      url "https://raw.githubusercontent.com/Homebrew/patches/dcfc5a2e6/gcc48/define_non_standard_clang_macros.patch"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/dcfc5a2e6/gcc48/define_non_standard_clang_macros.patch"
       sha256 "e727383c9186fdc36f804c69ad550f5cfd2b996e37083be94c0c9aa8fde226ee"
     end
     # Fixes build with Xcode 7.

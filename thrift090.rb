@@ -28,7 +28,7 @@ class Thrift090 < Formula
     %w[c4419ce40b7fda9ffd58a5dad7856b64ee84e3c1b820f3a64fed0b01b4bc9c42 remove-tr1-dependency.patch]
   ].each do |sha, patch|
     patch do
-      url "https://raw.githubusercontent.com/Homebrew/patches/dee880b1baba827255f7b0806ca32d36c4d1c2ca/thrift/0.9.0/#{patch}"
+      url "https://raw.githubusercontent.com/Homebrew/formula-patches/dee880b1baba827255f7b0806ca32d36c4d1c2ca/thrift/0.9.0/#{patch}"
       sha256 sha
     end
   end
