@@ -6,6 +6,12 @@ class Ansible20 < Formula
 
   head "https://github.com/ansible/ansible.git", :branch => "stable-2.0"
 
+  bottle do
+    sha256 "eba392f5b972ff47259e3620f8353261c4825836044b927015c198d5843caa44" => :el_capitan
+    sha256 "db49649aed885f3f916b679803bf4fa685290510328c2eec0b7a74783b79e50b" => :yosemite
+    sha256 "2389b14bd9e6025fd5414b7a2e930a5a5a00ccb5108e6b0cabe02f6aa5f3f45a" => :mavericks
+  end
+
   conflicts_with "ansible", :because => "Differing versions of same formula"
 
   devel do
