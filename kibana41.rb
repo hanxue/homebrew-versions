@@ -1,7 +1,7 @@
 class Kibana41 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://github.com/elastic/kibana.git", :tag => "v4.1.7", :revision => "6b8db7dbb5a881e5d57c4fa3baa3fc7f62d4431e"
+  url "https://github.com/elastic/kibana.git", :tag => "v4.1.8", :revision => "e4f4c5bef5fbec91f0890bd08f6a622f6c4648ad"
   head "https://github.com/elastic/kibana.git"
 
   bottle do
