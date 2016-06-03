@@ -3,8 +3,8 @@ require "language/go"
 class Mongodb30 < Formula
   desc "High-performance document-oriented database"
   homepage "https://www.mongodb.org/"
-  url "https://fastdl.mongodb.org/src/mongodb-src-r3.0.11.tar.gz"
-  sha256 "8b25bae2636960650246ea60f270f276b2ff8fc80f1776be252eb6ab20d74d15"
+  url "https://fastdl.mongodb.org/src/mongodb-src-r3.0.12.tar.gz"
+  sha256 "b9bea5e3d59b93775d5d55fb1dd161272aeefa193c2311a8f6722ad46d7a21ab"
 
   bottle do
     cellar :any_skip_relocation
@@ -25,8 +25,8 @@ class Mongodb30 < Formula
 
   go_resource "github.com/mongodb/mongo-tools" do
     url "https://github.com/mongodb/mongo-tools.git",
-      :tag => "r3.0.10",
-      :revision => "36fc2f8bf0cc0893e19dddb4999970b5c86eb3d7"
+      :tag => "r3.0.12",
+      :revision => "81c527a658a687b83564dfb9767df64420e9bcab"
   end
 
   def install
@@ -38,7 +38,7 @@ class Mongodb30 < Formula
 
     cd "src/github.com/mongodb/mongo-tools" do
       # https://github.com/Homebrew/homebrew/issues/40136
-      inreplace "build.sh", '-ldflags "-X github.com/mongodb/mongo-tools/common/options.Gitspec `git rev-parse HEAD`"', ""
+      inreplace "build.sh", '-ldflags "-X github.com/mongodb/mongo-tools/common/options.Gitspec=`git rev-parse HEAD` -X github.com/mongodb/mongo-tools/common/options.VersionStr=$(git describe)"', ""
 
       args = %W[]
 
