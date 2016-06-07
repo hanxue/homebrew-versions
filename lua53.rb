@@ -1,9 +1,8 @@
 class Lua53 < Formula
   desc "Powerful, lightweight programming language"
   homepage "http://www.lua.org/"
-  url "http://www.lua.org/ftp/lua-5.3.2.tar.gz"
-  sha256 "c740c7bb23a936944e1cc63b7c3c5351a8976d7867c5252c8854f7b2af9da68f"
-  revision 2
+  url "http://www.lua.org/ftp/lua-5.3.3.tar.gz"
+  sha256 "5113c06884f7de453ce57702abaac1d618307f33f6789fa870e87a59d772aca2"
 
   bottle do
     cellar :any
@@ -54,8 +53,8 @@ class Lua53 < Formula
     if build.without? "default-names"
       mv "#{bin}/lua", "#{bin}/lua-5.3"
       mv "#{bin}/luac", "#{bin}/luac-5.3"
-      mv "#{man1}/lua.1", "#{man1}/lua-5.3.2"
-      mv "#{man1}/luac.1", "#{man1}/luac-5.3.2"
+      mv "#{man1}/lua.1", "#{man1}/lua-5.3.3"
+      mv "#{man1}/luac.1", "#{man1}/luac-5.3.3"
       mv "#{lib}/pkgconfig/lua.pc", "#{lib}/pkgconfig/lua5.3.pc"
 
       bin.install_symlink "lua-5.3" => "lua5.3"
@@ -96,7 +95,7 @@ class Lua53 < Formula
 
   def pc_file; <<-EOS.undent
     V= 5.3
-    R= 5.3.2
+    R= 5.3.3
     prefix=#{HOMEBREW_PREFIX}
     INSTALL_BIN= ${prefix}/bin
     INSTALL_INC= ${prefix}/include/lua-5.3
@@ -110,7 +109,7 @@ class Lua53 < Formula
 
     Name: Lua
     Description: An Extensible Extension Language
-    Version: 5.3.2
+    Version: 5.3.3
     Requires:
     Libs: -L${libdir} -llua -lm
     Cflags: -I${includedir}
@@ -132,7 +131,7 @@ index 7fa91c8..a825198 100644
  TO_BIN= lua luac
  TO_INC= lua.h luaconf.h lualib.h lauxlib.h lua.hpp
 -TO_LIB= liblua.a
-+TO_LIB= liblua.5.3.2.dylib
++TO_LIB= liblua.5.3.3.dylib
  TO_MAN= lua.1 luac.1
 
  # Lua version and release.
@@ -140,7 +139,7 @@ index 7fa91c8..a825198 100644
 	cd src && $(INSTALL_DATA) $(TO_INC) $(INSTALL_INC)
 	cd src && $(INSTALL_DATA) $(TO_LIB) $(INSTALL_LIB)
 	cd doc && $(INSTALL_DATA) $(TO_MAN) $(INSTALL_MAN)
-+	ln -s -f liblua.5.3.2.dylib $(INSTALL_LIB)/liblua.5.3.dylib
++	ln -s -f liblua.5.3.3.dylib $(INSTALL_LIB)/liblua.5.3.dylib
 
  uninstall:
 	cd src && cd $(INSTALL_BIN) && $(RM) $(TO_BIN)
@@ -153,7 +152,7 @@ index 2e7a412..d0c4898 100644
  PLATS= aix bsd c89 freebsd generic linux macosx mingw posix solaris
 
 -LUA_A=	liblua.a
-+LUA_A=	liblua.5.3.2.dylib
++LUA_A=	liblua.5.3.3.dylib
  CORE_O=	lapi.o lcode.o lctype.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o \
 	lmem.o lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o \
 	ltm.o lundump.o lvm.o lzio.o
@@ -164,12 +163,12 @@ index 2e7a412..d0c4898 100644
 -	$(AR) $@ $(BASE_O)
 -	$(RANLIB) $@
 +	$(CC) -dynamiclib -install_name HOMEBREW_PREFIX/lib/liblua.5.3.dylib \
-+		-compatibility_version 5.3 -current_version 5.3.2 \
-+		-o liblua.5.3.2.dylib $^
++		-compatibility_version 5.3 -current_version 5.3.3 \
++		-o liblua.5.3.3.dylib $^
 
  $(LUA_T): $(LUA_O) $(LUA_A)
 -	$(CC) -o $@ $(LDFLAGS) $(LUA_O) $(LUA_A) $(LIBS)
-+	$(CC) -fno-common $(MYLDFLAGS) -o $@ $(LUA_O) $(LUA_A) -L. -llua.5.3.2 $(LIBS)
++	$(CC) -fno-common $(MYLDFLAGS) -o $@ $(LUA_O) $(LUA_A) -L. -llua.5.3.3 $(LIBS)
 
  $(LUAC_T): $(LUAC_O) $(LUA_A)
 	$(CC) -o $@ $(LDFLAGS) $(LUAC_O) $(LUA_A) $(LIBS)
