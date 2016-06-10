@@ -1,4 +1,5 @@
 class BashCompletion2 < Formula
+  desc "Programmable completion for Bash 4.0+"
   homepage "https://bash-completion.alioth.debian.org/"
   url "https://mirrors.kernel.org/debian/pool/main/b/bash-completion/bash-completion_2.1.orig.tar.bz2"
   mirror "https://mirrors.ocf.berkeley.edu/debian/pool/main/b/bash-completion/bash-completion_2.1.orig.tar.bz2"
@@ -40,10 +41,9 @@ class BashCompletion2 < Formula
 
   # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739835
   # https://bugs.launchpad.net/ubuntu/+source/bash-completion/+bug/1289597
-  patch :DATA
-
-  def compdir
-    HOMEBREW_PREFIX/"share/bash-completion/completions"
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/9d38db2889e3af2deba8edabca368e4e02d0f73e/bash-completion2/bug-739835.patch"
+    sha256 "126e535c2da21f67ec54522c3deaf210921c3ee89a863fbb585e7dde39d67aeb"
   end
 
   def install
@@ -54,37 +54,11 @@ class BashCompletion2 < Formula
     system "make", "install"
   end
 
-  def post_install
-    compdir.realpath.install_symlink HOMEBREW_CONTRIB/"brew_bash_completion.sh" => "brew"
-  end
-
   def caveats; <<-EOS.undent
     Add the following to your ~/.bash_profile:
       if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
         . $(brew --prefix)/share/bash-completion/bash_completion
       fi
-
-      Homebrew's own bash completion script has been linked into
-        #{compdir}
-      bash-completion will automatically source it when you invoke `brew`.
-
-      Any completion scripts in #{Formula["bash-completion"].compdir}
-      will continue to be sourced as well.
     EOS
   end
 end
-
-__END__
-diff --git a/bash_completion b/bash_completion
-index 6d3ba76..5d9c645 100644
---- a/bash_completion
-+++ b/bash_completion
-@@ -707,7 +707,7 @@ _init_completion()
-         fi
-     done
- 
--    [[ $cword -eq 0 ]] && return 1
-+    [[ $cword -le 0 ]] && return 1
-     prev=${words[cword-1]}
- 
-     [[ ${split-} ]] && _split_longopt && split=true
