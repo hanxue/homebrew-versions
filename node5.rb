@@ -1,8 +1,8 @@
 class Node5 < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v5.11.1/node-v5.11.1.tar.xz"
-  sha256 "f11bc3727e7ea74cffa940be258beaf1f81bee90537d13caa9e748ae6105661f"
+  url "https://nodejs.org/dist/v5.12.0/node-v5.12.0.tar.xz"
+  sha256 "4f926373f11f2a25156eee1804ec012eb912c42e5d34fc2909889da22efdadfe"
 
   bottle do
     sha256 "ec7190213aaeb71223505e147e7d48600f7564b52efabcb2d950626fa036c483" => :el_capitan
