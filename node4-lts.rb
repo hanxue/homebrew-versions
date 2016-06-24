@@ -1,8 +1,8 @@
 class Node4Lts < Formula
   desc "JavaScript runtime built on Chrome's V8 engine"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v4.4.5/node-v4.4.5.tar.xz"
-  sha256 "eaec2cd3c26a1cc101b829d32fef392268285187d1d9eda3718db288e7be28c6"
+  url "https://nodejs.org/dist/v4.4.6/node-v4.4.6.tar.xz"
+  sha256 "0f6bbfbea525469c91932b1aac35e0810e6bcda96f1c720e42a433942ee66106"
   head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
