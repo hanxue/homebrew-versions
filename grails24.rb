@@ -1,12 +1,14 @@
-class Grails13 < Formula
+class Grails24 < Formula
   desc "Web application framework for the Groovy language"
   homepage "http://grails.org"
-  url "http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-1.3.9.zip"
-  sha256 "1aea08ae97713b816d87ad699e65203f8c50843e84b4cad442119ab4f081d11a"
+  url "https://github.com/grails/grails-core/releases/download/v2.4.5/grails-2.4.5.zip"
+  sha256 "3faa1631b98d8e2bb145eb9aac1c9bf4c339064452409ddd2b96bdae29a7cf7f"
 
   bottle :unneeded
 
   depends_on :java
+
+  conflicts_with "grails", :because => "Differing versions of the same formula"
 
   def install
     rm_f Dir["bin/*.bat", "bin/cygrails", "*.bat"]
@@ -21,7 +23,7 @@ class Grails13 < Formula
 
   test do
     ENV["JAVA_HOME"] = `/usr/libexec/java_home`.chomp
-    assert_match "Grails #{version}",
-      shell_output("#{bin}/grails --version", 1)
+    assert_match "Grails version: #{version}",
+      shell_output("#{bin}/grails --version")
   end
 end

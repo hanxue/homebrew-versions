@@ -1,12 +1,14 @@
-class Grails224 < Formula
+class Grails25 < Formula
   desc "Web application framework for the Groovy language"
   homepage "http://grails.org"
-  url "http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-2.2.4.zip"
-  sha256 "7453eb23856f4b1acad4b084990f748494b260eb18dfbcdf0c4a28c2f54ce92f"
+  url "https://github.com/grails/grails-core/releases/download/v2.5.4/grails-2.5.4.zip"
+  sha256 "c1170104156c93be58f737cb1a22ac4e9785ca1fded43c44d9705d20d011df28"
 
   bottle :unneeded
 
   depends_on :java
+
+  conflicts_with "grails", :because => "Differing versions of the same formula"
 
   def install
     rm_f Dir["bin/*.bat", "bin/cygrails", "*.bat"]
