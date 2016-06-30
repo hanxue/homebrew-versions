@@ -6,9 +6,9 @@ class Gnupg21 < Formula
   sha256 "4f9d83a6221daa60130fa79f0b1d37d6c20fffdd0320b640c7a597c5b6219675"
 
   bottle do
-    sha256 "c74376ad8252d404d004c1f2b8e0c23f1fefa07463f072bcdf6a94929e8d333c" => :el_capitan
-    sha256 "c41a42e8fa8003bc9d6c7e635a072e2610c2db78d9268e49083ec752c297fb0a" => :yosemite
-    sha256 "7674d7ace819ec510336803095e7690b6c3c221832ae58d9c2820d3723bcea7c" => :mavericks
+    sha256 "4badc6179f850d075d1068e1b5dd2cb9e8c57a58f1a21ffc561aa755bfddf945" => :el_capitan
+    sha256 "731f538bb306ca1d27d50a73adad5abd4242fb21eff13012a0d1a687fc489b92" => :yosemite
+    sha256 "e759f7df6242fd5f25bb18e7c9daa880cfb6f56bcddc067ff37dfbf1d5f65e0d" => :mavericks
   end
 
   head do
