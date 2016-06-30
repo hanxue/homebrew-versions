@@ -1,9 +1,9 @@
 class Cassandra22 < Formula
   desc "Eventually consistent, distributed key-value db"
   homepage "https://cassandra.apache.org"
-  url "https://www.apache.org/dyn/closer.cgi?path=/cassandra/2.2.4/apache-cassandra-2.2.4-bin.tar.gz"
-  mirror "https://archive.apache.org/dist/cassandra/2.2.4/apache-cassandra-2.2.4-bin.tar.gz"
-  sha256 "48af862becea9ec70999976212d13e2cfb85dcacf565729e763146f86d9365a4"
+  url "https://www.apache.org/dyn/closer.cgi?path=/cassandra/2.2.6/apache-cassandra-2.2.6-bin.tar.gz"
+  mirror "https://archive.apache.org/dist/cassandra/2.2.6/apache-cassandra-2.2.6-bin.tar.gz"
+  sha256 "fe9a56c842bad309ab7fbeb5adcda1757f650ec092ae2c926e6d0b4a8d7e89ad"
 
   bottle :unneeded
 
@@ -89,6 +89,8 @@ class Cassandra22 < Formula
     rm bin/"cqlsh" # Remove existing exec script
     (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", :PYTHONPATH => pypath
   end
+
+  plist_options :manual => "cassandra -f"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
