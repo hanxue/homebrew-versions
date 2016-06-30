@@ -47,6 +47,13 @@ class Gnupg21 < Formula
   conflicts_with "gpgme",
         :because => "gpgme currently requires 1.x.x or 2.0.x."
 
+  # Patch for `make check` failures in 2.1.13.
+  # Fixed upstream by Justus Winter & can be removed in next release.
+  patch do
+    url "https://raw.githubusercontent.com/Homebrew/formula-patches/7b2211b/gnupg21/spawned_child_8f79c31b.diff"
+    sha256 "fde57b1e484aa738af8f582910330cadef144430d9221d3242b5f635c7f41dbe"
+  end
+
   def install
     (var/"run").mkpath
 
