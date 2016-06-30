@@ -4,6 +4,13 @@ class ErlangR19 < Formula
   url "https://github.com/erlang/otp/archive/OTP-19.0.1.tar.gz"
   sha256 "b425c6c009f1b75bf478306e15f948c3031d1a41ee7f7e5ac6845cc1b740fd44"
 
+  bottle do
+    cellar :any
+    sha256 "d1e97e4f15814dfae9ec8d4aa768452c63783049ea9a37e03514ef16d1ec721c" => :el_capitan
+    sha256 "d899e7d9154ff58a20ade8f511d0aab2a16ab171127cc24d401bd68739754eb7" => :yosemite
+    sha256 "d7e578457c8a9544db0ac16beaa4973b549e6dbb79b0a70083acf18c1fd80cc0" => :mavericks
+  end
+
   option "without-hipe", "Disable building hipe; fails on various OS X systems"
   option "with-native-libs", "Enable native library compilation"
   option "with-dirty-schedulers", "Enable experimental dirty schedulers"
