@@ -21,7 +21,7 @@ class Gcc45 < Formula
 
   desc "GNU compiler collection"
   homepage "https://gcc.gnu.org"
-  url "http://ftpmirror.gnu.org/gcc/gcc-4.5.4/gcc-4.5.4.tar.bz2"
+  url "https://ftpmirror.gnu.org/gcc/gcc-4.5.4/gcc-4.5.4.tar.bz2"
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-4.5.4/gcc-4.5.4.tar.bz2"
   sha256 "eef3f0456db8c3d992cbb51d5d32558190bc14f3bc19383dd93acc27acc6befc"
 

@@ -1,6 +1,6 @@
 class Guile18 < Formula
   homepage "https://www.gnu.org/software/guile/"
-  url "http://ftpmirror.gnu.org/guile/guile-1.8.8.tar.gz"
+  url "https://ftpmirror.gnu.org/guile/guile-1.8.8.tar.gz"
   mirror "https://ftp.gnu.org/gnu/guile/guile-1.8.8.tar.gz"
   sha256 "c3471fed2e72e5b04ad133bbaaf16369e8360283679bcf19800bc1b381024050"
 

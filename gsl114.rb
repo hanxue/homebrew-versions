@@ -1,7 +1,7 @@
 class Gsl114 < Formula
   desc "Numerical library for C and C++"
   homepage "https://www.gnu.org/software/gsl/"
-  url "http://ftpmirror.gnu.org/gsl/gsl-1.14.tar.gz"
+  url "https://ftpmirror.gnu.org/gsl/gsl-1.14.tar.gz"
   mirror "https://ftp.gnu.org/gnu/gsl/gsl-1.14.tar.gz"
   sha256 "3d4a47afd9a1e7c73b97791b4180d8cc4d5f0e5db6027fe06437f1f3f957fafb"
 
