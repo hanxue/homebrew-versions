@@ -1,8 +1,8 @@
 class Glfw3 < Formula
   desc "Multi-platform library for OpenGL applications"
   homepage "http://www.glfw.org/"
-  url "https://github.com/glfw/glfw/archive/3.1.2.tar.gz"
-  sha256 "6ac642087682aaf7f8397761a41a99042b2c656498217a1c63ba9706d1eef122"
+  url "https://github.com/glfw/glfw/archive/3.2.tar.gz"
+  sha256 "cb3aab46757981a39ae108e5207a1ecc4378e68949433a2b040ce2e17d8f6aa6"
 
   bottle do
     cellar :any
@@ -14,13 +14,14 @@ class Glfw3 < Formula
   option :universal
   option "without-shared-library", "Build static library only (defaults to building dylib only)"
   option "with-examples", "Build examples"
-  option "with-tests", "Build test programs"
+  option "with-test", "Build test programs"
 
   depends_on "cmake" => :build
 
   deprecated_option "build-examples" => "with-examples"
   deprecated_option "static" => "without-shared-library"
-  deprecated_option "build-tests" => "with-tests"
+  deprecated_option "build-tests" => "with-test"
+  deprecated_option "with-tests" => "with-test"
 
   # make library name consistent
   patch :DATA
@@ -35,7 +36,7 @@ class Glfw3 < Formula
     args << "-DGLFW_BUILD_UNIVERSAL=TRUE" if build.universal?
     args << "-DBUILD_SHARED_LIBS=TRUE" if build.with? "shared-library"
     args << "-DGLFW_BUILD_EXAMPLES=TRUE" if build.with? "examples"
-    args << "-DGLFW_BUILD_TESTS=TRUE" if build.with? "tests"
+    args << "-DGLFW_BUILD_TESTS=TRUE" if build.with? "test"
     args << "."
 
     system "cmake", *args
@@ -65,13 +66,13 @@ end
 
 __END__
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 8f0d665..9a12f74 100644
+index 3008b3c..95cd77a 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -466,12 +466,7 @@ endforeach()
- #--------------------------------------------------------------------
- # Choose library output name
- #--------------------------------------------------------------------
+@@ -50,12 +50,7 @@ if (BUILD_SHARED_LIBS)
+     set(_GLFW_BUILD_DLL 1)
+ endif()
+
 -if (BUILD_SHARED_LIBS AND UNIX)
 -    # On Unix-like systems, shared libraries can use the soname system.
 -    set(GLFW_LIB_NAME glfw)
@@ -80,5 +81,4 @@ index 8f0d665..9a12f74 100644
 -endif()
 +set(GLFW_LIB_NAME glfw3)
 
- #--------------------------------------------------------------------
- # Create generated files
+ set(CMAKE_MODULE_PATH "${GLFW_SOURCE_DIR}/CMake/modules")
