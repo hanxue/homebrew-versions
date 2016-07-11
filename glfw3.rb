@@ -23,11 +23,11 @@ class Glfw3 < Formula
   deprecated_option "build-tests" => "with-test"
   deprecated_option "with-tests" => "with-test"
 
-  # make library name consistent
-  patch :DATA
-
   def install
     ENV.universal_binary if build.universal?
+
+    # make library name consistent
+    inreplace "CMakeLists.txt", /set\(GLFW_LIB_NAME\sglfw\)\n.*else\(\)\n/, ""
 
     args = std_cmake_args + %W[
       -DGLFW_USE_CHDIR=TRUE
@@ -63,22 +63,3 @@ class Glfw3 < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 3008b3c..95cd77a 100644
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -50,12 +50,7 @@ if (BUILD_SHARED_LIBS)
-     set(_GLFW_BUILD_DLL 1)
- endif()
-
--if (BUILD_SHARED_LIBS AND UNIX)
--    # On Unix-like systems, shared libraries can use the soname system.
--    set(GLFW_LIB_NAME glfw)
--else()
--    set(GLFW_LIB_NAME glfw3)
--endif()
-+set(GLFW_LIB_NAME glfw3)
-
- set(CMAKE_MODULE_PATH "${GLFW_SOURCE_DIR}/CMake/modules")
