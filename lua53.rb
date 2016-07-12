@@ -1,7 +1,7 @@
 class Lua53 < Formula
   desc "Powerful, lightweight programming language"
-  homepage "http://www.lua.org/"
-  url "http://www.lua.org/ftp/lua-5.3.3.tar.gz"
+  homepage "https://www.lua.org/"
+  url "https://www.lua.org/ftp/lua-5.3.3.tar.gz"
   sha256 "5113c06884f7de453ce57702abaac1d618307f33f6789fa870e87a59d772aca2"
 
   bottle do
@@ -46,7 +46,7 @@ class Lua53 < Formula
     # We ship our own pkg-config file as Lua no longer provide them upstream.
     system "make", "macosx", "INSTALL_TOP=#{prefix}", "INSTALL_MAN=#{man1}", "INSTALL_INC=#{include}/lua-5.3"
     system "make", "install", "INSTALL_TOP=#{prefix}", "INSTALL_MAN=#{man1}", "INSTALL_INC=#{include}/lua-5.3"
-    (lib+"pkgconfig/lua.pc").write pc_file
+    (lib/"pkgconfig/lua.pc").write pc_file
     include.install_symlink "lua-5.3" => "lua5.3"
 
     # Allows side-by-side-by-side-by-side Lua installations
