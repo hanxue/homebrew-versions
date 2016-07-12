@@ -4,6 +4,12 @@ class Arangodb2 < Formula
   url "https://www.arangodb.com/repositories/Source/ArangoDB-2.8.10.tar.gz"
   sha256 "3a455e9d6093739660ad79bd3369652db79f3dabd9ae02faca1b014c9aa220f4"
 
+  bottle do
+    sha256 "6c256cbfeda5708a52da341a97581797ca6304b80de696bc590acb730d1dda15" => :el_capitan
+    sha256 "e52d321eb9c1fb953b69445a7a64e8db421a6194b9cca905fb200f5625795fe9" => :yosemite
+    sha256 "a8677e28cf876fa64f39abf7c97f35b02989715e05ae723366055d99524d92ab" => :mavericks
+  end
+
   conflicts_with "arangodb", :because => "Differing versions of the same formula"
 
   depends_on "go" => :build
