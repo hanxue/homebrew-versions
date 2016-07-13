@@ -6,9 +6,9 @@ class Glfw3 < Formula
 
   bottle do
     cellar :any
-    sha256 "c3f721491e4a3f07c1493f4fa2f90569df29d07b0e40c66ad74b7e5733030494" => :el_capitan
-    sha256 "8dfe6bdaa7e9d51c231dc2253ff058e1bf1414ca7d886962604fd9769e55bd9d" => :yosemite
-    sha256 "8913519230f28552e88591460316a97dd8f942bdb552de5ca7e2a68702b9e045" => :mavericks
+    sha256 "753dbb80f0202b991aa295902f6856b15519c099d46accddd85358e4d7260b63" => :el_capitan
+    sha256 "28d8a548c506afc1be463a76e4022f4dc9a38677aa3e00d8710b8bc75b2697b8" => :yosemite
+    sha256 "b4285762307f7acc1def7e07f4a4c68ad4f6c87b83f130b4716a80f8eea41fbe" => :mavericks
   end
 
   option :universal
