@@ -1,8 +1,8 @@
 class Arangodb2 < Formula
   desc "The Multi-Model NoSQL Database (Version 2)."
   homepage "https://www.arangodb.com/"
-  url "https://www.arangodb.com/repositories/Source/ArangoDB-2.8.10.tar.gz"
-  sha256 "3a455e9d6093739660ad79bd3369652db79f3dabd9ae02faca1b014c9aa220f4"
+  url "https://www.arangodb.com/repositories/Source/ArangoDB-2.8.11.tar.gz"
+  sha256 "1379871bc4209d0c9c3243e1ac6072bd8f3d541c488089ed29c8b285ebacd1e1"
 
   bottle do
     sha256 "6c256cbfeda5708a52da341a97581797ca6304b80de696bc590acb730d1dda15" => :el_capitan
@@ -12,6 +12,7 @@ class Arangodb2 < Formula
 
   conflicts_with "arangodb", :because => "Differing versions of the same formula"
 
+  depends_on "gcc" if MacOS.version == :mavericks
   depends_on "go" => :build
   depends_on "openssl"
 
