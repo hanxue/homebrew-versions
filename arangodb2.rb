@@ -5,9 +5,9 @@ class Arangodb2 < Formula
   sha256 "1379871bc4209d0c9c3243e1ac6072bd8f3d541c488089ed29c8b285ebacd1e1"
 
   bottle do
-    sha256 "6c256cbfeda5708a52da341a97581797ca6304b80de696bc590acb730d1dda15" => :el_capitan
-    sha256 "e52d321eb9c1fb953b69445a7a64e8db421a6194b9cca905fb200f5625795fe9" => :yosemite
-    sha256 "a8677e28cf876fa64f39abf7c97f35b02989715e05ae723366055d99524d92ab" => :mavericks
+    sha256 "63855f4e73dfb190fa0853e2f0f94bf7773660e6d328dac55663d922bae75ce7" => :el_capitan
+    sha256 "dea8e983e16c7bd814feff1e6d4b66880c8bd491c3e7c0f39678774fa28cc900" => :yosemite
+    sha256 "da10623adf5c65ea1306ac827163d2644b37da3baa60d24be711a0a03c9ab5ae" => :mavericks
   end
 
   conflicts_with "arangodb", :because => "Differing versions of the same formula"
