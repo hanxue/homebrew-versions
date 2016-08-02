@@ -4,6 +4,13 @@ class Boost160 < Formula
   url "https://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2"
   sha256 "686affff989ac2488f79a97b9479efb9f2abae035b5ed4d8226de6857933fd3b"
 
+  bottle do
+    cellar :any
+    sha256 "e0d546dd07d45c81d8deeadb98957cbe0a1ab044839533ed506e3aba751dcf98" => :el_capitan
+    sha256 "3d98f698af44eca75571303ca78d51d00389cc52149bd4e97ccba419efbd6473" => :yosemite
+    sha256 "4d7f57482d5b4f097b731d78efb23f211b571a7261d9ecf96b465c6bd6cca9e2" => :mavericks
+  end
+
   keg_only "Conflicts with boost"
 
   # Handle compile failure with boost/graph/adjacency_matrix.hpp
