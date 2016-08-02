@@ -7,6 +7,13 @@ class Docker111 < Formula
 
   head "https://github.com/docker/docker.git"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "8c6a2c823e746c47ba500cf2666e47bfedd86e8f0ea97075c9d0b6ad615676a2" => :el_capitan
+    sha256 "2c1317d6a54ef919fc3c79d966e6ac5f2d310674d0200a5f6fbc5381e1a6a77c" => :yosemite
+    sha256 "dc4d1899bf29750faad639324fec11717b6877747f64b8e28ca404bf35fb1941" => :mavericks
+  end
+
   option "with-experimental", "Enable experimental features"
   option "without-completions", "Disable bash/zsh completions"
 
