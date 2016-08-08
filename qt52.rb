@@ -17,10 +17,11 @@ class Qt52 < Formula
   option "with-developer", "Build and link with developer options"
 
   deprecated_option "developer" => "with-developer"
+  deprecated_option "with-d-bus" => "with-dbus"
 
   depends_on "pkg-config" => :build
   depends_on :xcode => :build
-  depends_on "d-bus" => :optional
+  depends_on "dbus" => :optional
   depends_on "mysql" => :optional
 
   # Fails to build miserably on Xcodes which contain the 10.10 SDK
@@ -45,8 +46,8 @@ class Qt52 < Formula
 
     args << "-plugin-sql-mysql" if build.with? "mysql"
 
-    if build.with? "d-bus"
-      dbus_opt = Formula["d-bus"].opt_prefix
+    if build.with? "dbus"
+      dbus_opt = Formula["dbus"].opt_prefix
       args << "-I#{dbus_opt}/lib/dbus-1.0/include"
       args << "-I#{dbus_opt}/include/dbus-1.0"
       args << "-L#{dbus_opt}/lib"
