@@ -161,8 +161,8 @@ class Gdal111 < Formula
       supported_backends.delete "liblzma"
       args << "--with-liblzma=yes"
       args.concat supported_backends.map { |b| "--with-" + b + "=" + HOMEBREW_PREFIX }
-    else
-      args.concat supported_backends.map { |b| "--without-" + b } if build.without? "unsupported"
+    elsif build.without? "unsupported"
+      args.concat supported_backends.map { |b| "--without-" + b }
     end
 
     # The following libraries are either proprietary, not available for public
@@ -247,11 +247,11 @@ class Gdal111 < Formula
         # See main `libkml` formula for info on patches
         inreplace "configure.ac", "-Werror", ""
         inreplace "third_party/Makefile.am" do |s|
-          s.sub! /(lib_LTLIBRARIES =) libminizip.la liburiparser.la/, "\\1"
-          s.sub! /(noinst_LTLIBRARIES = libgtest.la libgtest_main.la)/,
-                 "\\1 libminizip.la liburiparser.la"
-          s.sub! /(libminizip_la_LDFLAGS =)/, "\\1 -static"
-          s.sub! /(liburiparser_la_LDFLAGS =)/, "\\1 -static"
+          s.sub!(/(lib_LTLIBRARIES =) libminizip.la liburiparser.la/, "\\1")
+          s.sub!(/(noinst_LTLIBRARIES = libgtest.la libgtest_main.la)/,
+                 "\\1 libminizip.la liburiparser.la")
+          s.sub!(/(libminizip_la_LDFLAGS =)/, "\\1 -static")
+          s.sub!(/(liburiparser_la_LDFLAGS =)/, "\\1 -static")
         end
 
         system "./autogen.sh"
@@ -313,7 +313,7 @@ class Gdal111 < Formula
   end
 
   test do
-    system "#{bin}/gdalinfo", "--formats"
-    system "#{bin}/ogrinfo", "--formats"
+    system bin/"gdalinfo", "--formats"
+    system bin/"ogrinfo", "--formats"
   end
 end
