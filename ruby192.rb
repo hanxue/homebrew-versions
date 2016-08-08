@@ -1,19 +1,17 @@
-require 'formula'
-
 class Ruby192 < Formula
   desc "Powerful, clean, object-oriented scripting language"
-  homepage 'http://www.ruby-lang.org/en/'
-  url 'http://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p330.tar.bz2'
-  sha256 '6d3487ea8a86ad0fa78a8535078ff3c7a91ca9f99eff0a6a08e66c6e6bf2040f'
+  homepage "http://www.ruby-lang.org/en/"
+  url "http://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p330.tar.bz2"
+  sha256 "6d3487ea8a86ad0fa78a8535078ff3c7a91ca9f99eff0a6a08e66c6e6bf2040f"
 
-  depends_on 'pkg-config' => :build
-  depends_on 'readline'
-  depends_on 'gdbm'
-  depends_on 'libyaml'
+  depends_on "pkg-config" => :build
+  depends_on "readline"
+  depends_on "gdbm"
+  depends_on "libyaml"
 
   option :universal
-  option 'with-suffix', 'Suffix commands with "192"'
-  option 'with-doc', 'Install documentation'
+  option "with-suffix", 'Suffix commands with "192"'
+  option "with-doc", "Install documentation"
 
   fails_with :llvm do
     build 2326
@@ -27,12 +25,12 @@ class Ruby192 < Formula
       args << "--with-arch=#{Hardware::CPU.universal_archs.join(",")}"
     end
 
-    args << "--program-suffix=192" if build.with? 'suffix'
+    args << "--program-suffix=192" if build.with? "suffix"
 
     system "./configure", *args
     system "make"
-    system "make install"
-    system "make install-doc" if build.with? 'doc'
+    system "make", "install"
+    system "make install-doc" if build.with? "doc"
   end
 
   def post_install

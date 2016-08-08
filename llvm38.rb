@@ -73,7 +73,6 @@ class Llvm38 < Formula
     sha256 "aaca71557a11144d9fb8276f791282c910f7172dbbe7a6f63a146d718d058b16" => :mavericks
   end
 
-
   head do
     url "http://llvm.org/git/llvm.git", :branch => "release_38"
 

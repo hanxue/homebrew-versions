@@ -9,7 +9,7 @@ class JbossForge1 < Formula
 
   def install
     rm_f Dir["bin/*.bat"]
-    libexec.install %w[ bin modules jboss-modules.jar ]
+    libexec.install %w[bin modules jboss-modules.jar]
     bin.install_symlink libexec/"bin/forge"
   end
 end

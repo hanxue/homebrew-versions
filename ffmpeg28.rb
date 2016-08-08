@@ -88,8 +88,7 @@ class Ffmpeg28 < Formula
             "--enable-avresample",
             "--cc=#{ENV.cc}",
             "--host-cflags=#{ENV.cflags}",
-            "--host-ldflags=#{ENV.ldflags}",
-           ]
+            "--host-ldflags=#{ENV.ldflags}"]
 
     args << "--enable-opencl" if MacOS.version > :lion
 

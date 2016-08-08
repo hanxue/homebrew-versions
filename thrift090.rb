@@ -25,7 +25,7 @@ class Thrift090 < Formula
     # patch-use-boost-cpp-client-server.patch
     %w[2ea5a69c5358a56ef945d4fb127c11a7797afc751743b20f58dfff0955a68117 use-boost-cpp-client-server.patch],
     # patch-remove-tr1-dependency.patch
-    %w[c4419ce40b7fda9ffd58a5dad7856b64ee84e3c1b820f3a64fed0b01b4bc9c42 remove-tr1-dependency.patch]
+    %w[c4419ce40b7fda9ffd58a5dad7856b64ee84e3c1b820f3a64fed0b01b4bc9c42 remove-tr1-dependency.patch],
   ].each do |sha, patch|
     patch do
       url "https://raw.githubusercontent.com/Homebrew/formula-patches/dee880b1baba827255f7b0806ca32d36c4d1c2ca/thrift/0.9.0/#{patch}"

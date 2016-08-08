@@ -17,7 +17,7 @@ class Redis1310 < Formula
     src = (buildpath/"src/Makefile").exist? ? buildpath/"src" : buildpath
     system "make", "-C", src, "CC=#{ENV.cc}"
 
-    %w[ redis-benchmark redis-cli redis-server redis-check-dump redis-check-aof ].each do |p|
+    %w[redis-benchmark redis-cli redis-server redis-check-dump redis-check-aof].each do |p|
       begin
         bin.install "#{src}/#{p}"
       rescue
@@ -25,7 +25,7 @@ class Redis1310 < Formula
       end
     end
 
-    %w[ run db/redis log ].each { |p| (var+p).mkpath }
+    %w[run db/redis log].each { |p| (var+p).mkpath }
 
     # Fix up default conf file to match our paths
     inreplace "redis.conf" do |s|
