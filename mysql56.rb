@@ -1,8 +1,8 @@
 class Mysql56 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.6/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.31.tar.gz"
-  sha256 "6df1389bbf899025aee6be0f4a12b8b0135e6de7db83e3ea20201ad3633ba424"
+  url "https://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.32.tar.gz"
+  sha256 "4620ed9d9b5803a3ac7a23492dbea993214d3b5ffd4fb63d42771c616f60e359"
 
   bottle do
     sha256 "1523db67d9d27a756c31f6d7a4ccd8c6e775ab533ef4bb5dd1d57ea5aa54aeb9" => :el_capitan
