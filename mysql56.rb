@@ -5,9 +5,9 @@ class Mysql56 < Formula
   sha256 "4620ed9d9b5803a3ac7a23492dbea993214d3b5ffd4fb63d42771c616f60e359"
 
   bottle do
-    sha256 "1523db67d9d27a756c31f6d7a4ccd8c6e775ab533ef4bb5dd1d57ea5aa54aeb9" => :el_capitan
-    sha256 "8484037c97ba781422b09597bdd3f72186c4aca2e42aa2a1c93dd32799ab8eeb" => :yosemite
-    sha256 "d4a06aa3888dc4a09349aeeb77093012cf72d1c66516d5153a99e0666322b5e8" => :mavericks
+    sha256 "3a8b34126f20390f759d4c3975a5002dba0bc17ea22a49f4e900f8b6794f9930" => :el_capitan
+    sha256 "285c94a199ca2e13c748ebd275ef8ee25465d784cce177ff8648cf008faa8671" => :yosemite
+    sha256 "1dcaf46d38f960dd7ce0d091b6aed96cec489e2de4627bf164750244a4a54c29" => :mavericks
   end
 
   option :universal
