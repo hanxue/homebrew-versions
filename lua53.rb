@@ -79,8 +79,9 @@ class Lua53 < Formula
         system "make", "install"
 
         (share/"lua/5.3/luarocks").install_symlink Dir["#{libexec}/share/lua/5.3/luarocks/*"]
-        bin.install_symlink libexec/"bin/luarocks-5.3"
-        bin.install_symlink libexec/"bin/luarocks-admin-5.3"
+        suffix = "-5.3" if build.without? "default-names"
+        bin.install_symlink libexec/"bin/luarocks#{suffix}"
+        bin.install_symlink libexec/"bin/luarocks-admin#{suffix}"
 
         # This block ensures luarock exec scripts don't break across updates.
         inreplace libexec/"share/lua/5.3/luarocks/site_config.lua" do |s|
