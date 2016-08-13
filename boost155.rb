@@ -62,9 +62,10 @@ class Boost155 < Formula
   end
   bottle do
     cellar :any
-    sha256 "7ddd8eaf57ef85d2cbc5bfa04f6cac1aedfbf435cefdab2ccbf1d682c846248c" => :yosemite
-    sha256 "7a33b63b1e8c4afdb877cbb45b951c1867fb09ecd73f836478140cdce1ca8291" => :mavericks
-    sha256 "e9c02b26e9190d8da61e1acc46d2fb478ea8b836c4a463d5aed57d3c892c7432" => :mountain_lion
+    revision 1
+    sha256 "a0c12015fb98746ffa335f6db5fefc5e6c70e120c98f36d6e21f71b14fbc484e" => :el_capitan
+    sha256 "89301e28dbc76813de061c2350e6dced9861d9bd37ef9feb646233a8b50e8c88" => :yosemite
+    sha256 "1d3367159ddd35b26339402255e36fff7ff9d609be1a8cea4a7508a04b7de67b" => :mavericks
   end
 
   keg_only "Conflicts with boost in main repository."
