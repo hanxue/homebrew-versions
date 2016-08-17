@@ -6,6 +6,12 @@ class Go16 < Formula
   version "1.6.3"
   sha256 "6326aeed5f86cf18f16d6dc831405614f855e2d416a91fd3fdc334f772345b00"
 
+  bottle do
+    sha256 "87da991c1d9a0da6d2daf445205aecd25ba061e3930323716a99673f998a0bc8" => :el_capitan
+    sha256 "c18c7a7c0057d9d528fcb629479efeca51f29b86cf44a21660ea1a3ca9ae5c8a" => :yosemite
+    sha256 "1a4eb0768fb38e5a01a1444cf049ab3437723345d03e4c95cf9c7ba2fbe7eb29" => :mavericks
+  end
+
   option "without-cgo", "Build without cgo"
   option "without-godoc", "godoc will not be installed for you"
   option "without-vet", "vet will not be installed for you"
