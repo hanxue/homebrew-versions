@@ -1,8 +1,8 @@
-class Zeromq405 < Formula
+class Zeromq40 < Formula
   desc "High-performance, asynchronous messaging library"
   homepage "http://www.zeromq.org/"
-  url "http://download.zeromq.org/zeromq-4.0.5.tar.gz"
-  sha256 "3bc93c5f67370341428364ce007d448f4bb58a0eaabd0a60697d8086bc43342b"
+  url "http://download.zeromq.org/zeromq-4.0.7.tar.gz"
+  sha256 "e00b2967e074990d0538361cc79084a0a92892df2c6e7585da34e4c61ee47b03"
 
   bottle do
     cellar :any
@@ -11,21 +11,14 @@ class Zeromq405 < Formula
     sha256 "910a39ad58338eed771327083b5ec97f95dc77339e7e6ff246b2380ce5cacfcc" => :mavericks
   end
 
-  conflicts_with "zeromq", :because => "Differing version of the same formula"
-
-  patch do
-    # enable --without-libsodium on libzmq < 4.1
-    # zeromq/zeromq4-x#105
-    url "https://gist.githubusercontent.com/minrk/478aab66adf7016158ff/raw/b5ea2d61c3f66db6ff3e266b76d1bec4ad4a238b/without-libsodium.patch"
-    sha256 "17a36523d837af125b146c7efc093e4e3d808438d347f25a0476f1ccc183395e"
-  end
-
   option :universal
   option "with-libpgm", "Build with PGM extension"
 
   depends_on "pkg-config" => :build
   depends_on "libpgm" => :optional
   depends_on "libsodium" => :optional
+
+  conflicts_with "zeromq", :because => "Differing version of the same formula"
 
   def install
     ENV.universal_binary if build.universal?
