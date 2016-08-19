@@ -21,6 +21,7 @@ class Qt52 < Formula
 
   depends_on "pkg-config" => :build
   depends_on :xcode => :build
+  depends_on MaximumMacOSRequirement => :mavericks
   depends_on "dbus" => :optional
   depends_on "mysql" => :optional
 
