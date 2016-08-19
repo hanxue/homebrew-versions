@@ -6,9 +6,9 @@ class Zeromq40 < Formula
 
   bottle do
     cellar :any
-    sha256 "a8276cede4c824f86f779408bb2c375e51e47dfdf14271eb451c56fb86456199" => :el_capitan
-    sha256 "2870f7f4c2ae6f8c35eec102b8483ef377273983e90056b553efe6da34536f7e" => :yosemite
-    sha256 "80771fd720a205b35d4a5629d234e7788a2fa396352af2969eaa27d31db57788" => :mavericks
+    sha256 "2bfd5e276813f742b84f02fd87b9235ba9845fd1c84f57a282fabc5b0ca37d0a" => :el_capitan
+    sha256 "fe34e4169e00c7ecb92820080d0d0c4271de50f323b58f10280933c46c55c05c" => :yosemite
+    sha256 "b492c298f61faa6eda6345807b2357f4761c533d21bd4197d4d7aa5f3e2a0acc" => :mavericks
   end
 
   option :universal
