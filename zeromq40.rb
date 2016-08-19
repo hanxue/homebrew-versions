@@ -1,8 +1,8 @@
 class Zeromq40 < Formula
   desc "High-performance, asynchronous messaging library"
   homepage "http://www.zeromq.org/"
-  url "http://download.zeromq.org/zeromq-4.0.7.tar.gz"
-  sha256 "e00b2967e074990d0538361cc79084a0a92892df2c6e7585da34e4c61ee47b03"
+  url "https://github.com/zeromq/zeromq4-x/releases/download/v4.0.8/zeromq-4.0.8.tar.gz"
+  sha256 "56b652e622ee30456d3c2ce86d8b6a979a00bfe4ea3828d483a5e90864dac1dc"
 
   bottle do
     cellar :any
