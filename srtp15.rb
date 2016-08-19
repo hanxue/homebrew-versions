@@ -4,6 +4,13 @@ class Srtp15 < Formula
   url "https://github.com/cisco/libsrtp/archive/v1.5.2.tar.gz"
   sha256 "86e1efe353397c0751f6bdd709794143bd1b76494412860f16ff2b6d9c304eda"
 
+  bottle do
+    cellar :any
+    sha256 "0138197f62306eb4ab277f250355c5377f42447ad4355cc42e06b72fa7e5ff02" => :el_capitan
+    sha256 "3e53f1b801ac37803cb277a9c48bd56c45066a0940000187f60b6c3966e0cae0" => :yosemite
+    sha256 "4a7bff25018c02c889874b2d997fcf51db42be90aa22acdcda6d629de22daf50" => :mavericks
+  end
+
   depends_on "pkg-config" => :build
 
   def install
