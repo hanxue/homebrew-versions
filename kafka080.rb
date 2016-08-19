@@ -5,12 +5,14 @@ class Kafka080 < Formula
   sha256 "f4b7229671aba98dba9a882244cb597aab8a9018631575d28e119725a01cfc9a"
 
   depends_on "zookeeper"
-  depends_on :java => "1.7+"
+  depends_on :java => "1.7"
 
   conflicts_with "kafka",
                  :because => "kafka080 and kafka install the same binaries."
 
   def install
+    ENV.java_cache
+
     system "./sbt", "update"
     system "./sbt", "package"
     system "./sbt", "assembly-package-dependency"
@@ -32,7 +34,7 @@ class Kafka080 < Formula
     libexec.install %w[contrib core examples lib perf system_test]
 
     prefix.install "bin"
-    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("1.7+"))
+    bin.env_script_all_files(libexec/"bin", Language::Java.java_home_env("1.7"))
 
     (etc/"kafka").install Dir["config/*"]
   end
