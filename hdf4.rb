@@ -6,9 +6,10 @@ class Hdf4 < Formula
   revision 1
 
   bottle do
-    sha256 "8ba0e3973461d87e378cebcfef7d6d73ceb49a999e47d8c19bd083f4f9d8cacf" => :yosemite
-    sha256 "7a56cd6de013df4548bc13f17cc1ff2585b24f2baf4bc8056d91a46a7ed099f7" => :mavericks
-    sha256 "d0f88cadfb4fd2e5a2e7dc996d5d218531c43924812443ecad15a1393eb50388" => :mountain_lion
+    cellar :any
+    sha256 "e018d9409053399f6fefe5ba5d7dab23ed759e284eeea2752754ecff30caa9a7" => :el_capitan
+    sha256 "43edd9d4ff3cbf3355a03f5360e6c7b1ae221f57b1ad9d03f73aef673b8fdc53" => :yosemite
+    sha256 "cdf830efff4a25926f2f0a436c6b1a7403e8146dc2b94c2edee60b54a22c8f0d" => :mavericks
   end
 
   depends_on "cmake" => :build
