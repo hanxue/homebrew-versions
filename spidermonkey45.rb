@@ -11,6 +11,10 @@ class Spidermonkey45 < Formula
   end
 
   bottle do
+    cellar :any
+    sha256 "c5dc69879958146442f0fe32e407e3c376d85a65b9be6fd98f3a3d5bc7efe89d" => :el_capitan
+    sha256 "88c1e28bcd7029bd2655302e5a40373c0c762791f2256d03de5cb3c5267c62e1" => :yosemite
+    sha256 "2ac3b74f9dac8bb478107241beec252f0a175aad3b852b17f3deed8b010a2434" => :mavericks
   end
 
   depends_on "readline"
