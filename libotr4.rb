@@ -13,6 +13,8 @@ class Libotr4 < Formula
 
   depends_on "libgcrypt"
 
+  conflicts_with "libotr", :because => "Differing version of same formula."
+
   def install
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
