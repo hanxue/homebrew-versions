@@ -1,10 +1,8 @@
-class Logstash22 < Formula
+class Logstash23 < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://download.elastic.co/logstash/logstash/logstash-2.2.4.tar.gz"
-  sha256 "0d7fa078eb93b1eecea2845b1404b0f05b438cb3ecc9999316477980ef945492"
-
-  conflicts_with "logstash", :because => "Different versions of same formula"
+  url "https://download.elastic.co/logstash/logstash/logstash-2.3.4.tar.gz"
+  sha256 "7f62a03ddc3972e33c343e982ada1796b18284f43ed9c0089a2efee78b239583"
 
   head do
     url "https://github.com/elastic/logstash.git"
@@ -14,6 +12,8 @@ class Logstash22 < Formula
   bottle :unneeded
 
   depends_on :java => "1.7+"
+
+  conflicts_with "logstash", :because => "Different versions of same formula"
 
   def install
     if build.head?
@@ -26,11 +26,11 @@ class Logstash22 < Formula
     end
 
     inreplace %w[bin/logstash], %r{^\. "\$\(cd `dirname \$SOURCEPATH`\/\.\.; pwd\)\/bin\/logstash\.lib\.sh\"}, ". #{libexec}/bin/logstash.lib.sh"
-    inreplace %w[bin/plugin], %r{^\. "\$\(cd `dirname \$0`\/\.\.; pwd\)\/bin\/logstash\.lib\.sh\"}, ". #{libexec}/bin/logstash.lib.sh"
+    inreplace %w[bin/logstash-plugin], %r{^\. "\$\(cd `dirname \$0`\/\.\.; pwd\)\/bin\/logstash\.lib\.sh\"}, ". #{libexec}/bin/logstash.lib.sh"
     inreplace %w[bin/logstash.lib.sh], /^LOGSTASH_HOME=.*$/, "LOGSTASH_HOME=#{libexec}"
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/logstash"
-    bin.install_symlink libexec/"bin/plugin" => "logstash-plugin"
+    bin.install_symlink libexec/"bin/logstash-plugin"
   end
 
   def caveats; <<-EOS.undent
