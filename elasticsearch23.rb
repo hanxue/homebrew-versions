@@ -1,10 +1,8 @@
-class Elasticsearch22 < Formula
+class Elasticsearch23 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.2.2/elasticsearch-2.2.2.tar.gz"
-  sha256 "c706db594f1feb5051d90697c6c412eadd60e00a9ec3b4f345a122801183af69"
-
-  conflicts_with "elasticsearch", :because => "Different versions of same formula"
+  url "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.5/elasticsearch-2.3.5.tar.gz"
+  sha256 "1119a8c18620b98c4b85261318663a1f26dea92a26f34dfeb7f813fb7cbb468a"
 
   head do
     url "https://github.com/elasticsearch/elasticsearch.git"
@@ -13,8 +11,9 @@ class Elasticsearch22 < Formula
   end
 
   bottle :unneeded
-
   depends_on :java => "1.7+"
+
+  conflicts_with "elasticsearch", :because => "Different versions of same formula"
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
