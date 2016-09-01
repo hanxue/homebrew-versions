@@ -5,6 +5,13 @@ class Gsl1 < Formula
   mirror "https://ftp.gnu.org/gnu/gsl/gsl-1.16.tar.gz"
   sha256 "73bc2f51b90d2a780e6d266d43e487b3dbd78945dd0b04b14ca5980fe28d2f53"
 
+  bottle do
+    cellar :any
+    sha256 "c90aae66eb711e5dfaf23a2519d8a0d557af0c5ebfee23da24f30696d7ce2bbb" => :el_capitan
+    sha256 "5027ba24fc613bc80500956df563feb55887bc6b68763acb1ad8006a7c71693c" => :yosemite
+    sha256 "26726db85cdcb16073aa735091d70e3a0ae4c93f4919d58e164721df54cc8471" => :mavericks
+  end
+
   option :universal
 
   def install
