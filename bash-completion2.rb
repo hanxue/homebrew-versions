@@ -1,8 +1,8 @@
 class BashCompletion2 < Formula
   desc "Programmable completion for Bash 4.0+"
   homepage "https://github.com/scop/bash-completion"
-  url "https://github.com/scop/bash-completion/releases/download/2.3/bash-completion-2.3.tar.xz"
-  sha256 "b2e081af317f3da4fff3a332bfdbebeb5514ebc6c2d2a9cf781180acab15e8e9"
+  url "https://github.com/scop/bash-completion/releases/download/2.4/bash-completion-2.4.tar.xz"
+  sha256 "c0f76b5202fec9ef8ffba82f5605025ca003f27cfd7a85115f838ba5136890f6"
   head "https://github.com/scop/bash-completion.git"
 
   bottle do
@@ -13,13 +13,6 @@ class BashCompletion2 < Formula
   end
 
   conflicts_with "bash-completion"
-
-  # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=739835
-  # resolves issue with completion of files/directories with spaces in the name.
-  patch do
-    url "https://anonscm.debian.org/cgit/bash-completion/debian.git/plain/debian/patches/00-fix_quote_readline_by_ref.patch?id=d734ca3bd73ae49b8f452802fb8fb65a440ab07a"
-    sha256 "7304f8fb4ad869f1b3d6f3456b2750246ddedef6fc307939bf403bf528f2fdf1"
-  end
 
   def install
     inreplace "bash_completion", "readlink -f", "readlink"
