@@ -7,9 +7,9 @@ class BashCompletion2 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "d09547e2899fa8ebb91737a60fbb67d5fa0f7b4bab5c15b50c4cfacb533974e9" => :el_capitan
-    sha256 "bf5de0393acf3041e2801981017f53a62cb2d34435e63519ef352f507f26d361" => :yosemite
-    sha256 "3f7d127ea60af0e26d4c5b0621b3eeabe4550d49a59411e72ff3a03e28cd05b7" => :mavericks
+    sha256 "3d4d824313eef450b32440cbbe22b47b37486dea42534792cb5fa09f4f8357e8" => :el_capitan
+    sha256 "756fd7260c13dc9f71f15e833289e15d13421eca826d11a6397462cedff71a6f" => :yosemite
+    sha256 "756fd7260c13dc9f71f15e833289e15d13421eca826d11a6397462cedff71a6f" => :mavericks
   end
 
   conflicts_with "bash-completion"
