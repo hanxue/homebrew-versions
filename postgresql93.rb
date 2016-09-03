@@ -86,12 +86,16 @@ class Postgresql93 < Formula
     system "make", "install-world"
   end
 
+  def post_install
+    (var/"log").mkpath
+    (var/"postgres").mkpath
+    unless File.exist? "#{var}/postgres/PG_VERSION"
+      system "#{bin}/initdb", "#{var}/postgres"
+    end
+  end
+
   def caveats
     s = <<-EOS.undent
-    initdb #{var}/postgres -E utf8    # create a database
-    postgres -D #{var}/postgres       # serve that database
-    PGDATA=#{var}/postgres postgres   # ...alternatively
-
     If builds of PostgreSQL 9 are failing and you have version 8.x installed,
     you may need to remove the previous version first. See:
       https://github.com/Homebrew/homebrew/issues/issue/2510
@@ -129,15 +133,13 @@ class Postgresql93 < Formula
         <string>#{opt_bin}/postgres</string>
         <string>-D</string>
         <string>#{var}/postgres</string>
-        <string>-r</string>
-        <string>#{var}/postgres/server.log</string>
       </array>
       <key>RunAtLoad</key>
       <true/>
       <key>WorkingDirectory</key>
       <string>#{HOMEBREW_PREFIX}</string>
       <key>StandardErrorPath</key>
-      <string>#{var}/postgres/server.log</string>
+      <string>#{var}/log/postgres.log</string>
     </dict>
     </plist>
     EOS
