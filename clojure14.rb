@@ -1,6 +1,6 @@
 class Clojure14 < Formula
   homepage "http://clojure.org/"
-  url "http://repo1.maven.org/maven2/org/clojure/clojure/1.4.0/clojure-1.4.0.zip"
+  url "https://search.maven.org/remotecontent?filepath=org/clojure/clojure/1.4.0/clojure-1.4.0.zip"
   sha256 "27a5a151d5cc1bc3e52dff47c66111e637fefeb42d9bedfa1284a1a31d080171"
 
   bottle :unneeded
