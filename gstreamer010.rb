@@ -1,6 +1,6 @@
 class Gstreamer010 < Formula
   homepage "http://gstreamer.freedesktop.org/"
-  url "http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-0.10.36.tar.bz2"
+  url "https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-0.10.36.tar.bz2"
   sha256 "e556a529e0a8cf1cd0afd0cab2af5488c9524e7c3f409de29b5d82bb41ae7a30"
 
   bottle do
