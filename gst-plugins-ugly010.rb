@@ -1,6 +1,6 @@
 class GstPluginsUgly010 < Formula
   homepage "http://gstreamer.freedesktop.org/"
-  url "http://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-0.10.19.tar.bz2"
+  url "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-0.10.19.tar.bz2"
   sha256 "1ca90059275c0f5dca71d4d1601a8f429b7852baed0723e820703b977e2c8df0"
 
   bottle do
