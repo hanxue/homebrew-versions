@@ -1,6 +1,6 @@
 class GstRtsp010 < Formula
   homepage "http://gstreamer.freedesktop.org/"
-  url "http://gstreamer.freedesktop.org/src/gst-rtsp/gst-rtsp-0.10.8.tar.bz2"
+  url "https://gstreamer.freedesktop.org/src/gst-rtsp/gst-rtsp-0.10.8.tar.bz2"
   sha256 "9915887cf8515bda87462c69738646afb715b597613edc7340477ccab63a6617"
 
   bottle do
