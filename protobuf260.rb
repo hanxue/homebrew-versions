@@ -16,8 +16,6 @@ class Protobuf260 < Formula
     sha256 "3da3651216bd105e9611fa14ecffb591eebb20c79b261f5038d11f812f851137" => :mountain_lion
   end
 
-  conflicts_with "protobuf", :because => "Differing versions of same formula"
-
   # this will double the build time approximately if enabled
   option "with-check", "Run build-time check"
 
@@ -26,6 +24,8 @@ class Protobuf260 < Formula
 
   option "without-python", "Build without python support"
   depends_on :python => :recommended if MacOS.version <= :snow_leopard
+
+  conflicts_with "protobuf", :because => "Differing versions of same formula"
 
   fails_with :llvm do
     build 2334

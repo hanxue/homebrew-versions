@@ -11,8 +11,6 @@ class LibmongoclientLegacy < Formula
     sha256 "984a9b24c5f6e6b8e8a7b83fca80f128e5168705b9064081e39a7bf5f8b9fa0c" => :mavericks
   end
 
-  conflicts_with "libmongoclient", :because => "libmongoclient contains 26compat branch"
-
   option :cxx11
 
   depends_on "scons" => :build
@@ -22,6 +20,8 @@ class LibmongoclientLegacy < Formula
   else
     depends_on "boost"
   end
+
+  conflicts_with "libmongoclient", :because => "libmongoclient contains 26compat branch"
 
   def install
     ENV.cxx11 if build.cxx11?

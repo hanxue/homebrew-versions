@@ -24,6 +24,8 @@ class ErlangR19 < Formula
   depends_on "fop" => :optional # enables building PDF docs
   depends_on "wxmac" => :optional # for GUI apps like observer
 
+  conflicts_with "erlang", :because => "Different version of same formula"
+
   resource "man" do
     url "http://www.erlang.org/download/otp_doc_man_19.0.tar.gz"
     sha256 "c7a3d6d85a5a2b96d844297a3fa1bee448c3dd86237734688466249fd5a1401e"
@@ -33,8 +35,6 @@ class ErlangR19 < Formula
     url "http://www.erlang.org/download/otp_doc_html_19.0.tar.gz"
     sha256 "b6f7c4e964673333f6c3eea8530dd988b41339b8912ae293f6f1b429489159ff"
   end
-
-  conflicts_with "erlang", :because => "Different version of same formula"
 
   fails_with :llvm
 

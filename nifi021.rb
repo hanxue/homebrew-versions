@@ -4,11 +4,11 @@ class Nifi021 < Formula
   url "https://archive.apache.org/dist/nifi/0.2.1/nifi-0.2.1-bin.tar.gz"
   sha256 "e151dab553a8ea466f7462d75145e2aa08ced938499aef184850aa4d3209c605"
 
-  conflicts_with "nifi", :because => "Differing versions of the same formula"
-
   bottle :unneeded
 
   depends_on :java => "1.7+"
+
+  conflicts_with "nifi", :because => "Differing versions of the same formula"
 
   def install
     libexec.install Dir["*"]

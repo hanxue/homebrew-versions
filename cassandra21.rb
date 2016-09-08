@@ -4,8 +4,6 @@ class Cassandra21 < Formula
   url "https://archive.apache.org/dist/cassandra/2.1.13/apache-cassandra-2.1.13-bin.tar.gz"
   sha256 "102fffe21b1641696cbdaef0fb5a2fecf01f28da60c81a1dede06c2d8bdb6325"
 
-  conflicts_with "cassandra", :because => "Differing versions of the same formula"
-
   bottle do
     sha256 "aeed895122d5da6f68b859846e630387244fa0be7dee74bdd740410a46be9b47" => :el_capitan
     sha256 "65036573d39a54595206dcb72a2f10dd33b435c61cf2776499d471a2561dccbb" => :yosemite
@@ -13,6 +11,8 @@ class Cassandra21 < Formula
   end
 
   depends_on :python if MacOS.version <= :snow_leopard
+
+  conflicts_with "cassandra", :because => "Differing versions of the same formula"
 
   # Only Yosemite has new enough setuptools for successful compile of the below deps.
   resource "setuptools" do

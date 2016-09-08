@@ -28,7 +28,7 @@ You can read Homebrew’s Acceptable Formulae document [here](https://github.com
 * Versions formulae *usually* do not have head or devel sections.
 * Versions formulae *can* depend on other versions formulae.
 * If copied from `homebrew/core` prior formulae please remove any deprecated options and fix any issues raised by `brew audit --strict`.
-* If a newer/older version exists in `homebrew/core` please add a `conflicts_with` line, like [this](https://github.com/Homebrew/homebrew-versions/commit/c70582a2055ea6649cc1974076f57001f8c471a3).
+* If a newer/older version exists in `homebrew/core` please add a `conflicts_with` line, like [this](https://github.com/Homebrew/homebrew-versions/commit/c70582a2055ea6649cc1974076f57001f8c471a3). Note: the `conflicts_with` line(s) must be placed after any `depends_on` lines.
 
 ## Troubleshooting
 First, please run `brew update` and `brew doctor`.

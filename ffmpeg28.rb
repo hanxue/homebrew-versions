@@ -10,9 +10,6 @@ class Ffmpeg28 < Formula
     sha256 "bc7b183c0eedcb5a8ab35be3b25cf00af89c867085a5fc0855d7ec74ab7d1e79" => :mavericks
   end
 
-  conflicts_with "ffmpeg",
-                 :because => "both install the same binaries"
-
   option "without-x264", "Disable H.264 encoder"
   option "without-lame", "Disable MP3 encoder"
   option "without-libvo-aacenc", "Disable VisualOn AAC encoder"
@@ -77,6 +74,9 @@ class Ffmpeg28 < Formula
   depends_on "zeromq" => :optional
   depends_on "libbs2b" => :optional
   depends_on "dcadec" => :optional
+
+  conflicts_with "ffmpeg",
+                 :because => "both install the same binaries"
 
   def install
     args = ["--prefix=#{prefix}",

@@ -10,11 +10,11 @@ class Arangodb2 < Formula
     sha256 "da10623adf5c65ea1306ac827163d2644b37da3baa60d24be711a0a03c9ab5ae" => :mavericks
   end
 
-  conflicts_with "arangodb", :because => "Differing versions of the same formula"
-
   depends_on "gcc" if MacOS.version == :mavericks
   depends_on "go" => :build
   depends_on "openssl"
+
+  conflicts_with "arangodb", :because => "Differing versions of the same formula"
 
   needs :cxx11
 

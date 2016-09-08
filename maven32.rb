@@ -5,10 +5,10 @@ class Maven32 < Formula
   mirror "https://archive.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.tar.gz"
   sha256 "8c190264bdf591ff9f1268dc0ad940a2726f9e958e367716a09b8aaa7e74a755"
 
+  depends_on :java
+
   conflicts_with "maven", :because => "Differing versions of same formula"
   conflicts_with "mvnvm", :because => "Also installs a 'mvn' executable"
-
-  depends_on :java
 
   def install
     # Remove windows files

@@ -4,10 +4,10 @@ class Rabbitmq30 < Formula
   url "http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server-generic-unix-3.0.4.tar.gz"
   sha256 "2920cc2ffdf65a645b8c8b06c9bbf5aa5d1b57373e07fc763314370cfa86f223"
 
-  conflicts_with "rabbitmq"
-
   depends_on "erlang"
   depends_on "simplejson" => :python if MacOS.version == :leopard
+
+  conflicts_with "rabbitmq"
 
   def install
     # Install the base files

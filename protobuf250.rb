@@ -10,8 +10,6 @@ class Protobuf250 < Formula
     sha256 "5ee898191f6e0453427f837ba7db8e2bd39294ea270efd28927d52f05bc4f59c" => :mountain_lion
   end
 
-  conflicts_with "protobuf", :because => "conflicts with protobuf in main repository."
-
   option :universal
   option :cxx11
 
@@ -19,6 +17,8 @@ class Protobuf250 < Formula
   option "with-check", "Run build-time check"
 
   depends_on :python => :optional
+
+  conflicts_with "protobuf", :because => "conflicts with protobuf in main repository."
 
   fails_with :llvm do
     build 2334

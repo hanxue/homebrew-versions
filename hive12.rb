@@ -6,10 +6,10 @@ class Hive12 < Formula
 
   bottle :unneeded
 
-  conflicts_with "hive", :because => "Differing versions of same formula"
-
   depends_on "hadoop"
   depends_on :java
+
+  conflicts_with "hive", :because => "Differing versions of same formula"
 
   def install
     rm_f Dir["bin/*.cmd", "bin/ext/*.cmd", "bin/ext/util/*.cmd"]

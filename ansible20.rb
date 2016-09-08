@@ -12,8 +12,6 @@ class Ansible20 < Formula
     sha256 "2389b14bd9e6025fd5414b7a2e930a5a5a00ccb5108e6b0cabe02f6aa5f3f45a" => :mavericks
   end
 
-  conflicts_with "ansible", :because => "Differing versions of same formula"
-
   devel do
     url "https://releases.ansible.com/ansible/ansible-2.0.2.0-0.4.rc4.tar.gz"
     sha256 "b902f974b48bd6867fc5e6770bbc80df5d8af6c5b8f5a831bc8611360af1dc08"
@@ -24,6 +22,8 @@ class Ansible20 < Formula
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "libyaml"
   depends_on "openssl"
+
+  conflicts_with "ansible", :because => "Differing versions of same formula"
 
   #
   # ansible (core dependencies)

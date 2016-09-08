@@ -4,9 +4,9 @@ class Maven31 < Formula
   url "https://www.apache.org/dyn/closer.cgi?path=maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz"
   sha256 "077ed466455991d5abb4748a1d022e2d2a54dc4d557c723ecbacdc857c61d51b"
 
-  conflicts_with "maven", :because => "Differing versions of same formula"
-
   depends_on :java
+
+  conflicts_with "maven", :because => "Differing versions of same formula"
 
   def install
     # Remove windows files
