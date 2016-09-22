@@ -1,11 +1,12 @@
+# This formula will be removed once it stops being supported &
+# receiving security fixes upstream after December 31st 2016.
 class Openssl101 < Formula
   desc "SSL/TLS cryptography library"
   homepage "https://openssl.org"
-  url "https://www.openssl.org/source/openssl-1.0.1t.tar.gz"
-  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.1t.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.1t.tar.gz"
-  sha256 "4a6ee491a2fdb22e519c76fdc2a628bb3cec12762cd456861d207996c8a07088"
-  revision 1
+  url "https://www.openssl.org/source/openssl-1.0.1u.tar.gz"
+  mirror "https://dl.bintray.com/homebrew/mirror/openssl-1.0.1u.tar.gz"
+  mirror "https://www.mirrorservice.org/sites/ftp.openssl.org/source/openssl-1.0.1u.tar.gz"
+  sha256 "4312b4ca1215b6f2c97007503d80db80d5157f76f8f7d3febbe6b4c56ff26739"
 
   bottle do
     sha256 "83bfa63c3c0b5dd10036746c2170a9dd12dce175030a453538fbe345b47dde39" => :el_capitan
@@ -23,19 +24,10 @@ class Openssl101 < Formula
 
   depends_on "makedepend" => :build
 
-  # OpenSSL let the certs used for testing in the 1.0.1 branch expire
-  # and consequently `make test` now dies a horrible death.
-  # I'm not even joking.
-  # https://mta.openssl.org/pipermail/openssl-dev/2016-May/006983.html
-  patch do
-    url "https://github.com/openssl/openssl/commit/24762dee178bace.diff"
-    sha256 "7cfdb6248054602688c26a8f448c4489881684fe44dfef6727fb5dc0845dfd8b"
-  end
-
   def arch_args
     {
-      :x86_64 => %w[darwin64-x86_64-cc enable-ec_nistp_64_gcc_128],
-      :i386   => %w[darwin-i386-cc],
+      x86_64: %w[darwin64-x86_64-cc enable-ec_nistp_64_gcc_128],
+      i386: %w[darwin-i386-cc],
     }
   end
 
