@@ -6,7 +6,7 @@ class Tomcat7 < Formula
 
   bottle :unneeded
 
-  conflicts_with "tomcat", :because => "Differing versions of same formula"
+  conflicts_with "tomcat", because: "Differing versions of same formula"
 
   option "with-fulldocs", "Install full documentation locally"
 

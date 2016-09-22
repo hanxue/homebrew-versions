@@ -19,9 +19,9 @@ class Influxdb08 < Formula
   depends_on "flex" => :build
   depends_on "go" => :build
   depends_on "gawk" => :build
-  depends_on :hg => :build
+  depends_on hg: :build
 
-  conflicts_with "influxdb", :because => "Differing versions of the same formula"
+  conflicts_with "influxdb", because: "Differing versions of the same formula"
 
   def install
     ENV["GOPATH"] = buildpath
@@ -52,7 +52,7 @@ class Influxdb08 < Formula
     (var/"influxdb08/raft").mkpath
   end
 
-  plist_options :manual => "influxdb -config=#{HOMEBREW_PREFIX}/etc/influxdb.conf"
+  plist_options manual: "influxdb -config=#{HOMEBREW_PREFIX}/etc/influxdb.conf"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

@@ -12,7 +12,7 @@ class Cassandra21 < Formula
 
   depends_on :python if MacOS.version <= :snow_leopard
 
-  conflicts_with "cassandra", :because => "Differing versions of the same formula"
+  conflicts_with "cassandra", because: "Differing versions of the same formula"
 
   # Only Yosemite has new enough setuptools for successful compile of the below deps.
   resource "setuptools" do
@@ -89,7 +89,7 @@ class Cassandra21 < Formula
 
     bin.write_exec_script Dir["#{libexec}/bin/*"]
     rm bin/"cqlsh" # Remove existing exec script
-    (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", :PYTHONPATH => pypath
+    (bin/"cqlsh").write_env_script libexec/"bin/cqlsh", PYTHONPATH: pypath
   end
 
   def plist; <<-EOS.undent

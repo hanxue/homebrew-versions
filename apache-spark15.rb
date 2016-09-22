@@ -7,7 +7,7 @@ class ApacheSpark15 < Formula
 
   bottle :unneeded
 
-  conflicts_with "apache-spark", :because => "Differing version of same formula"
+  conflicts_with "apache-spark", because: "Differing version of same formula"
 
   def install
     # Rename beeline to distinguish it from hive's beeline

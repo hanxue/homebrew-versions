@@ -37,7 +37,7 @@ class Redis28 < Formula
     etc.install "sentinel.conf" => "redis28-sentinel.conf" unless (etc/"redis28-sentinel.conf").exist?
   end
 
-  plist_options :manual => "redis28-server #{HOMEBREW_PREFIX}/etc/redis28.conf"
+  plist_options manual: "redis28-server #{HOMEBREW_PREFIX}/etc/redis28.conf"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

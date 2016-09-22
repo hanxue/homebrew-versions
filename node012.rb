@@ -3,7 +3,7 @@ class Node012 < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/download/release/v0.12.15/node-v0.12.15.tar.xz"
   sha256 "f4ce0c4bb217a32d074916d291381b16e1b9a0bb2be0317ce28e471e0f42a0ac"
-  head "https://github.com/nodejs/node.git", :branch => "v0.12-staging"
+  head "https://github.com/nodejs/node.git", branch: "v0.12-staging"
 
   bottle do
     sha256 "5302519c74a82c423a153e168ade10a3f5aca58120bc44f5079e3c05e0b8a867" => :el_capitan
@@ -15,7 +15,7 @@ class Node012 < Formula
   option "without-npm", "npm will not be installed"
   option "without-completion", "npm bash completion will not be installed"
 
-  depends_on :python => :build if MacOS.version <= :snow_leopard
+  depends_on python: :build if MacOS.version <= :snow_leopard
   depends_on "pkg-config" => :build
   depends_on "openssl" => :optional
 
@@ -23,7 +23,7 @@ class Node012 < Formula
   # https://github.com/Homebrew/homebrew/issues/36681
   depends_on "icu4c" => :optional
 
-  conflicts_with "node", :because => "Differing version of same formula"
+  conflicts_with "node", because: "Differing version of same formula"
 
   fails_with :llvm do
     build 2326

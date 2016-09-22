@@ -9,8 +9,8 @@ class Solr54 < Formula
 
   depends_on :java
 
-  conflicts_with "solr", :because => "Differing versions of the same formula"
-  conflicts_with "solr55", :because => "Differing versions of the same formula"
+  conflicts_with "solr", because: "Differing versions of the same formula"
+  conflicts_with "solr55", because: "Differing versions of the same formula"
 
   skip_clean "example/logs"
 
@@ -36,7 +36,7 @@ class Solr54 < Formula
     end
   end
 
-  plist_options :manual => "solr start"
+  plist_options manual: "solr start"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>

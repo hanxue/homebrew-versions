@@ -1,5 +1,5 @@
 class UniversalPython < Requirement
-  satisfy(:build_env => false) { archs_for_command("python").universal? }
+  satisfy(build_env: false) { archs_for_command("python").universal? }
 
   def message; <<-EOS.undent
     A universal build was requested, but Python is not a universal build
@@ -11,7 +11,7 @@ class UniversalPython < Requirement
 end
 
 class UniversalPython3 < Requirement
-  satisfy(:build_env => false) { archs_for_command("python3").universal? }
+  satisfy(build_env: false) { archs_for_command("python3").universal? }
 
   def message; <<-EOS.undent
     A universal build was requested, but Python 3 is not a universal build
@@ -79,8 +79,8 @@ class Boost155 < Formula
   option "with-mpi", "Build with MPI support"
   option :cxx11
 
-  depends_on :python => :optional
-  depends_on :python3 => :optional
+  depends_on python: :optional
+  depends_on python3: :optional
   depends_on UniversalPython if build.universal? && build.with?("python")
   depends_on UniversalPython3 if build.universal? && build.with?("python3")
 
@@ -100,7 +100,7 @@ class Boost155 < Formula
     if build.cxx11?
       depends_on "open-mpi" => "c++11"
     else
-      depends_on :mpi => [:cc, :cxx, :optional]
+      depends_on mpi: [:cc, :cxx, :optional]
     end
   end
 

@@ -6,7 +6,7 @@ class Maven31 < Formula
 
   depends_on :java
 
-  conflicts_with "maven", :because => "Differing versions of same formula"
+  conflicts_with "maven", because: "Differing versions of same formula"
 
   def install
     # Remove windows files

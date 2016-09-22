@@ -14,7 +14,7 @@ class Arangodb2 < Formula
   depends_on "go" => :build
   depends_on "openssl"
 
-  conflicts_with "arangodb", :because => "Differing versions of the same formula"
+  conflicts_with "arangodb", because: "Differing versions of the same formula"
 
   needs :cxx11
 
@@ -59,7 +59,7 @@ class Arangodb2 < Formula
     s
   end
 
-  plist_options :manual => "#{HOMEBREW_PREFIX}/opt/arangodb2/sbin/arangod-2.8"
+  plist_options manual: "#{HOMEBREW_PREFIX}/opt/arangodb2/sbin/arangod-2.8"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

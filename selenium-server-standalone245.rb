@@ -4,14 +4,14 @@ class SeleniumServerStandalone245 < Formula
   url "https://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar"
   sha256 "1172dfa2d94b43bcbcd9e85c824fd714f2d1ed411b6919a22e7338879fad757b"
 
-  conflicts_with "selenium-server-standalone", :because => "Differing version of core formula"
+  conflicts_with "selenium-server-standalone", because: "Differing version of core formula"
 
   def install
     libexec.install "selenium-server-standalone-2.45.0.jar"
     bin.write_jar_script libexec/"selenium-server-standalone-2.45.0.jar", "selenium-server"
   end
 
-  plist_options :manual => "selenium-server -p 4444"
+  plist_options manual: "selenium-server -p 4444"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

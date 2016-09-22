@@ -4,7 +4,7 @@ class Kettle54 < Formula
   url "https://downloads.sourceforge.net/project/pentaho/Data%20Integration/5.4/pdi-ce-5.4.0.1-130.zip"
   sha256 "240e72e2227f1e3e4c7b7173a42157a1ba0ef0e2055ffa3122d2f633ca9e14c6"
 
-  conflicts_with "kettle", :because => "Differing versions of the same formula"
+  conflicts_with "kettle", because: "Differing versions of the same formula"
 
   bottle :unneeded
 
@@ -20,7 +20,7 @@ class Kettle54 < Formula
 
     # We don't assume that carte, kitchen or pan are in anyway unique command names so we'll prepend "pdi"
     %w[carte kitchen pan].each do |command|
-      (bin+"pdi#{command}").write_env_script libexec+"#{command}.sh", :BASEDIR => libexec
+      (bin+"pdi#{command}").write_env_script libexec+"#{command}.sh", BASEDIR: libexec
     end
   end
 

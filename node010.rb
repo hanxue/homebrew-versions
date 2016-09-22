@@ -4,7 +4,7 @@ class Node010 < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v0.10.46/node-v0.10.46.tar.xz"
   sha256 "9b0e6079fc3282491028d29ae019fc7ba8de187dc3acda22a5cfd7d145cbffd9"
-  head "https://github.com/nodejs/node.git", :branch => "v0.10-staging"
+  head "https://github.com/nodejs/node.git", branch: "v0.10-staging"
 
   bottle do
     sha256 "c6db723c5b562e7d20d9ba31b650bf4467621fdcf4eabeaf9077c726e0189452" => :el_capitan
@@ -18,7 +18,7 @@ class Node010 < Formula
   option "without-npm", "npm will not be installed"
   option "without-completion", "npm bash completion will not be installed"
 
-  depends_on :python => :build
+  depends_on python: :build
   depends_on "openssl" => :optional
 
   fails_with :llvm do
@@ -31,7 +31,7 @@ class Node010 < Formula
   end
 
   conflicts_with "node",
-    :because => "Differing versions of the same formulae."
+    because: "Differing versions of the same formulae."
 
   def install
     args = %W[--prefix=#{prefix} --without-npm]

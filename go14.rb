@@ -21,7 +21,7 @@ class Go14 < Formula
 
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
-    :revision => "69db398fe0e69396984e3967724820c1f631e971"
+    revision: "69db398fe0e69396984e3967724820c1f631e971"
   end
 
   resource "gobootstrap" do
@@ -77,7 +77,7 @@ class Go14 < Formula
     (buildpath/"pkg/obj").rmtree
     rm_rf "gobootstrap" # Bootstrap not required beyond compile.
     libexec.install Dir["*"]
-    (bin/"go14").write_env_script(libexec/"bin/go", :PATH => "#{libexec}/bin:$PATH")
+    (bin/"go14").write_env_script(libexec/"bin/go", PATH: "#{libexec}/bin:$PATH")
     bin.install_symlink libexec/"bin/gofmt" => "gofmt14"
 
     if build.with?("godoc") || build.with?("vet")

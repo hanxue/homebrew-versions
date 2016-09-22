@@ -19,7 +19,7 @@ class Postgresql94 < Formula
   depends_on "openssl"
   depends_on "readline"
   depends_on "libxml2" if MacOS.version <= :leopard # Leopard libxml is too old
-  depends_on :python => :optional
+  depends_on python: :optional
 
   fails_with :clang do
     build 211
@@ -27,9 +27,9 @@ class Postgresql94 < Formula
   end
 
   conflicts_with "postgres-xc",
-    :because => "postgresql and postgres-xc install the same binaries."
+    because: "postgresql and postgres-xc install the same binaries."
   conflicts_with "postgresql",
-    :because => "Differing versions of the same formula."
+    because: "Differing versions of the same formula."
 
   patch :DATA
 
@@ -108,7 +108,7 @@ class Postgresql94 < Formula
     s
   end
 
-  plist_options :manual => "postgres -D #{HOMEBREW_PREFIX}/var/postgres"
+  plist_options manual: "postgres -D #{HOMEBREW_PREFIX}/var/postgres"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

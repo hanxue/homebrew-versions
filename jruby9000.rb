@@ -4,11 +4,11 @@ class Jruby9000 < Formula
   url "https://s3.amazonaws.com/jruby.org/downloads/9.0.0.0/jruby-bin-9.0.0.0.tar.gz"
   sha256 "655665db3a1dc0462cba99d45532ab57d8416b5f168d8a0081bde9b7a93a394e"
 
-  depends_on :java => "1.7+"
+  depends_on java: "1.7+"
 
-  conflicts_with "jruby", :because => "Differing version of the same formula"
-  conflicts_with "jruby168", :because => "Differing version of the same formula"
-  conflicts_with "jruby1721", :because => "Differing version of the same formula"
+  conflicts_with "jruby", because: "Differing version of the same formula"
+  conflicts_with "jruby168", because: "Differing version of the same formula"
+  conflicts_with "jruby1721", because: "Differing version of the same formula"
 
   def install
     # Remove Windows files

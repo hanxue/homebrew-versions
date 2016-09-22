@@ -11,7 +11,7 @@ class Astyle204 < Formula
     sha256 "98fbe0b2ecc638bc09894bf6def96e9bcab59a501e1373582b8df5435cd7b188" => :mountain_lion
   end
 
-  conflicts_with "astyle", :because => "Differing versions of same formulae"
+  conflicts_with "astyle", because: "Differing versions of same formulae"
 
   def install
     cd "src" do

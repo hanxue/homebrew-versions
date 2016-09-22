@@ -6,14 +6,14 @@ class Elasticsearch23 < Formula
 
   head do
     url "https://github.com/elasticsearch/elasticsearch.git"
-    depends_on :java => "1.8"
+    depends_on java: "1.8"
     depends_on "gradle" => :build
   end
 
   bottle :unneeded
-  depends_on :java => "1.7+"
+  depends_on java: "1.7+"
 
-  conflicts_with "elasticsearch", :because => "Different versions of same formula"
+  conflicts_with "elasticsearch", because: "Different versions of same formula"
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
@@ -82,7 +82,7 @@ class Elasticsearch23 < Formula
     EOS
   end
 
-  plist_options :manual => "elasticsearch"
+  plist_options manual: "elasticsearch"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>

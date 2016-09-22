@@ -5,7 +5,7 @@ class Play22 < Formula
 
   bottle :unneeded
 
-  conflicts_with "sox", :because => "both install `play` binaries"
+  conflicts_with "sox", because: "both install `play` binaries"
 
   def install
     rm_rf Dir["**/*.bat"]

@@ -11,10 +11,10 @@ class Bazel02 < Formula
     sha256 "d1b33ce6f3186c65528ef941fca40cfd7a25b7a4307370975000c51493dce6ce" => :yosemite
   end
 
-  depends_on :java => "1.8+"
-  depends_on :macos => :yosemite
+  depends_on java: "1.8+"
+  depends_on macos: :yosemite
 
-  conflicts_with "bazel", :because => "Differing version of same formula"
+  conflicts_with "bazel", because: "Differing version of same formula"
 
   def install
     ENV["EMBED_LABEL"] = "#{version}-homebrew"

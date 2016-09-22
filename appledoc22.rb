@@ -21,7 +21,7 @@ class Appledoc22 < Formula
   EOS
 
   depends_on :xcode
-  depends_on :macos => :lion
+  depends_on macos: :lion
 
   # Actually works with pre-503 clang, but we don't have a way to
   # express this yet.

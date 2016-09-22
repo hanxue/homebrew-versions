@@ -23,11 +23,11 @@ class Mariadb100 < Formula
   depends_on "pidof" unless MacOS.version >= :mountain_lion
   depends_on "openssl"
 
-  conflicts_with "mariadb", :because => "Differing versions of the same formula"
+  conflicts_with "mariadb", because: "Differing versions of the same formula"
   conflicts_with "mysql", "mysql-cluster", "percona-server",
-    :because => "mariadb, mysql, and percona install the same binaries."
+    because: "mariadb, mysql, and percona install the same binaries."
   conflicts_with "mysql-connector-c",
-    :because => "both install MySQL client libraries"
+    because: "both install MySQL client libraries"
 
   def install
     # Don't hard-code the libtool path. See:
@@ -176,7 +176,7 @@ class Mariadb100 < Formula
     EOS
   end
 
-  plist_options :manual => "mysql.server start"
+  plist_options manual: "mysql.server start"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

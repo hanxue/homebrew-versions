@@ -29,7 +29,7 @@ class Subversion17 < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on :apr => :build
+  depends_on apr: :build
   depends_on :java
 
   # Requires system OpenSSL headers to build. >El Capitan no longer ship them.
@@ -40,7 +40,7 @@ class Subversion17 < Formula
   # Always build against Homebrew versions instead of system versions for consistency.
   # We don't use our OpenSSL because Neon refuses to support it due to wanting SSLv2
   # and using a more recent Neon via disabling the version check results in segfauls at runtime.
-  depends_on :python => :optional
+  depends_on python: :optional
   depends_on "sqlite"
 
   # Building Ruby bindings requires libtool

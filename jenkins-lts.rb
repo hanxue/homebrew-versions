@@ -6,10 +6,10 @@ class JenkinsLts < Formula
 
   bottle :unneeded
 
-  depends_on :java => "1.7+"
+  depends_on java: "1.7+"
 
   conflicts_with "jenkins",
-    :because => "both use the same data directory: $HOME/.jenkins"
+    because: "both use the same data directory: $HOME/.jenkins"
 
   def install
     system "jar", "xvf", "jenkins.war"
@@ -23,7 +23,7 @@ class JenkinsLts < Formula
     EOS
   end
 
-  plist_options :manual => "jenkins-lts"
+  plist_options manual: "jenkins-lts"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

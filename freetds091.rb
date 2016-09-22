@@ -21,7 +21,7 @@ class Freetds091 < Formula
   depends_on "unixodbc" => :optional
   depends_on "openssl" => :recommended
 
-  conflicts_with "freetds", :because => "Differing version of same formula"
+  conflicts_with "freetds", because: "Differing version of same formula"
 
   def install
     system "autoreconf", "-i" if build.head?

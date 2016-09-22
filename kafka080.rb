@@ -5,10 +5,10 @@ class Kafka080 < Formula
   sha256 "f4b7229671aba98dba9a882244cb597aab8a9018631575d28e119725a01cfc9a"
 
   depends_on "zookeeper"
-  depends_on :java => "1.7"
+  depends_on java: "1.7"
 
   conflicts_with "kafka",
-                 :because => "kafka080 and kafka install the same binaries."
+                 because: "kafka080 and kafka install the same binaries."
 
   def install
     ENV.java_cache

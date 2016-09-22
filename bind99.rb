@@ -13,7 +13,7 @@ class Bind99 < Formula
 
   depends_on "openssl"
 
-  conflicts_with "bind", :because => "Differing versions of the same formula"
+  conflicts_with "bind", because: "Differing versions of the same formula"
 
   def install
     ENV.libxml2
@@ -136,7 +136,7 @@ class Bind99 < Formula
     EOS
   end
 
-  plist_options :startup => true
+  plist_options startup: true
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

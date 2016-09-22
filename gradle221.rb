@@ -6,7 +6,7 @@ class Gradle221 < Formula
 
   bottle :unneeded
 
-  conflicts_with "gradle", :because => "Differing version of same formula"
+  conflicts_with "gradle", because: "Differing version of same formula"
 
   def install
     libexec.install %w[bin lib]

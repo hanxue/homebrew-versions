@@ -36,7 +36,7 @@ class Gnuplot4 < Formula
   depends_on "libtiff"
   depends_on "fontconfig"
   depends_on "pango" if (build.with? "cairo") || (build.with? "wxmac")
-  depends_on :x11 => :optional
+  depends_on x11: :optional
   depends_on "pdflib-lite" => :optional
   depends_on "gd" => :recommended
   depends_on "wxmac" => :optional
@@ -67,7 +67,7 @@ class Gnuplot4 < Formula
     ]
 
     args << "--with-pdf=#{pdflib}" if build.with? "pdflib-lite"
-    args << ((build.with? "gd") ? "--with-gd=#{gd}" : "--without-gd")
+    args << (build.with? "gd" ? "--with-gd=#{gd}" : "--without-gd")
 
     if build.without? "wxmac"
       args << "--disable-wxwidgets"
@@ -77,8 +77,8 @@ class Gnuplot4 < Formula
     args << "--enable-qt"             if build.with? "qt"
     args << "--without-lua"           if build.with? "lua"
     args << "--without-lisp-files"    if build.without? "emacs"
-    args << ((build.with? "aquaterm") ? "--with-aquaterm" : "--without-aquaterm")
-    args << ((build.with? "x11") ? "--with-x" : "--without-x")
+    args << (build.with? "aquaterm" ? "--with-aquaterm" : "--without-aquaterm")
+    args << (build.with? "x11" ? "--with-x" : "--without-x")
 
     if build.with? "latex"
       args << "--with-latex"

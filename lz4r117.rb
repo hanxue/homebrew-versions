@@ -12,7 +12,7 @@ class Lz4r117 < Formula
     sha256 "031be16225c00692a6aaa462237d7899ec3435b92b05e20dfdd5781d00a58f08" => :mavericks
   end
 
-  conflicts_with "lz4", :because => "Differing versions of the same formulae"
+  conflicts_with "lz4", because: "Differing versions of the same formulae"
 
   def install
     system "make", "install", "PREFIX=#{prefix}"

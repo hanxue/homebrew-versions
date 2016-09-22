@@ -14,7 +14,7 @@ class Libcouchbase1 < Formula
   depends_on "libevent"
   depends_on "libvbucket"
 
-  conflicts_with "libcouchbase", :because => "Differing versions of the same formula."
+  conflicts_with "libcouchbase", because: "Differing versions of the same formula."
 
   def install
     system "./configure", "--disable-debug",

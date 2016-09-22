@@ -15,7 +15,7 @@ class ClangFormat38 < Formula
   depends_on "ninja" => :build
   depends_on "subversion" => :build
 
-  conflicts_with "clang-format", :because => "Differing versions of the same formula"
+  conflicts_with "clang-format", because: "Differing versions of the same formula"
 
   resource "clang" do
     url "http://llvm.org/releases/3.8.0/cfe-3.8.0.src.tar.xz"
