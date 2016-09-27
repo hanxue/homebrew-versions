@@ -28,11 +28,20 @@ class Subversion18 < Formula
     sha256 "e0500be065dbbce490449837bb2ab624e46d64fc0b090474d9acaa87c82b2590"
   end
 
-  depends_on apr: :build
+  # macOS Sierra ships the APR libraries & headers, but has removed the
+  # apr-1-config & apu-1-config executables which serf demands to find
+  # those elements. We may need to adopt a broader solution if this problem
+  # expands, but currently subversion is the only breakage as a result.
+  if MacOS.version >= :sierra
+    depends_on "apr-util"
+    depends_on "apr"
+  else
+    depends_on :apr => :build
+  end
 
   # Always build against Homebrew versions instead of system versions for consistency.
   depends_on "sqlite"
-  depends_on python: :optional
+  depends_on :python => :optional
 
   # Bindings require swig
   depends_on "swig" if build.with?("perl") || build.with?("python") || build.with?("ruby")
@@ -43,7 +52,7 @@ class Subversion18 < Formula
 
   # Other optional dependencies
   depends_on "gpg-agent" => :optional
-  depends_on java: :optional
+  depends_on :java => :optional
 
   # Fix #23993 by stripping flags swig can't handle from SWIG_CPPFLAGS
   # Prevent "-arch ppc" from being pulled in from Perl's $Config{ccflags}
@@ -66,7 +75,7 @@ class Subversion18 < Formula
   end
 
   def install
-    serf_prefix = libexec+"serf"
+    serf_prefix = libexec/"serf"
 
     resource("serf").stage do
       # SConstruct merges in gssapi linkflags using scons's MergeFlags,
@@ -81,7 +90,7 @@ class Subversion18 < Formula
                 CFLAGS=#{ENV.cflags} LINKFLAGS=#{ENV.ldflags}
                 OPENSSL=#{Formula["openssl"].opt_prefix}]
 
-      unless MacOS::CLT.installed?
+      if MacOS.version >= :sierra || !MacOS::CLT.installed?
         args << "APR=#{Formula["apr"].opt_prefix}"
         args << "APU=#{Formula["apr-util"].opt_prefix}"
       end
@@ -134,7 +143,7 @@ class Subversion18 < Formula
     args << "--enable-javahl" << "--without-jikes" if build.with? "java"
     args << "--without-gpg-agent" if build.without? "gpg-agent"
 
-    if MacOS::CLT.installed?
+    if MacOS::CLT.installed? && MacOS.version < :sierra
       args << "--with-apr=/usr"
       args << "--with-apr-util=/usr"
     else
