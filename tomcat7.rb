@@ -1,8 +1,8 @@
 class Tomcat7 < Formula
   desc "Implementation of Java Servlet and JavaServer Pages"
   homepage "https://tomcat.apache.org/"
-  url "https://www.apache.org/dyn/closer.cgi?path=tomcat/tomcat-7/v7.0.70/bin/apache-tomcat-7.0.70.tar.gz"
-  sha256 "13f33616a3352e4fce548e042adfdd824353d0b48a42e1606daace7916868c74"
+  url "https://www.apache.org/dyn/closer.cgi?path=tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72.tar.gz"
+  sha256 "779c7bba49a9ed3cafc47a87c8f331d2068f2545105fdd1c1076e0357ebda5db"
 
   bottle :unneeded
 
@@ -11,9 +11,9 @@ class Tomcat7 < Formula
   option "with-fulldocs", "Install full documentation locally"
 
   resource "fulldocs" do
-    url "https://www.apache.org/dyn/closer.cgi?path=/tomcat/tomcat-7/v7.0.70/bin/apache-tomcat-7.0.70-fulldocs.tar.gz"
-    version "7.0.70"
-    sha256 "5666f430c1234dec5319b481aaab22f22bb56a5a8a0c00a3aba3d310171e1e25"
+    url "https://www.apache.org/dyn/closer.cgi?path=/tomcat/tomcat-7/v7.0.72/bin/apache-tomcat-7.0.72-fulldocs.tar.gz"
+    version "7.0.72"
+    sha256 "bea99925baa6ac0e940a231655b125f0f1ccdc43c9150ebc3984e8fbf7305975"
   end
 
   # Keep log folders
