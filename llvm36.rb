@@ -69,7 +69,7 @@ class Llvm36 < Formula
   end
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "6f30868fbf5b515118f5f856381ad093adf7f7caac3b2deb21441e71c12c98c8" => :el_capitan
     sha256 "09504fc4a73dc6524ba5c8d3ac9f87bc07595203f7c49126808183f184275cab" => :yosemite
     sha256 "6965cd67562a7b24fccc1d9baefc4f6f5656220d43ffbf86d2b50886c2cd807d" => :mavericks
