@@ -3,6 +3,12 @@ class Ruby192 < Formula
   homepage "http://www.ruby-lang.org/en/"
   url "http://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-p330.tar.bz2"
   sha256 "6d3487ea8a86ad0fa78a8535078ff3c7a91ca9f99eff0a6a08e66c6e6bf2040f"
+  bottle do
+    sha256 "32baaaf3b6daabd0a6ddeb69bc826e8a04d20efda71ede20273b1712f1253c74" => :sierra
+    sha256 "37446bb5b88b3d538b129d0a0008d3a05a8dbb30d4eed3a0e23a274161dd226a" => :el_capitan
+    sha256 "e4ab276308858e8a54b57c02876e3fb4b8435bb3eb3695c1a239563b0dc552be" => :yosemite
+  end
+
   revision 1
 
   depends_on "pkg-config" => :build
