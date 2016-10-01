@@ -3,7 +3,7 @@ class Ruby187 < Formula
   homepage "https://www.ruby-lang.org/"
   url "https://cache.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p374.tar.bz2"
   sha256 "b4e34703137f7bfb8761c4ea474f7438d6ccf440b3d35f39cc5e4d4e239c07e3"
-  revision 1
+  revision 2
 
   bottle do
     sha256 "b4e1438c714bbb068e2923a3122f5e9cf9d016fb9a157a8188dd0fbe4e32332f" => :el_capitan
