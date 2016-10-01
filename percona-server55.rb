@@ -26,16 +26,16 @@ class PerconaServer55 < Formula
   depends_on "openssl"
 
   conflicts_with "mysql",
-    because: "percona-server55 and mysql install the same binaries."
+    :because => "percona-server55 and mysql install the same binaries."
 
   conflicts_with "mariadb",
-    because: "percona-server55 and mariadb install the same binaries."
+    :because => "percona-server55 and mariadb install the same binaries."
 
   conflicts_with "mysql-cluster",
-    because: "percona-server55 and mysql-cluster install the same binaries."
+    :because => "percona-server55 and mysql-cluster install the same binaries."
 
   conflicts_with "percona-server",
-    because: "percona-server55 and percona-server install the same binaries."
+    :because => "percona-server55 and percona-server install the same binaries."
 
   fails_with :llvm do
     build 2334
@@ -147,7 +147,7 @@ class PerconaServer55 < Formula
     EOS
   end
 
-  plist_options manual: "mysql.server start"
+  plist_options :manual => "mysql.server start"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

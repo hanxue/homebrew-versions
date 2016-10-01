@@ -3,7 +3,7 @@ class Node4Lts < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v4.6.0/node-v4.6.0.tar.xz"
   sha256 "42910dbd34e49bfc40580e06753947c30d31101455a38e9f0343a23d67c0c694"
-  head "https://github.com/nodejs/node.git", branch: "v4.x-staging"
+  head "https://github.com/nodejs/node.git", :branch => "v4.x-staging"
 
   bottle do
     sha256 "3f557c2b949b8d8dd3c439d92cc4de6b6960f4680928bd96fe2c85f2c6477ad1" => :sierra
@@ -20,7 +20,7 @@ class Node4Lts < Formula
   depends_on "pkg-config" => :build
   depends_on "openssl" => :optional
 
-  conflicts_with "node", because: "Differing versions of the same formula"
+  conflicts_with "node", :because => "Differing versions of the same formula"
 
   fails_with :llvm do
     build 2326

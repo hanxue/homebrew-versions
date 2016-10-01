@@ -8,12 +8,12 @@ class Valgrind38 < Formula
     sha256 "0dcc7f6f685a66c2fb66f4dc9ecb716a7cf5bab1bc6a63bf16f2f7f0c2c0513a" => :mountain_lion
   end
 
-  depends_on macos: :snow_leopard
+  depends_on :macos => :snow_leopard
   depends_on MaximumMacOSRequirement => :mountain_lion
 
   env :std if :macos == :snow_leopard
 
-  conflicts_with "valgrind", because: "Differing version of same formula"
+  conflicts_with "valgrind", :because => "Differing version of same formula"
 
   # Valgrind needs vcpreload_core-*-darwin.so to have execute permissions.
   # See #2150 for more information.

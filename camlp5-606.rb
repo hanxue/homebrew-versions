@@ -13,7 +13,7 @@ class Camlp5606 < Formula
 
   depends_on "objective-caml312"
 
-  conflicts_with "camlp5", because: "both install an camlp5 binary"
+  conflicts_with "camlp5", :because => "both install an camlp5 binary"
 
   def install
     if build.with? "strict"

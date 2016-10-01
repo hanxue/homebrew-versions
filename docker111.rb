@@ -2,8 +2,8 @@ class Docker111 < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/docker.git",
-      tag: "v1.11.2",
-      revision: "b9f10c951893f9a00865890a5232e85d770c1087"
+      :tag => "v1.11.2",
+      :revision => "b9f10c951893f9a00865890a5232e85d770c1087"
 
   head "https://github.com/docker/docker.git"
 
@@ -19,7 +19,7 @@ class Docker111 < Formula
 
   depends_on "go" => :build
 
-  conflicts_with "docker", because: "Differing version of the same formula"
+  conflicts_with "docker", :because => "Differing version of the same formula"
 
   if build.with? "experimental"
     depends_on "libtool" => :run

@@ -6,9 +6,9 @@ class Nifi021 < Formula
 
   bottle :unneeded
 
-  depends_on java: "1.7+"
+  depends_on :java => "1.7+"
 
-  conflicts_with "nifi", because: "Differing versions of the same formula"
+  conflicts_with "nifi", :because => "Differing versions of the same formula"
 
   def install
     libexec.install Dir["*"]
@@ -16,7 +16,7 @@ class Nifi021 < Formula
     ENV["NIFI_HOME"] = libexec
 
     bin.install libexec/"bin/nifi.sh" => "nifi"
-    bin.env_script_all_files libexec/"bin/", NIFI_HOME: libexec
+    bin.env_script_all_files libexec/"bin/", :NIFI_HOME => libexec
   end
 
   test do

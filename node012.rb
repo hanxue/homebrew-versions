@@ -3,7 +3,7 @@ class Node012 < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/download/release/v0.12.16/node-v0.12.16.tar.xz"
   sha256 "4ce3a862eb28be752fbd65fe032c1d55cbbc1145af39292766eea701f67ba5f6"
-  head "https://github.com/nodejs/node.git", branch: "v0.12-staging"
+  head "https://github.com/nodejs/node.git", :branch => "v0.12-staging"
 
   bottle do
     sha256 "b061702121f736b35cea35e0fa77554153a87a47b6bd3e3fb2cc050d3ff2fc1f" => :sierra

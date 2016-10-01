@@ -15,7 +15,7 @@ class Ppl011 < Formula
   depends_on "homebrew/dupes/m4" => :build if MacOS.version < :leopard
   depends_on "gmp4"
 
-  conflicts_with "ppl10", because: "They install the same binaries"
+  conflicts_with "ppl10", :because => "They install the same binaries"
 
   # https://www.cs.unipr.it/mantis/view.php?id=596
   # https://github.com/Homebrew/homebrew/issues/27431

@@ -36,7 +36,7 @@ class Redis1310 < Formula
     etc.install "redis.conf" unless (etc/"redis.conf").exist?
   end
 
-  plist_options manual: "redis-server #{HOMEBREW_PREFIX}/etc/redis.conf"
+  plist_options :manual => "redis-server #{HOMEBREW_PREFIX}/etc/redis.conf"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

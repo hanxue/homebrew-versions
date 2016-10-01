@@ -3,7 +3,7 @@ class LibmongoclientLegacy < Formula
   url "https://github.com/mongodb/mongo-cxx-driver/archive/legacy-1.1.2.tar.gz"
   sha256 "8c52cae798086c3e9d0e6fe488c3378601db858cc71944b6b83440d8b00298f4"
 
-  head "https://github.com/mongodb/mongo-cxx-driver.git", branch: "legacy"
+  head "https://github.com/mongodb/mongo-cxx-driver.git", :branch => "legacy"
 
   bottle do
     sha256 "9639189d02dd9c71704effdfefa3696f3a95076cc1c91c628940b6ebbe645ccd" => :sierra
@@ -21,7 +21,7 @@ class LibmongoclientLegacy < Formula
     depends_on "boost"
   end
 
-  conflicts_with "libmongoclient", because: "libmongoclient contains 26compat branch"
+  conflicts_with "libmongoclient", :because => "libmongoclient contains 26compat branch"
 
   def install
     ENV.cxx11 if build.cxx11?

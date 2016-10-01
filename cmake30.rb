@@ -3,7 +3,7 @@ class NoExpatFramework < Requirement
     "/Library/Frameworks/expat.framework"
   end
 
-  satisfy build_env: false do
+  satisfy :build_env => false do
     !File.exist? expat_framework
   end
 
@@ -32,12 +32,12 @@ class Cmake30 < Formula
   end
 
   option "without-docs", "Don't build man pages"
-  depends_on python: :build if MacOS.version <= :snow_leopard && build.with?("docs")
+  depends_on :python => :build if MacOS.version <= :snow_leopard && build.with?("docs")
 
   depends_on "qt" => :optional
 
-  conflicts_with "cmake", because: "both install a cmake binary"
-  conflicts_with "cmake31", because: "both install a cmake binary"
+  conflicts_with "cmake", :because => "both install a cmake binary"
+  conflicts_with "cmake31", :because => "both install a cmake binary"
 
   resource "sphinx" do
     url "https://pypi.python.org/packages/source/S/Sphinx/Sphinx-1.2.3.tar.gz"

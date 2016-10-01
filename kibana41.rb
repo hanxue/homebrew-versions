@@ -1,7 +1,7 @@
 class Kibana41 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://github.com/elastic/kibana.git", tag: "v4.1.8", revision: "e4f4c5bef5fbec91f0890bd08f6a622f6c4648ad"
+  url "https://github.com/elastic/kibana.git", :tag => "v4.1.8", :revision => "e4f4c5bef5fbec91f0890bd08f6a622f6c4648ad"
   head "https://github.com/elastic/kibana.git"
 
   bottle do
@@ -10,7 +10,7 @@ class Kibana41 < Formula
     sha256 "ea04294f5933f7d733747f7d78195fd1c1b3dcb87936ae8c622a28f17d59175d" => :mavericks
   end
 
-  conflicts_with "kibana", because: "Different versions of same formula"
+  conflicts_with "kibana", :because => "Different versions of same formula"
 
   resource "node" do
     url "https://nodejs.org/dist/v4.4.4/node-v4.4.4.tar.gz"
@@ -76,7 +76,7 @@ class Kibana41 < Formula
     EOS
   end
 
-  plist_options manual: "kibana"
+  plist_options :manual => "kibana"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

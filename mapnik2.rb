@@ -36,7 +36,7 @@ class Mapnik2 < Formula
   depends_on "cairo" => :optional
   depends_on "py2cairo" if build.with? "cairo"
 
-  conflicts_with "mapnik", because: "Differing versions of the same formula"
+  conflicts_with "mapnik", :because => "Differing versions of the same formula"
 
   def install
     icu = Formula["icu4c"].opt_prefix

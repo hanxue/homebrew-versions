@@ -4,7 +4,7 @@ class Ansible20 < Formula
   url "https://releases.ansible.com/ansible/ansible-2.0.2.0.tar.gz"
   sha256 "373a2e50319d90da50948e3faf1c033464b7302200e0199da8981d24646d4387"
 
-  head "https://github.com/ansible/ansible.git", branch: "stable-2.0"
+  head "https://github.com/ansible/ansible.git", :branch => "stable-2.0"
 
   bottle do
     sha256 "eba392f5b972ff47259e3620f8353261c4825836044b927015c198d5843caa44" => :el_capitan
@@ -23,7 +23,7 @@ class Ansible20 < Formula
   depends_on "libyaml"
   depends_on "openssl"
 
-  conflicts_with "ansible", because: "Differing versions of same formula"
+  conflicts_with "ansible", :because => "Differing versions of same formula"
 
   #
   # ansible (core dependencies)
@@ -584,7 +584,7 @@ class Ansible20 < Formula
 
     man1.install Dir["docs/man/man1/*.1"]
     bin.install Dir["#{libexec}/bin/*"]
-    bin.env_script_all_files(libexec/"bin", PYTHONPATH: ENV["PYTHONPATH"])
+    bin.env_script_all_files(libexec/"bin", :PYTHONPATH => ENV["PYTHONPATH"])
   end
 
   def caveats; <<-EOS.undent

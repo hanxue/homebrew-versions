@@ -19,12 +19,12 @@ class Go16 < Formula
 
   depends_on MaximumMacOSRequirement => :el_capitan
 
-  conflicts_with "go", because: "Differing versions of the same formula"
+  conflicts_with "go", :because => "Differing versions of the same formula"
 
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
-        branch: "release-branch.go1.6",
-        revision: "c887be1b2ebd11663d4bf2fbca508c449172339e"
+        :branch => "release-branch.go1.6",
+        :revision => "c887be1b2ebd11663d4bf2fbca508c449172339e"
   end
 
   resource "gobootstrap" do

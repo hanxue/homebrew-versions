@@ -18,7 +18,7 @@ class Go15 < Formula
 
   resource "gotools" do
     url "https://go.googlesource.com/tools.git",
-    revision: "d02228d1857b9f49cd0252788516ff5584266eb6"
+    :revision => "d02228d1857b9f49cd0252788516ff5584266eb6"
   end
 
   resource "gobootstrap" do
@@ -31,7 +31,7 @@ class Go15 < Formula
     end
   end
 
-  conflicts_with "go", because: "Differing versions of the same formula"
+  conflicts_with "go", :because => "Differing versions of the same formula"
 
   def install
     # GOROOT_FINAL must be overidden later on real Go install

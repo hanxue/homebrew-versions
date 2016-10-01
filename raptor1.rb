@@ -12,7 +12,7 @@ class Raptor1 < Formula
     sha256 "97e90bcc8fce2de88810bde2e136aa10accca4973de418e4c6530f0a4994dfe7" => :mountain_lion
   end
 
-  conflicts_with "raptor", because: "newer version in Homebrew/homebrew ships same binaries"
+  conflicts_with "raptor", :because => "newer version in Homebrew/homebrew ships same binaries"
 
   # Modern cURL versions don't have a types header. Compile fails
   # as it looks for it in make. Patched the header out here, borrowing

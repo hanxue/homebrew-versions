@@ -14,7 +14,7 @@ class Libgee08 < Formula
   depends_on "vala" => :build
   depends_on "gobject-introspection"
 
-  conflicts_with "libgee", because: "Differing versions of the same formula."
+  conflicts_with "libgee", :because => "Differing versions of the same formula."
 
   def install
     system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"

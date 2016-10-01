@@ -17,9 +17,9 @@ class Iojs < Formula
 
   depends_on "pkg-config" => :build
   depends_on "openssl" => :optional
-  depends_on python: :build if MacOS.version <= :snow_leopard
+  depends_on :python => :build if MacOS.version <= :snow_leopard
 
-  conflicts_with "node", because: "Differing release line of the node formula"
+  conflicts_with "node", :because => "Differing release line of the node formula"
 
   fails_with :llvm do
     build 2326

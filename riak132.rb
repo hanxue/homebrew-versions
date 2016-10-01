@@ -5,8 +5,8 @@ class Riak132 < Formula
   version "1.3.2"
   sha256 "3a31e7dd00487b4758307d9932a508401ed1763ed3360cbe8ca9615e2ffd7c0e"
 
-  depends_on macos: :mountain_lion
-  depends_on arch: :x86_64
+  depends_on :macos => :mountain_lion
+  depends_on :arch => :x86_64
   depends_on "erlang"
   depends_on "openssl"
 

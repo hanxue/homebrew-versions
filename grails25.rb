@@ -8,7 +8,7 @@ class Grails25 < Formula
 
   depends_on :java
 
-  conflicts_with "grails", because: "Differing versions of the same formula"
+  conflicts_with "grails", :because => "Differing versions of the same formula"
 
   def install
     rm_f Dir["bin/*.bat", "bin/cygrails", "*.bat"]

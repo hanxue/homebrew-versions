@@ -11,7 +11,7 @@ class Virtuoso616 < Formula
   end
 
   head do
-    url "https://github.com/openlink/virtuoso-opensource.git", branch: "develop/6"
+    url "https://github.com/openlink/virtuoso-opensource.git", :branch => "develop/6"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -22,7 +22,7 @@ class Virtuoso616 < Formula
   depends_on "gawk" => :build
   depends_on "openssl"
 
-  conflicts_with "unixodbc", because: "Both install `isql` binaries."
+  conflicts_with "unixodbc", :because => "Both install `isql` binaries."
 
   skip_clean :la
 

@@ -5,7 +5,7 @@ class GitTf202 < Formula
 
   bottle :unneeded
 
-  conflicts_with "git-tf", because: "two different versions of the same library"
+  conflicts_with "git-tf", :because => "two different versions of the same library"
 
   def install
     libexec.install "git-tf"

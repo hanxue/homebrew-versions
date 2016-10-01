@@ -30,15 +30,15 @@ class Gnupg21 < Formula
   depends_on "homebrew/fuse/encfs" => :optional
 
   conflicts_with "gnupg2",
-        because: "GPG2.1.x is incompatible with the 2.0.x branch."
+        :because => "GPG2.1.x is incompatible with the 2.0.x branch."
   conflicts_with "gpg-agent",
-        because: "GPG2.1.x ships an internal gpg-agent which it must use."
+        :because => "GPG2.1.x ships an internal gpg-agent which it must use."
   conflicts_with "dirmngr",
-        because: "GPG2.1.x ships an internal dirmngr which it it must use."
+        :because => "GPG2.1.x ships an internal dirmngr which it it must use."
   conflicts_with "fwknop",
-        because: "fwknop expects to use a `gpgme` with Homebrew/Homebrew's gnupg2."
+        :because => "fwknop expects to use a `gpgme` with Homebrew/Homebrew's gnupg2."
   conflicts_with "gpgme",
-        because: "gpgme currently requires 1.x.x or 2.0.x."
+        :because => "gpgme currently requires 1.x.x or 2.0.x."
 
   def install
     ENV.append "LDFLAGS", "-lresolv"

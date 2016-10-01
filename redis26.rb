@@ -17,7 +17,7 @@ class Redis26 < Formula
   end
 
   conflicts_with "redis",
-                 because: "Differing version of Homebrew/homebrew Redis"
+                 :because => "Differing version of Homebrew/homebrew Redis"
 
   def install
     # Architecture isn't detected correctly on 32bit Snow Leopard without help
@@ -40,7 +40,7 @@ class Redis26 < Formula
     etc.install "redis.conf" unless (etc/"redis.conf").exist?
   end
 
-  plist_options manual: "redis-server #{HOMEBREW_PREFIX}/etc/redis.conf"
+  plist_options :manual => "redis-server #{HOMEBREW_PREFIX}/etc/redis.conf"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

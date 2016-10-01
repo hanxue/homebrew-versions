@@ -8,11 +8,11 @@ class AndroidNdkR10e < Formula
   bottle :unneeded
 
   # As of r10e, only a 64-bit version is provided
-  depends_on arch: :x86_64
+  depends_on :arch => :x86_64
   depends_on "android-sdk" => :recommended
 
   conflicts_with "crystax-ndk",
-    because: "both install `ndk-build`, `ndk-gdb` and `ndk-stack` binaries"
+    :because => "both install `ndk-build`, `ndk-gdb` and `ndk-stack` binaries"
 
   def install
     bin.mkpath

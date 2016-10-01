@@ -41,37 +41,37 @@ class Llvm33 < Formula
   end
 
   head do
-    url "http://llvm.org/git/llvm.git", branch: "release_33"
+    url "http://llvm.org/git/llvm.git", :branch => "release_33"
 
     resource "clang" do
-      url "http://llvm.org/git/clang.git", branch: "release_33"
+      url "http://llvm.org/git/clang.git", :branch => "release_33"
     end
 
     resource "clang-tools-extra" do
-      url "http://llvm.org/git/clang-tools-extra.git", branch: "release_33"
+      url "http://llvm.org/git/clang-tools-extra.git", :branch => "release_33"
     end
 
     resource "compiler-rt" do
-      url "http://llvm.org/git/compiler-rt.git", branch: "release_33"
+      url "http://llvm.org/git/compiler-rt.git", :branch => "release_33"
     end
 
     resource "polly" do
-      url "http://llvm.org/git/polly.git", branch: "release_33"
+      url "http://llvm.org/git/polly.git", :branch => "release_33"
     end
 
     resource "libcxx" do
-      url "http://llvm.org/git/libcxx.git", branch: "release_33"
+      url "http://llvm.org/git/libcxx.git", :branch => "release_33"
     end
   end
 
   if MacOS.version <= :snow_leopard
     # Not tarball release for libc++abi yet. Using latest branch.
     resource "libcxxabi" do
-      url "http://llvm.org/git/libcxxabi.git", branch: "release_32"
+      url "http://llvm.org/git/libcxxabi.git", :branch => "release_32"
     end
 
     resource "clang-unwind-patch" do
-      url "http://llvm.org/viewvc/llvm-project/cfe/trunk/lib/Headers/unwind.h?r1=172666&r2=189535&view=patch", using: :nounzip
+      url "http://llvm.org/viewvc/llvm-project/cfe/trunk/lib/Headers/unwind.h?r1=172666&r2=189535&view=patch", :using => :nounzip
       sha256 "3e54779e8764cd6c8c4547fbea23838d4af7f3da5eee214e361db4c13d715456"
     end
   end

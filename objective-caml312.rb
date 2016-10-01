@@ -12,7 +12,7 @@ class ObjectiveCaml312 < Formula
 
   depends_on :x11 # Mandatory or compile = nope.
 
-  conflicts_with "objective-caml", because: "both install an ocaml binary"
+  conflicts_with "objective-caml", :because => "both install an ocaml binary"
 
   patch do
     url "http://caml.inria.fr/mantis/file_download.php?file_id=723&type=bug"

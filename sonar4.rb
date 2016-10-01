@@ -31,7 +31,7 @@ class Sonar4 < Formula
     end
   end
 
-  plist_options manual: "sonar console"
+  plist_options :manual => "sonar console"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

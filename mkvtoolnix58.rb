@@ -9,7 +9,7 @@ class Mkvtoolnix58 < Formula
     sha256 "c58a9c895e5a915c7c8de33a61392e25d40717a103032adbf53c559d75d6d7df" => :mavericks
   end
 
-  depends_on ruby: "1.9"
+  depends_on :ruby => "1.9"
   depends_on "pkg-config" => :build
   depends_on "libvorbis"
   depends_on "flac" => :optional

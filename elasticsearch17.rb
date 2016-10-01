@@ -6,7 +6,7 @@ class Elasticsearch17 < Formula
 
   bottle :unneeded
 
-  depends_on java: "1.7+"
+  depends_on :java => "1.7+"
 
   def cluster_name
     "elasticsearch_#{ENV["USER"]}"
@@ -72,7 +72,7 @@ class Elasticsearch17 < Formula
     EOS
   end
 
-  plist_options manual: "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch17/config/elasticsearch.yml"
+  plist_options :manual => "elasticsearch --config=#{HOMEBREW_PREFIX}/opt/elasticsearch17/config/elasticsearch.yml"
 
   def plist; <<-EOS.undent
       <?xml version="1.0" encoding="UTF-8"?>

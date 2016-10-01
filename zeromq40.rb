@@ -18,7 +18,7 @@ class Zeromq40 < Formula
   depends_on "libpgm" => :optional
   depends_on "libsodium" => :optional
 
-  conflicts_with "zeromq", because: "Differing version of the same formula"
+  conflicts_with "zeromq", :because => "Differing version of the same formula"
 
   def install
     ENV.universal_binary if build.universal?

@@ -17,7 +17,7 @@ class BoostPython159 < Formula
   option :cxx11
 
   option "without-python", "Build without python 2 support"
-  depends_on python3: :optional
+  depends_on :python3 => :optional
 
   if build.cxx11?
     depends_on "boost159" => "c++11"

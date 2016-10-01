@@ -1,10 +1,10 @@
 class Kibana44 < Formula
   desc "Analytics and search dashboard for Elasticsearch"
   homepage "https://www.elastic.co/products/kibana"
-  url "https://github.com/elastic/kibana.git", tag: "v4.4.2", revision: "b0ef773a465d0eb27d192ca77f881eba90ef93d5"
+  url "https://github.com/elastic/kibana.git", :tag => "v4.4.2", :revision => "b0ef773a465d0eb27d192ca77f881eba90ef93d5"
   head "https://github.com/elastic/kibana.git"
 
-  conflicts_with "kibana", because: "Different versions of same formula"
+  conflicts_with "kibana", :because => "Different versions of same formula"
 
   bottle do
     sha256 "f0e5591eb069135d45391f1a923cb60aa70c07dc51a1f6fb71e3a0f0f09d7268" => :el_capitan
@@ -67,7 +67,7 @@ class Kibana44 < Formula
     (prefix/"installedPlugins").mkdir
   end
 
-  plist_options manual: "kibana"
+  plist_options :manual => "kibana"
 
   def caveats; <<-EOS.undent
     Config: #{etc}/kibana/

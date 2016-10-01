@@ -36,7 +36,7 @@ class Gnuplot4 < Formula
   depends_on "libtiff"
   depends_on "fontconfig"
   depends_on "pango" if (build.with? "cairo") || (build.with? "wxmac")
-  depends_on x11: :optional
+  depends_on :x11 => :optional
   depends_on "pdflib-lite" => :optional
   depends_on "gd" => :recommended
   depends_on "wxmac" => :optional

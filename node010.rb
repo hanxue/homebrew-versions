@@ -4,7 +4,7 @@ class Node010 < Formula
   homepage "https://nodejs.org/"
   url "https://nodejs.org/dist/v0.10.47/node-v0.10.47.tar.xz"
   sha256 "335bdf4db702885a8acaf2c9f241c70cabd62497361da81aca65c8e8a8e7ff09"
-  head "https://github.com/nodejs/node.git", branch: "v0.10-staging"
+  head "https://github.com/nodejs/node.git", :branch => "v0.10-staging"
 
   bottle do
     sha256 "fe2f262c63955708a31aaaea2c96f3e8c68bcbaacdebb6b29c632b724b55d828" => :sierra

@@ -24,7 +24,7 @@ class ErlangR19 < Formula
   depends_on "fop" => :optional # enables building PDF docs
   depends_on "wxmac" => :optional # for GUI apps like observer
 
-  conflicts_with "erlang", because: "Different version of same formula"
+  conflicts_with "erlang", :because => "Different version of same formula"
 
   resource "man" do
     url "http://www.erlang.org/download/otp_doc_man_19.0.tar.gz"

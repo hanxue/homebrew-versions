@@ -19,14 +19,14 @@ class Mongodb30 < Formula
 
   depends_on "boost" => :optional
   depends_on "go" => :build
-  depends_on macos: :mountain_lion
+  depends_on :macos => :mountain_lion
   depends_on "scons" => :build
   depends_on "openssl" => :optional
 
   go_resource "github.com/mongodb/mongo-tools" do
     url "https://github.com/mongodb/mongo-tools.git",
-      tag: "r3.0.12",
-      revision: "81c527a658a687b83564dfb9767df64420e9bcab"
+      :tag => "r3.0.12",
+      :revision => "81c527a658a687b83564dfb9767df64420e9bcab"
   end
 
   def install
@@ -90,7 +90,7 @@ class Mongodb30 < Formula
     EOS
   end
 
-  plist_options manual: "mongod --config #{HOMEBREW_PREFIX}/etc/mongod.conf"
+  plist_options :manual => "mongod --config #{HOMEBREW_PREFIX}/etc/mongod.conf"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>

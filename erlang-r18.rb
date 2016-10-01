@@ -22,10 +22,10 @@ class ErlangR18 < Formula
   depends_on "libtool" => :build
   depends_on "openssl"
   depends_on "fop" => :optional # enables building PDF docs
-  depends_on java: :optional
+  depends_on :java => :optional
   depends_on "wxmac" => :recommended # for GUI apps like observer
 
-  conflicts_with "erlang", because: "Different version of same formula"
+  conflicts_with "erlang", :because => "Different version of same formula"
 
   fails_with :llvm
 

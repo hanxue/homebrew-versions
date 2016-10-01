@@ -6,14 +6,14 @@ class Logstash23 < Formula
 
   head do
     url "https://github.com/elastic/logstash.git"
-    depends_on java: "1.8"
+    depends_on :java => "1.8"
   end
 
   bottle :unneeded
 
-  depends_on java: "1.7+"
+  depends_on :java => "1.7+"
 
-  conflicts_with "logstash", because: "Different versions of same formula"
+  conflicts_with "logstash", :because => "Different versions of same formula"
 
   def install
     if build.head?

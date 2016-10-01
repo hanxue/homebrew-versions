@@ -76,7 +76,7 @@ class Ffmpeg28 < Formula
   depends_on "dcadec" => :optional
 
   conflicts_with "ffmpeg",
-                 because: "both install the same binaries"
+                 :because => "both install the same binaries"
 
   def install
     args = ["--prefix=#{prefix}",

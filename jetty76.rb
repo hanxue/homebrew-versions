@@ -12,7 +12,7 @@ class Jetty76 < Formula
     sha256 "d1036c8ad02f4b7c40abecf247e5fbbd9764a6c577f1033642eaacec8156c31f" => :mountain_lion
   end
 
-  conflicts_with "jetty", because: "Differing version of same formula"
+  conflicts_with "jetty", :because => "Differing version of same formula"
 
   def install
     rm_rf Dir["bin/*.{cmd,bat]}"]
