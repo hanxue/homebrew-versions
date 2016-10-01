@@ -7,7 +7,7 @@ class Go14 < Formula
   sha256 "9947fc705b0b841b5938c48b22dc33e9647ec0752bae66e50278df4f23f64959"
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "cb0b484f72595448782f9310cc20ee232ec995d8bc2f526f2f8dc3db5067ca59" => :el_capitan
     sha256 "fbc83a42718bd0fbb64261e90eb6f9f7149645edf3404cd0109b4479be88162e" => :yosemite
     sha256 "171aa236e64a1e67d181da21cdb24beb14cb2505647c748a73f78f5753c677e6" => :mavericks
