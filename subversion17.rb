@@ -6,7 +6,7 @@ class Subversion17 < Formula
   revision 1
 
   bottle do
-    revision 2
+    rebuild 2
     sha256 "a23dd79e9755459fa60c24a7fa384e9773390aacecbcf37015e65fcb13561877" => :yosemite
     sha256 "0d5c2a17b11d7382f5a3ee85283ebfb1ec181b4005e6e2e27bb920311f22d290" => :mavericks
     sha256 "02a0b33757eb922373afdb7bc0710772b1bd1a13796ef78f805dfd849722b73a" => :mountain_lion
