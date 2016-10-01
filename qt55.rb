@@ -55,7 +55,7 @@ class Qt55 < Formula
   end
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "9e0b3642d2dfb09c7153429bd046247a381bc4293f196ab05cd4bc7d887ec960" => :el_capitan
     sha256 "7c44ea0260869c8e800881ebe2dd0ea0e19929411335b327c8e87c7ae9d13047" => :yosemite
     sha256 "b3df300d7ce1a469ef9f1e94178633a6085afffababdc6859f8d1fca54c932dd" => :mavericks
