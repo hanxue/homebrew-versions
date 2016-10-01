@@ -3,6 +3,7 @@ class Ruby20 < Formula
   homepage "https://www.ruby-lang.org/"
   url "https://cache.ruby-lang.org/pub/ruby/2.0/ruby-2.0.0-p648.tar.bz2"
   sha256 "087ad4dec748cfe665c856dbfbabdee5520268e94bb81a1d8565d76c3cc62166"
+  revision 1
 
   bottle do
     sha256 "4fe2f216254bf42f9a9e45f8805e5f857013a0f4d42d4210d5e60b897dde2ca0" => :el_capitan
