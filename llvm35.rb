@@ -50,7 +50,7 @@ class Llvm35 < Formula
   end
 
   bottle do
-    revision 4
+    rebuild 4
     sha256 "0049fccd96ac0047c3619e9262945cb8d87512a75791c9dcb7ddc16a8cc81062" => :el_capitan
     sha256 "f85175cebf2e08b80383dceb057fbd5c986c2c0803b98211c49974a67dabfbba" => :yosemite
     sha256 "ad1df4e607f8766d2d594cdc7edfe9f225de00e0ed8080f76e9e9fe3f542a90b" => :mavericks
