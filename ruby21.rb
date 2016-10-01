@@ -1,8 +1,8 @@
 class Ruby21 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.9.tar.bz2"
-  sha256 "4f21376aa11e09b499c3254bbd839e68e053c0d18e28d61c428a32347269036e"
+  url "https://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.10.tar.bz2"
+  sha256 "a74675578a9a801ac25eb7152bef3023432d6267f875b198eb9cd6944a5bf4f1"
 
   bottle do
     sha256 "4ecbacee3a08c5d0ee2d0746094253361c5c2c4d6bcb7d9cc5fbab6ad577579b" => :el_capitan
