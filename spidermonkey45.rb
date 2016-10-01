@@ -17,6 +17,8 @@ class Spidermonkey45 < Formula
     sha256 "2ac3b74f9dac8bb478107241beec252f0a175aad3b852b17f3deed8b010a2434" => :mavericks
   end
 
+  revision 1
+
   depends_on "readline"
   depends_on "nspr"
   depends_on "icu4c"
