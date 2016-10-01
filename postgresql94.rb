@@ -5,10 +5,9 @@ class Postgresql94 < Formula
   sha256 "c120a62e90214c20d9160da3ca3fbaec97d5f1656f1dd033f60e7297b7a1e1c9"
 
   bottle do
-    rebuild 1
-    sha256 "16ed0f6837096cac0fab926ac36ca88461f12d640be0dcaf7482c0b907852aa8" => :el_capitan
-    sha256 "b48ac1cc7ea1c123800873ef5b79ce5be2d15b602f6afad0e71a83fad68fae18" => :yosemite
-    sha256 "89e575a4f2d805a1b7c2b9c44eac6087059cfd28dcf667aa0c4c2262e34d3c3f" => :mavericks
+    sha256 "29478f6c29e47219bf9759921dce3286aaea2fbc6ca35624d8dbc2a185891710" => :sierra
+    sha256 "92cc910081bc9098488ffe0fbe1ba3d9b17a16a45c768a471e385e43b5985943" => :el_capitan
+    sha256 "6adb9f87b93d61f64d29f4f4b8336f6c30c68d8b98d11325cf5de6a81254303a" => :yosemite
   end
 
   revision 1
