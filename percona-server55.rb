@@ -12,6 +12,8 @@ class PerconaServer55 < Formula
     sha256 "f3cc42afd6def0a236696d10366ab4f98f9894caefdc9538f21b9b0ef202b734" => :mavericks
   end
 
+  revision 1
+
   option :universal
   option "with-tests", "Build with unit tests"
   option "with-embedded", "Build the embedded server"
