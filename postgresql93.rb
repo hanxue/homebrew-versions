@@ -11,6 +11,8 @@ class Postgresql93 < Formula
     sha256 "73bd984f6a03781442ffe7750297919f12c2f410090c2cdf4bfc07f7fdca0f24" => :mavericks
   end
 
+  revision 1
+
   option "32-bit"
   option "without-perl", "Build without Perl support"
   option "without-tcl", "Build without Tcl support"
