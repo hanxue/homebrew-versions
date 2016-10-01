@@ -28,7 +28,7 @@ class Gcc48 < Formula
   head "svn://gcc.gnu.org/svn/gcc/branches/gcc-4_8-branch"
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "8cf53c3b1f03049538b9f78ea1ffe7ebf21fcc99a3b4147e4ede8defefc4cef4" => :el_capitan
     sha256 "ae30faa242deae02d46bc92a318e0f0b8f6f0754521fec2225c2fb0403022e31" => :yosemite
     sha256 "0bc974cb0c23ed4ca3536eb2b5e7f11e692a5e6246d99b82ad74880685f42736" => :mavericks
