@@ -3,7 +3,7 @@ class Ruby193 < Formula
   homepage "https://www.ruby-lang.org/"
   url "https://cache.ruby-lang.org/pub/ruby/1.9/ruby-1.9.3-p551.tar.bz2"
   sha256 "b0c5e37e3431d58613a160504b39542ec687d473de1d4da983dabcf3c5de771e"
-  revision 2
+  revision 4
 
   bottle do
     sha256 "37b47d24dadddcd0f8571e108753d3e3f0131642629331eaf1c2d13fcef1faa6" => :el_capitan
