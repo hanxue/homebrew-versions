@@ -34,7 +34,7 @@ class Llvm33 < Formula
   end
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "5c6a3bb358f33665ec6dbd47edcfcdf654b7137be6034a3f1c5c11e7fee61af2" => :yosemite
     sha256 "e7ecd19ec38bf9572af232d3374432d8dda9722fab39bab76afdc884c63ed789" => :mavericks
     sha256 "eeec3d9cfe71b297a28ee1a9b25d27154c19bb3e25f6fdbc5599ae891175790f" => :mountain_lion
