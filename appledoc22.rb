@@ -9,7 +9,7 @@ class Appledoc22 < Formula
   sha256 "0ec881f667dfe70d565b7f1328e9ad4eebc8699ee6dcd381f3bd0ccbf35c0337"
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "8ce8785d092cd3cf22ad0266ba51c7cb514e381a6481305572db170a2a5b5f8e" => :yosemite
     sha256 "3ff1135e32ec900932270ce5353baf906a85c86a20c1bc6ef3b93c4d50439d89" => :mavericks
     sha256 "a1b3d3a41cc2080dc2bf9e4d3907166e994d0c22dcf0ad323e243184f54fce09" => :mountain_lion
