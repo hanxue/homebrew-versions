@@ -5,7 +5,7 @@ class Qt52 < Formula
   sha256 "84e924181d4ad6db00239d87250cc89868484a14841f77fb85ab1f1dbdcd7da1"
 
   bottle do
-    revision 1
+    rebuild 1
     sha256 "daaaa01ffcd89cf498b54b4e505e8e8271a636d38610cd636ae605ebd80bc47f" => :mavericks
   end
 
