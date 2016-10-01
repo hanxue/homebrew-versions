@@ -28,7 +28,7 @@ class Gcc49 < Formula
   head "svn://gcc.gnu.org/svn/gcc/branches/gcc-4_9-branch"
 
   bottle do
-    revision 3
+    rebuild 3
     sha256 "0acf2b010e3c2210fcb5fdc03de9dc14f0556cf5295347d8f72f2d8d1cfab4ff" => :el_capitan
     sha256 "5b635a24e9f7464fb94d2933b00a8d1b1cfc0efb1de140fe568e313d24965140" => :yosemite
     sha256 "dc24f86a9652fbb0ec0bc9dd0103d23bb68c315bd490ee5d0b10a7144453ecc4" => :mavericks
