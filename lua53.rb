@@ -6,9 +6,10 @@ class Lua53 < Formula
 
   bottle do
     cellar :any
-    sha256 "56ec46f48303ede0210a6f5cb0ebb82ffd088002e12c3698271af946b3460eeb" => :el_capitan
-    sha256 "df3c611fc103491b9aeb5357bcd2a49830e72bdd89d73827acf32da7ebc136a7" => :yosemite
-    sha256 "df14dde529876d335709841750c65e2216038819fae2efe3cffdcb4057812e57" => :mavericks
+    rebuild 1
+    sha256 "5eff9815f5db76ad773afa19dbb5202ea41444617a895994318d58ad99c63db5" => :sierra
+    sha256 "62b7cc7f2f7cf140a66202fb4cafe9dd302560ff19e01ead92ff5498bb6a6a84" => :el_capitan
+    sha256 "8f10da97b1335139ac0632b6c4ac83079e36fb20b1e8d39290598bdbb57739c7" => :yosemite
   end
 
   fails_with :llvm do
