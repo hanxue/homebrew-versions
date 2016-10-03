@@ -3,7 +3,7 @@ class Mapnik2 < Formula
   homepage "http://www.mapnik.org/"
   url "https://s3.amazonaws.com/mapnik/dist/v2.2.0/mapnik-v2.2.0.tar.bz2"
   sha256 "9b30de4e58adc6d5aa8478779d0a47fdabe6bf8b166b67a383b35f5aa5d6c1b0"
-  revision 2
+  revision 3
 
   bottle do
     sha256 "b555f843463c44234c82571c15cd9cc8345a8c30cea415cccbaccfd273beae55" => :el_capitan
