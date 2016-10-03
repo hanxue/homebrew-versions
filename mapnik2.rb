@@ -6,9 +6,9 @@ class Mapnik2 < Formula
   revision 3
 
   bottle do
-    sha256 "b555f843463c44234c82571c15cd9cc8345a8c30cea415cccbaccfd273beae55" => :el_capitan
-    sha256 "0b98b9139c184c9d58cab3fd510df54a17ca722e15897ba20dabecd13a3c641a" => :yosemite
-    sha256 "841a6ad2f0458ce1e0829e729a59ddb34689072692eb2704dc983eaad93fc16a" => :mavericks
+    sha256 "bd5985de004f83740308b23eb6e168d61babf6f6150293d0aa87a4f10d117eaa" => :sierra
+    sha256 "24d15c676a305843a7f33ab5239838a48edaa5f9de264858a4ae23642fb40514" => :el_capitan
+    sha256 "0861497b515ce96d66af6ab74c2cef5e4815aa592886668ea32120096fab4db4" => :yosemite
   end
 
   # compile error in bindings/python/mapnik_text_placement.cpp
