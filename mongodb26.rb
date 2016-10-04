@@ -1,8 +1,8 @@
 class Mongodb26 < Formula
   desc "High-performance document-oriented database"
   homepage "https://www.mongodb.org/"
-  url "https://fastdl.mongodb.org/src/mongodb-src-r2.6.11.tar.gz"
-  sha256 "e1a64a1ef7114f3e8ed3c7acaa4e97ffe30e2b57a1a5f2a40f0018bad3b8d12f"
+  url "https://fastdl.mongodb.org/src/mongodb-src-r2.6.12.tar.gz"
+  sha256 "2dd51eabcfcd133573be74c0131c85b67764042833e7d94077e86adc0b9406dc"
 
   bottle do
     cellar :any_skip_relocation
@@ -18,16 +18,10 @@ class Mongodb26 < Formula
   depends_on "boost" => :optional
   depends_on "openssl" => :optional
 
-  # Review this patch with each release.
-  # This modifies the SConstruct file to include 10.10 and 10.11 as accepted build options.
-  if MacOS.version >= :yosemite
-    patch do
-      url "https://gist.githubusercontent.com/asmarques/4e4e66121dbe46a08933/raw/d6753551ff3849bf0fb5ca87c0a96e1255f4254d/mongodb26-elcapitan.diff"
-      sha256 "2f79588a8a15660908d8d071655541c9ab0ac425550b02dc454c861c75f86606"
-    end
-  end
-
   def install
+    # This modifies the SConstruct file to include 10.10, 10.11, and 10.12 osx versions as accepted build options.
+    inreplace "SConstruct", /osx_version_choices = \[.+?\]/, "osx_version_choices = ['10.6', '10.7', '10.8', '10.9', '10.10', '10.11', '10.12']"
+
     args = %W[
       --prefix=#{prefix}
       -j#{ENV.make_jobs}
