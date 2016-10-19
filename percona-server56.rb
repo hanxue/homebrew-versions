@@ -1,9 +1,9 @@
 class PerconaServer56 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https://www.percona.com"
-  url "https://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-5.6.28-76.1/source/tarball/percona-server-5.6.28-76.1.tar.gz"
-  version "5.6.28-76.1"
-  sha256 "ab8ab794a58a82132645ae84b74de91c7f9a5bcf81f2162628ce8976a00a4fd4"
+  url "https://www.percona.com/downloads/Percona-Server-5.6/Percona-Server-5.6.33-79.0/source/tarball/percona-server-5.6.33-79.0.tar.gz"
+  version "5.6.33-79.0"
+  sha256 "ed8372340740faca1f58735938823eaf65ffbda64a5c65b18d187b959afbd34e"
 
   bottle do
     sha256 "29cf79333367a520b823559f1a8695721b28ec50ab0ac593a284fdffe5bfe954" => :el_capitan
@@ -111,7 +111,7 @@ class PerconaServer56 < Formula
     # Build with local infile loading support
     args << "-DENABLED_LOCAL_INFILE=1" if build.with? "local-infile"
 
-    system "cmake", *args
+    system "cmake", ".", *std_cmake_args, *args
     system "make"
     system "make", "install"
 
