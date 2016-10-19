@@ -4,6 +4,12 @@ class Vim74 < Formula
   url "https://github.com/vim/vim/archive/v7.4.2367.tar.gz"
   sha256 "a9ae4031ccd73cc60e771e8bf9b3c8b7f10f63a67efce7f61cd694cd8d7cda5c"
 
+  bottle do
+    sha256 "756846cbc93de6d7d52f2b160aa13cc92e79ad87cb3489ca46613d93b4aba823" => :sierra
+    sha256 "5e276eaeb95437cc53829f0c38996ea9d69f272b6868378ced5d95f8884c41f4" => :el_capitan
+    sha256 "2550cf8ea38c0ea5076b2fd1616ff0abeb1b429c8c1b291b1635f7bc09c73b8b" => :yosemite
+  end
+
   option "with-override-system-vi", "Override system vi"
   option "without-nls", "Build vim without National Language Support (translated messages, keymaps)"
   option "with-client-server", "Enable client/server mode"
