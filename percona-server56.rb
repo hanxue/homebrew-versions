@@ -79,7 +79,7 @@ class PerconaServer56 < Formula
     ]
 
     # PAM plugin is Linux-only at the moment
-    args.concat %W[
+    args.concat %w[
       -DWITHOUT_AUTH_PAM=1
       -DWITHOUT_AUTH_PAM_COMPAT=1
       -DWITHOUT_DIALOG=1
@@ -87,7 +87,7 @@ class PerconaServer56 < Formula
 
     # TokuDB is broken on MacOsX
     # https://bugs.launchpad.net/percona-server/+bug/1531446
-    args.concat %W[-DWITHOUT_TOKUDB=1]
+    args.concat %w[-DWITHOUT_TOKUDB=1]
 
     # To enable unit testing at build, we need to download the unit testing suite
     if build.with? "test"
