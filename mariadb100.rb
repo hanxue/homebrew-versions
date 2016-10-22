@@ -144,7 +144,7 @@ class Mariadb100 < Formula
       libexec.mkpath
       libexec.install "#{bin}/wsrep_sst_common"
       # Fix up references to wsrep_sst_common
-      %W[
+      %w[
         wsrep_sst_mysqldump
         wsrep_sst_rsync
         wsrep_sst_xtrabackup
