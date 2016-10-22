@@ -24,7 +24,7 @@ class Play14 < Formula
       stdin.write "\n"
       stdin.close
     end
-    %W[app conf lib public test].each do |d|
+    %w[app conf lib public test].each do |d|
       File.directory? testpath/"app/#{d}"
     end
   end
