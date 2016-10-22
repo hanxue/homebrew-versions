@@ -29,7 +29,7 @@ class Glfw3 < Formula
     # make library name consistent
     inreplace "CMakeLists.txt", /set\(GLFW_LIB_NAME\sglfw\)\n.*else\(\)\n/, ""
 
-    args = std_cmake_args + %W[
+    args = std_cmake_args + %w[
       -DGLFW_USE_CHDIR=TRUE
       -DGLFW_USE_MENUBAR=TRUE
     ]
