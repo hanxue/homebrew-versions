@@ -40,7 +40,7 @@ class Mongodb30 < Formula
       # https://github.com/Homebrew/homebrew/issues/40136
       inreplace "build.sh", '-ldflags "-X github.com/mongodb/mongo-tools/common/options.Gitspec=`git rev-parse HEAD` -X github.com/mongodb/mongo-tools/common/options.VersionStr=$(git describe)"', ""
 
-      args = %W[]
+      args = %w[]
 
       if build.with? "openssl"
         args << "ssl"
