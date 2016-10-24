@@ -4,6 +4,12 @@ class Node6Lts < Formula
   url "https://nodejs.org/dist/v6.9.1/node-v6.9.1.tar.xz"
   sha256 "0bdd8d1305777cc8cd206129ea494d6c6ce56001868dd80147aff531d6df0729"
 
+  bottle do
+    sha256 "061afad3ba1f7b0adbd5ff3652a7ed3760ebcaa7ddfeab1f0f8f5a0f546c7587" => :sierra
+    sha256 "8122350d4ae8cd6f209ce2a44e0a762673003265951f51c8d8aea8923bf3ed86" => :el_capitan
+    sha256 "04b4056de9dc1427fa62fdc8fc8f883122274b101bb3e0f362fa81e3c46dea43" => :yosemite
+  end
+
   option "with-debug", "Build with debugger hooks"
   option "with-openssl", "Build against Homebrew's OpenSSL instead of the bundled OpenSSL"
   option "without-npm", "npm will not be installed"
