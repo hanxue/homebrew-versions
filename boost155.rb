@@ -62,7 +62,8 @@ class Boost155 < Formula
   end
   bottle do
     cellar :any
-    revision 1
+    rebuild 1
+    sha256 "47f288321a2a3a0aade80312484f0ab66274b5663d12c4af7c98065bf5c5de32" => :sierra
     sha256 "a0c12015fb98746ffa335f6db5fefc5e6c70e120c98f36d6e21f71b14fbc484e" => :el_capitan
     sha256 "89301e28dbc76813de061c2350e6dced9861d9bd37ef9feb646233a8b50e8c88" => :yosemite
     sha256 "1d3367159ddd35b26339402255e36fff7ff9d609be1a8cea4a7508a04b7de67b" => :mavericks
