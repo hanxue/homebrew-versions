@@ -1,8 +1,8 @@
 class Mysql56 < Formula
   desc "Open source relational database management system"
   homepage "https://dev.mysql.com/doc/refman/5.6/en/"
-  url "https://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.32.tar.gz"
-  sha256 "4620ed9d9b5803a3ac7a23492dbea993214d3b5ffd4fb63d42771c616f60e359"
+  url "https://cdn.mysql.com/Downloads/MySQL-5.6/mysql-5.6.34.tar.gz"
+  sha256 "ee90bafec6af3abe2715ccb0b3cc9345ed8d1cce025d41e6ec2b2b7a7d820823"
 
   bottle do
     sha256 "b59880e0b5ffa53a45282f073a0503e1de895ace087c7b635214efac5a1a54d9" => :sierra
@@ -55,10 +55,6 @@ class Mysql56 < Formula
 
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
-      .
-      -DCMAKE_INSTALL_PREFIX=#{prefix}
-      -DCMAKE_FIND_FRAMEWORK=LAST
-      -DCMAKE_VERBOSE_MAKEFILE=ON
       -DMYSQL_DATADIR=#{datadir}
       -DINSTALL_INCLUDEDIR=include/mysql
       -DINSTALL_MANDIR=share/man
@@ -105,7 +101,7 @@ class Mysql56 < Formula
     # Build with debug support
     args << "-DWITH_DEBUG=1" if build.with? "debug"
 
-    system "cmake", *args
+    system "cmake", ".", *std_cmake_args, *args
     system "make"
     system "make", "install"
 
