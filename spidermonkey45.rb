@@ -17,7 +17,7 @@ class Spidermonkey45 < Formula
     sha256 "bcf55ed89f3b0f30fb6412833f69d15b3f15567e177e188668d934a9efd6185c" => :yosemite
   end
 
-  revision 1
+  revision 2
 
   depends_on "readline"
   depends_on "nspr"
