@@ -5,6 +5,12 @@ class Kafka090 < Formula
   mirror "https://archive.apache.org/dist/kafka/0.9.0.1/kafka_2.11-0.9.0.1.tgz"
   sha256 "db28f4d5a9327711013c26632baed8e905ce2f304df89a345f25a6dfca966c7a"
 
+  bottle do
+    sha256 "2d77b861273fe5c77b18938ceae9975b6e0d62d7ed1a1bc78783021eab60f15b" => :sierra
+    sha256 "2d77b861273fe5c77b18938ceae9975b6e0d62d7ed1a1bc78783021eab60f15b" => :el_capitan
+    sha256 "2d77b861273fe5c77b18938ceae9975b6e0d62d7ed1a1bc78783021eab60f15b" => :yosemite
+  end
+
   depends_on "zookeeper"
   depends_on :java => "1.8+"
 
