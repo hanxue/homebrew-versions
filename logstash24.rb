@@ -1,8 +1,8 @@
-class Logstash23 < Formula
+class Logstash24 < Formula
   desc "Tool for managing events and logs"
   homepage "https://www.elastic.co/products/logstash"
-  url "https://download.elastic.co/logstash/logstash/logstash-2.3.4.tar.gz"
-  sha256 "7f62a03ddc3972e33c343e982ada1796b18284f43ed9c0089a2efee78b239583"
+  url "https://download.elastic.co/logstash/logstash/logstash-2.4.0.tar.gz"
+  sha256 "622c435c5c0f40e205fd4d9411eb409cc52992cf62dde4c7cd46e480cd8247cc"
 
   head do
     url "https://github.com/elastic/logstash.git"
