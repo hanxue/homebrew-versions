@@ -17,13 +17,13 @@ class Nu0 < Formula
     end
 
     inreplace "Nukefile" do |s|
-      case Hardware.cpu_type
+      case Hardware::CPU.type
       when :intel
         arch = :i386
       when :ppc
         arch = :ppc
       end
-      arch = :x86_64 if arch == :i386 && Hardware.is_64_bit?
+      arch = :x86_64 if arch == :i386 && Hardware::CPU.is_64_bit?
       s.sub!(/^;;\(set @arch '\("i386"\)\)$/, "(set @arch '(\"#{arch}\"))") unless arch.nil?
       s.gsub!('(SH "sudo ', '(SH "') # don't use sudo to install
       s.gsub!('#{@destdir}/Library/Frameworks', '#{@prefix}/Library/Frameworks')
