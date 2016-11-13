@@ -4,6 +4,12 @@ class Gnuplot4 < Formula
   url "https://downloads.sourceforge.net/project/gnuplot/gnuplot/4.6.7/gnuplot-4.6.7.tar.gz"
   sha256 "26d4d17a00e9dcf77a4e64a28a3b2922645b8bbfe114c0afd2b701ac91235980"
 
+  bottle do
+    sha256 "9c22b87be2895a3651df4e5b200868b859524c6d566a08e2bbb0bceaa1cb07f8" => :sierra
+    sha256 "e92f5c0184f19460688e0d5d65208fee1742d2927db0fa32b6617f4e246615e5" => :el_capitan
+    sha256 "d65821308e19143895a6435bde915c79c8b3a50ded2dc2aea2e870545ae4ed01" => :yosemite
+  end
+
   option "with-pdflib-lite", "Build the PDF terminal using pdflib-lite"
   option "with-wxmac", "Build the wxWidgets terminal using pango"
   option "with-cairo", "Build the Cairo based terminals"
