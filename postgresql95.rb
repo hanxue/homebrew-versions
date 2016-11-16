@@ -1,45 +1,38 @@
-class Postgresql93 < Formula
+class Postgresql95 < Formula
   desc "Object-relational database system"
-  homepage "http://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v9.3.14/postgresql-9.3.14.tar.bz2"
-  sha256 "5c4322f1c42ba1ff4b28383069c56663b46160bb08e85d41fa2ab9a5009d039d"
-
-  bottle do
-    sha256 "7651b316bf36d3d432c7634dea78ddb398b10ce7610afecffe90d0016d994aea" => :sierra
-    sha256 "0470ec5e1ec0dc45a18893d3e513c8ac404fc52aa6281b23c800cc8d017a9767" => :el_capitan
-    sha256 "a9ba2cc6ae74320a10be40d42c4a75989d38fce99232c032026ae60d275525b6" => :yosemite
-  end
-
-  revision 1
+  homepage "https://www.postgresql.org/"
+  url "https://ftp.postgresql.org/pub/source/v9.5.5/postgresql-9.5.5.tar.bz2"
+  sha256 "02c65290be74de6604c3fed87c9fd3e6b32e949f0ab8105a75bd7ed5aa71f394"
 
   option "32-bit"
   option "without-perl", "Build without Perl support"
   option "without-tcl", "Build without Tcl support"
   option "with-dtrace", "Build with DTrace support"
 
-  deprecated_option "no-perl" => "without-perl"
-  deprecated_option "no-tcl" => "without-tcl"
-  deprecated_option "enable-dtrace" => "with-dtrace"
-
   depends_on "openssl"
   depends_on "readline"
   depends_on "libxml2" if MacOS.version <= :leopard # Leopard libxml is too old
-  depends_on "ossp-uuid" => :recommended # ossp-uuid is no longer required for uuid support since 9.4beta2
+
+  option "with-python", "Enable PL/Python2"
   depends_on :python => :optional
+
+  option "with-python3", "Enable PL/Python3 (incompatible with --with-python)"
+  depends_on :python3 => :optional
 
   conflicts_with "postgres-xc",
     :because => "postgresql and postgres-xc install the same binaries."
+  conflicts_with "postgresql",
+    :because => "Differing versions of the same formula."
 
   fails_with :clang do
     build 211
     cause "Miscompilation resulting in segfault on queries"
   end
 
-  # Fix uuid-ossp build issues: http://archives.postgresql.org/pgsql-general/2012-07/msg00654.php
-  patch :DATA
-
   def install
     ENV.libxml2 if MacOS.version >= :snow_leopard
+    # avoid adding the SDK library directory to the linker search path
+    ENV["XML2_CONFIG"] = "xml2-config --exec-prefix=/usr"
 
     ENV.prepend "LDFLAGS", "-L#{Formula["openssl"].opt_lib} -L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["openssl"].opt_include} -I#{Formula["readline"].opt_include}"
@@ -47,7 +40,9 @@ class Postgresql93 < Formula
     args = %W[
       --disable-debug
       --prefix=#{prefix}
-      --datadir=#{share}/#{name}
+      --datadir=#{HOMEBREW_PREFIX}/share/#{name}
+      --libdir=#{HOMEBREW_PREFIX}/lib
+      --sysconfdir=#{etc}
       --docdir=#{doc}
       --enable-thread-safety
       --with-bonjour
@@ -59,10 +54,19 @@ class Postgresql93 < Formula
       --with-libxslt
     ]
 
-    args << "--with-python" if build.with? "python"
     args << "--with-perl" if build.with? "perl"
 
-    # The CLT is required to build tcl support on 10.7 and 10.8 because tclConfig.sh is not part of the SDK
+    which_python = nil
+    if build.with?("python") && build.with?("python3")
+      odie "Cannot provide both --with-python and --with-python3"
+    elsif build.with?("python") || build.with?("python3")
+      args << "--with-python"
+      which_python = which(build.with?("python") ? "python" : "python3")
+    end
+    ENV["PYTHON"] = which_python
+
+    # The CLT is required to build Tcl support on 10.7 and 10.8 because
+    # tclConfig.sh is not part of the SDK
     if build.with?("tcl") && (MacOS.version >= :mavericks || MacOS::CLT.installed?)
       args << "--with-tcl"
 
@@ -72,20 +76,17 @@ class Postgresql93 < Formula
     end
 
     args << "--enable-dtrace" if build.with? "dtrace"
-
-    if build.with?("ossp-uuid")
-      args << "--with-ossp-uuid"
-      ENV.append "CFLAGS", `uuid-config --cflags`.strip
-      ENV.append "LDFLAGS", `uuid-config --ldflags`.strip
-      ENV.append "LIBS", `uuid-config --libs`.strip
-    end
+    args << "--with-uuid=e2fs"
 
     if build.build_32_bit?
-      ENV.append ["CFLAGS", "LDFLAGS"], "-arch #{Hardware::CPU.arch_32_bit}"
+      ENV.append %w[CFLAGS LDFLAGS], "-arch #{Hardware::CPU.arch_32_bit}"
     end
 
     system "./configure", *args
-    system "make", "install-world"
+    system "make"
+    system "make", "install-world", "datadir=#{pkgshare}",
+                                    "libdir=#{lib}",
+                                    "pkglibdir=#{lib}/postgresql"
   end
 
   def post_install
@@ -96,30 +97,23 @@ class Postgresql93 < Formula
     end
   end
 
-  def caveats
-    s = <<-EOS.undent
+  def caveats; <<-EOS.undent
     If builds of PostgreSQL 9 are failing and you have version 8.x installed,
     you may need to remove the previous version first. See:
-      https://github.com/Homebrew/homebrew/issues/issue/2510
+      https://github.com/Homebrew/homebrew/issues/2510
 
-    To migrate existing data from a previous major version (pre-9.3) of PostgreSQL, see:
-      http://www.postgresql.org/docs/9.3/static/upgrading.html
+    To migrate existing data from a previous major version (pre-9.0) of PostgreSQL, see:
+      https://www.postgresql.org/docs/9.5/static/upgrading.html
+
+    To migrate existing data from a previous minor version (9.0-9.4) of PostgreSQL, see:
+      https://www.postgresql.org/docs/9.5/static/pgupgrade.html
+
+      You will need your previous PostgreSQL installation from brew to perform `pg_upgrade`.
+      Do not run `brew cleanup postgresql` until you have performed the migration.
     EOS
-
-    if MacOS.prefer_64_bit?
-      s << <<-EOS.undent
-      \nWhen installing the postgres gem, including ARCHFLAGS is recommended:
-        ARCHFLAGS="-arch x86_64" gem install pg
-
-      To install gems without sudo, see the Homebrew documentation:
-      https://github.com/Homebrew/brew/blob/master/docs/Gems%2C-Eggs-and-Perl-Modules.md
-      EOS
-    end
-
-    s
   end
 
-  plist_options :manual => "postgres -D #{HOMEBREW_PREFIX}/var/postgres"
+  plist_options :manual => "pg_ctl -D #{HOMEBREW_PREFIX}/var/postgres start"
 
   def plist; <<-EOS.undent
     <?xml version="1.0" encoding="UTF-8"?>
@@ -149,19 +143,8 @@ class Postgresql93 < Formula
 
   test do
     system "#{bin}/initdb", testpath/"test"
+    assert_equal "#{HOMEBREW_PREFIX}/share/#{name}", shell_output("#{bin}/pg_config --sharedir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}/lib", shell_output("#{bin}/pg_config --libdir").chomp
+    assert_equal "#{HOMEBREW_PREFIX}/lib/postgresql", shell_output("#{bin}/pg_config --pkglibdir").chomp
   end
 end
-
-
-__END__
---- a/contrib/uuid-ossp/uuid-ossp.c	2012-07-30 18:34:53.000000000 -0700
-+++ b/contrib/uuid-ossp/uuid-ossp.c	2012-07-30 18:35:03.000000000 -0700
-@@ -9,6 +9,8 @@
-  *-------------------------------------------------------------------------
-  */
-
-+#define _XOPEN_SOURCE
-+
- #include "postgres.h"
- #include "fmgr.h"
- #include "utils/builtins.h"
