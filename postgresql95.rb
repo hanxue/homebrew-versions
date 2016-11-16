@@ -4,6 +4,12 @@ class Postgresql95 < Formula
   url "https://ftp.postgresql.org/pub/source/v9.5.5/postgresql-9.5.5.tar.bz2"
   sha256 "02c65290be74de6604c3fed87c9fd3e6b32e949f0ab8105a75bd7ed5aa71f394"
 
+  bottle do
+    sha256 "2b566a555bf58761e0ab2e3c3a7685ba09f253117a7522d3e83b0915ab137688" => :sierra
+    sha256 "890536e87f961756994d08f2e152708db4b16898faad76f92d4852bfff1b3274" => :el_capitan
+    sha256 "e60d51ca79ff282189fcdbe26aa8dbaf26835822495ad84c859e1a3d0e91a2ab" => :yosemite
+  end
+
   option "32-bit"
   option "without-perl", "Build without Perl support"
   option "without-tcl", "Build without Tcl support"
