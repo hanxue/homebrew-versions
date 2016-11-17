@@ -1,9 +1,9 @@
 class ApacheSpark16 < Formula
   desc "Engine for large-scale data processing"
   homepage "https://spark.apache.org"
-  url "http://d3kbcqa49mib13.cloudfront.net/spark-1.6.2-bin-hadoop2.6.tgz"
-  version "1.6.2"
-  sha256 "bddeccec0fb8ac9491cbb4e320467e9263bcc1caf9b45466164f8ae2d97de710"
+  url "http://d3kbcqa49mib13.cloudfront.net/spark-1.6.3-bin-hadoop2.6.tgz"
+  version "1.6.3"
+  sha256 "389e79458ad1d8ad8044643d97304d09bf3ca31f804c386e560033c48123cd69"
 
   bottle :unneeded
 
