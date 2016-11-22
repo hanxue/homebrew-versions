@@ -1,8 +1,8 @@
 class Elasticsearch24 < Formula
   desc "Distributed search & analytics engine"
   homepage "https://www.elastic.co/products/elasticsearch"
-  url "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.1/elasticsearch-2.4.1.tar.gz"
-  sha256 "23a369ef42955c19aaaf9e34891eea3a055ed217d7fbe76da0998a7a54bbe167"
+  url "https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.2/elasticsearch-2.4.2.tar.gz"
+  sha256 "7741a2e78f5f155c5005ba891f9b6e57a4e45178cb540beed101d30517cbe22f"
 
   bottle :unneeded
   depends_on :java => "1.7+"
