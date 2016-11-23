@@ -1,3 +1,4 @@
 {
-  "coq83": "homebrew/boneyard"
+  "coq83": "homebrew/boneyard",
+  "elasticsearch17": "homebrew/core"
 }
