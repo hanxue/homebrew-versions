@@ -1,4 +1,7 @@
 {
   "coq83": "homebrew/boneyard",
-  "elasticsearch17": "homebrew/core"
+  "elasticsearch17": "homebrew/core",
+  "elasticsearch24": "homebrew/core",
+  "mysql55": "homebrew/core",
+  "mysql56": "homebrew/core"
 }
