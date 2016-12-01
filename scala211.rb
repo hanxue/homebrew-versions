@@ -4,6 +4,13 @@ class Scala211 < Formula
   url "http://downloads.lightbend.com/scala/2.11.8/scala-2.11.8.tgz"
   sha256 "87fc86a19d9725edb5fd9866c5ee9424cdb2cd86b767f1bb7d47313e8e391ace"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "6fa591031d5c3f216920761fdd8d07dac1a94952de0e39becd088789563e4d33" => :sierra
+    sha256 "6fa591031d5c3f216920761fdd8d07dac1a94952de0e39becd088789563e4d33" => :el_capitan
+    sha256 "6fa591031d5c3f216920761fdd8d07dac1a94952de0e39becd088789563e4d33" => :yosemite
+  end
+
   keg_only "Conflicts with scala in main repository."
 
   option "with-docs", "Also install library documentation"
