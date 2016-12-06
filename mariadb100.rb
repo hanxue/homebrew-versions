@@ -1,8 +1,8 @@
 class Mariadb100 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https://mariadb.org/"
-  url "https://fossies.org/linux/misc/mariadb-10.0.27.tar.gz"
-  sha256 "bdf3a0c25aa2bc7a22a47e994eb7c8aa782624810eb3156038cc62bc9085c0cd"
+  url "https://fossies.org/linux/misc/mariadb-10.0.28.tar.gz"
+  sha256 "0a5033d56f1c5403df7fabd519ccbdc4da308b30a1ecd52e06a19be182a9bab2"
 
   bottle do
     sha256 "440c32068ef098715588dd991f3f678c96b84157eba19fd90db2fce1750e4286" => :el_capitan
@@ -11,13 +11,15 @@ class Mariadb100 < Formula
   end
 
   option :universal
-  option "with-tests", "Keep test when installing"
+  option "with-test", "Keep test when installing"
   option "with-bench", "Keep benchmark app when installing"
   option "with-embedded", "Build the embedded server"
   option "with-libedit", "Compile with editline wrapper instead of readline"
   option "with-archive-storage-engine", "Compile with the ARCHIVE storage engine enabled"
   option "with-blackhole-storage-engine", "Compile with the BLACKHOLE storage engine enabled"
   option "with-local-infile", "Build with local infile loading support"
+
+  deprecated_option "with-tests" => "with-test"
 
   depends_on "cmake" => :build
   depends_on "pidof" unless MacOS.version >= :mountain_lion
@@ -50,10 +52,6 @@ class Mariadb100 < Formula
 
     # -DINSTALL_* are relative to prefix
     args = %W[
-      .
-      -DCMAKE_INSTALL_PREFIX=#{prefix}
-      -DCMAKE_FIND_FRAMEWORK=LAST
-      -DCMAKE_VERBOSE_MAKEFILE=ON
       -DMYSQL_DATADIR=#{var}/mysql
       -DINSTALL_INCLUDEDIR=include/mysql
       -DINSTALL_MANDIR=share/man
@@ -109,15 +107,14 @@ class Mariadb100 < Formula
     # Build with local infile loading support
     args << "-DENABLED_LOCAL_INFILE=1" if build.with? "local-infile"
 
-    system "cmake", *args
+    system "cmake", ".", *std_cmake_args, *args
     system "make"
     system "make", "install"
 
     # Fix my.cnf to point to #{etc} instead of /etc
     (etc+"my.cnf.d").mkpath
-    inreplace "#{etc}/my.cnf" do |s|
-      s.gsub!("!includedir /etc/my.cnf.d", "!includedir #{etc}/my.cnf.d")
-    end
+    inreplace "#{etc}/my.cnf", "!includedir /etc/my.cnf.d",
+                               "!includedir #{etc}/my.cnf.d"
     touch etc/"my.cnf.d/.homebrew_dont_prune_me"
 
     # Don't create databases inside of the prefix!
@@ -150,9 +147,8 @@ class Mariadb100 < Formula
         wsrep_sst_xtrabackup
         wsrep_sst_xtrabackup-v2
       ].each do |f|
-        inreplace "#{bin}/#{f}" do |s|
-          s.gsub!("$(dirname $0)/wsrep_sst_common", "#{libexec}/wsrep_sst_common")
-        end
+        inreplace "#{bin}/#{f}", "$(dirname $0)/wsrep_sst_common",
+                                 "#{libexec}/wsrep_sst_common"
       end
     end
   end
@@ -208,7 +204,7 @@ class Mariadb100 < Formula
         system "./mysql-test-run.pl", "status"
       end
     else
-      system "mysqld", "--version"
+      system "#{bin}/mysqld", "--version"
     end
   end
 end
