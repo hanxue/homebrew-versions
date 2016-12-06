@@ -4,6 +4,7 @@ class Bazel02 < Formula
   url "https://github.com/bazelbuild/bazel/archive/0.2.3.tar.gz"
   sha256 "37fd2d49c57df171b704bf82c94e7bf954d94748e2a8621c5456c5c9d5f2c845"
   head "https://github.com/bazelbuild/bazel.git"
+  revision 1
 
   bottle do
     cellar :any_skip_relocation
@@ -15,6 +16,14 @@ class Bazel02 < Formula
   depends_on :macos => :yosemite
 
   conflicts_with "bazel", :because => "Differing version of same formula"
+
+  if MacOS.version >= :sierra
+    # Use nanosleep(2) instead of poll(2) to sleep.
+    patch do
+      url "https://github.com/bazelbuild/bazel/pull/1803.patch"
+      sha256 "a6673fb1875adec23630950d579a6ba11237045fb3c645cb4c690efd5b313986"
+    end
+  end
 
   def install
     ENV["EMBED_LABEL"] = "#{version}-homebrew"
