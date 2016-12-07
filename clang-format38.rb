@@ -6,9 +6,10 @@ class ClangFormat38 < Formula
 
   bottle do
     cellar :any_skip_relocation
-    sha256 "4d68bd49d9d837144da9921ee28a61419ec306035c2a127af1df8961a1e9d1db" => :el_capitan
-    sha256 "ce8d399f32942a3414c9f1d142a647f14fabc8d043c603ebba8bba20478bce2d" => :yosemite
-    sha256 "69e3bc7fec832ea0976179f2723905efbe351ba4f36c9e15f144ba61b4f008e4" => :mavericks
+    rebuild 1
+    sha256 "35469b903414f1e7ed7870a6976379250fc1a3708d4b5ade5a5f20fabded46bf" => :sierra
+    sha256 "02fec3b31622f0eda3706e72f43b608e0d9c399b9fd6ff45e07e541e3c0862e3" => :el_capitan
+    sha256 "17a00b6ddc1c3f427702460a372c9d6ba8b51113a9c9a6f2e02f8dff1d485287" => :yosemite
   end
 
   depends_on "cmake" => :build
