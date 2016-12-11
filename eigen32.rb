@@ -4,6 +4,13 @@ class Eigen32 < Formula
   url "https://bitbucket.org/eigen/eigen/get/3.2.10.tar.bz2"
   sha256 "760e6656426fde71cc48586c971390816f456d30f0b5d7d4ad5274d8d2cb0a6d"
 
+  bottle do
+    cellar :any_skip_relocation
+    sha256 "89ecd58783c9750b3d9122cce786fb17834d108fd3e51247255d8094f9bd16e7" => :sierra
+    sha256 "c57f778c3143aad316232c46232a7d304c497e7923cb1a1fe2604fda8302bb44" => :el_capitan
+    sha256 "ef12ccf9d0cceab10bc57cb23a5723de78c69a74e44f5a01ce16075d20068f83" => :yosemite
+  end
+
   keg_only "Conflicts wit eigen in core repository."
 
   option :universal
