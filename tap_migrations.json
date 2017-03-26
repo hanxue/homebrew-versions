@@ -54,7 +54,7 @@
   "gst-plugins-good010": "homebrew/core",
   "gst-plugins-ugly010": "homebrew/core",
   "gstreamer010": "homebrew/core",
-  "hdf4": "homebrew/core",
+  "hdf4": "homebrew/science",
   "influxdb08": "homebrew/core",
   "isl011": "homebrew/core",
   "isl012": "homebrew/core",
