@@ -79,6 +79,7 @@
   "mariadb100": "homebrew/core",
   "maven31": "homebrew/core",
   "maven32": "homebrew/core",
+  "mongodb26": "homebrew/core",
   "mongodb30": "homebrew/core",
   "mongodb32": "homebrew/core",
   "mpfr2": "homebrew/core",
