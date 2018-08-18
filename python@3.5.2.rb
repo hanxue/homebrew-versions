@@ -1,21 +1,16 @@
-class Python352 < Formula
+class PythonAT352 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
+  url "https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz"
+  sha256 "0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40"
   revision 3
 
-  head "https://hg.python.org/cpython", :using => :hg
-
-  stable do
-    url "https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tar.xz"
-    sha256 "0010f56100b9b74259ebcd5d4b295a32324b58b517403a10d1a2aa7cb22bca40"
-
-    # Patch for pyport.h macro issue
-    # https://bugs.python.org/issue10910
-    # https://trac.macports.org/ticket/44288
-    patch do
-      url "https://bugs.python.org/file30805/issue10910-workaround.txt"
-      sha256 "c075353337f9ff3ccf8091693d278782fcdff62c113245d8de43c5c7acc57daf"
-    end
+  # Patch for pyport.h macro issue
+  # https://bugs.python.org/issue10910
+  # https://trac.macports.org/ticket/44288
+  patch do
+    url "https://bugs.python.org/file30805/issue10910-workaround.txt"
+    sha256 "c075353337f9ff3ccf8091693d278782fcdff62c113245d8de43c5c7acc57daf"
   end
 
   bottle do
@@ -24,10 +19,7 @@ class Python352 < Formula
     sha256 "075f5e63188dfcd5a13ef1f9658b26aa2d8d943fbc5c5c50e05fc973bc38f7c1" => :yosemite
   end
 
-  devel do
-    url "https://www.python.org/ftp/python/3.6.0/Python-3.6.0b1.tar.xz"
-    sha256 "a83b094a8abf8a1fba7c548a5e8dd0aabe87a87a6ebd87c97f4a5a2527a74d42"
-  end
+  keg_only :versioned_formula
 
   option "with-tcl-tk", "Use Homebrew's Tk instead of macOS Tk (has optional Cocoa and threads support)"
   option "with-quicktest", "Run `make quicktest` after the build"
@@ -39,17 +31,15 @@ class Python352 < Formula
   depends_on "pkg-config" => :build
   depends_on "readline" => :recommended
   depends_on "sqlite" => :recommended
-  depends_on "gdbm" => :recommended
+  depends_on "gdbm@1.14.1" => :recommended
   depends_on "openssl"
   depends_on "xz" => :recommended # for the lzma module added in 3.3
-  depends_on "homebrew/dupes/tcl-tk" => :optional
-  depends_on :x11 if build.with?("tcl-tk") && Tab.for_name("homebrew/dupes/tcl-tk").with?("x11")
+  depends_on "tcl-tk" => :optional
+  depends_on :x11 if build.with?("tcl-tk") && Tab.for_name("tcl-tk").with?("x11")
   depends_on "sphinx-doc" => [:build, :optional]
 
   skip_clean "bin/pip3", "bin/pip-3.4", "bin/pip-3.5"
   skip_clean "bin/easy_install3", "bin/easy_install-3.4", "bin/easy_install-3.5"
-
-  conflicts_with "python3", :because => "Conflicts with the latest Python 3 in main repository."
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/9f/32/81c324675725d78e7f6da777483a3453611a427db0145dfb878940469692/setuptools-25.2.0.tar.gz"
@@ -92,10 +82,10 @@ class Python352 < Formula
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
-    reason <<-EOS.undent
-    The bottle needs the Apple Command Line Tools to be installed.
-      You can install them, if desired, with:
-        xcode-select --install
+    reason <<~EOS
+      The bottle needs the Apple Command Line Tools to be installed.
+        You can install them, if desired, with:
+          xcode-select --install
     EOS
     satisfy { MacOS::CLT.installed? }
   end
@@ -166,6 +156,12 @@ class Python352 < Formula
       tcl_tk = Formula["tcl-tk"].opt_prefix
       cppflags << "-I#{tcl_tk}/include"
       ldflags  << "-L#{tcl_tk}/lib"
+    end
+
+    if build.with? "gdbm@1.14.1"
+      gdbm = Formula["gdbm@1.14.1"].opt_prefix
+      cppflags << "-I#{gdbm}/include"
+      ldflags  << "-L#{gdbm}/lib"
     end
 
     args << "CFLAGS=#{cflags.join(" ")}" unless cflags.empty?
@@ -277,8 +273,8 @@ class Python352 < Formula
     end
 
     if build.with? "tcl-tk"
-      include_dirs << Formula["homebrew/dupes/tcl-tk"].opt_include
-      library_dirs << Formula["homebrew/dupes/tcl-tk"].opt_lib
+      include_dirs << Formula["tcl-tk"].opt_include
+      library_dirs << Formula["tcl-tk"].opt_lib
     end
 
     cfg = lib_cellar/"distutils/distutils.cfg"
